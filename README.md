@@ -8,6 +8,4 @@ The files in this repo are:
     - IOT.java
     - Sensor.java
 
-Why is there an error?
-
 
