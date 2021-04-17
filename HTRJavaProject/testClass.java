@@ -15,6 +15,7 @@ public class testClass {
 		// TODO Auto-generated method stub
 		System.out.println("Hello World!");
 		System.out.println("Hello CS 347!");
+		System.out.println("Poop");
 
 	}
 
