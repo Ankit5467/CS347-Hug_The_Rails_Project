@@ -4,24 +4,28 @@ package htrPackage;
 public class Sensors {
 
 	//hardware:
-	double wheel_diameter;
+	protected double wheel_diameter;
 	
 	//Data fields:
-	double longitude;
-	double latitude;
+	private double longitude;
+	private double latitude;
 	
-	boolean moving_obstruction;
-	boolean stationary_obstruction;
+	private double gate_distance;
+	private boolean gate_status;
 	
-	int rpm;
+	private boolean moving_obstruction;
+	private boolean stationary_obstruction;
+	private double distance_from_obstruction;
 	
-	double speed;
-	double wind_speed;
+	private int rpm;
 	
-	double rate_rain;
-	double rate_snow;
+	private double speed;
+	private double wind_speed;
 	
-	double visibility;
+	private double rate_rain;
+	private double rate_snow;
+	
+	private double visibility;
 	
 	
 	void setLocation() {
@@ -36,6 +40,14 @@ public class Sensors {
 	
 	//combine the get & sets:
 	
+	double getGateDistance() {
+		return 0.0;
+	}
+	
+	boolean isGateOpen() {
+		return false;
+	}
+	
 	boolean detectStationaryObject() {
 		//update:
 		//stationary_obstruction;
@@ -48,6 +60,21 @@ public class Sensors {
 		return false;
 	}
 	
+	//CHECK BACK ON LATER
+	double obtainDistanceFromObject() {
+		//distance b/w train and obstacle.
+		double dist = 0.0;
+		if(detectStationaryObject()) {
+			//some math
+			dist = 0.0;
+		}
+		if(detectMovingObject()) {
+			//some math
+			dist = 0.0;
+		}
+		return dist;
+	}
+	
 	int getRPM() {
 		// update data field rpm w/ new rpm
 		// return rpm
@@ -56,7 +83,7 @@ public class Sensors {
 	
 	double getSpeed() {
 		// update: 
-		// data field speed;
+		// data field speed, GPS speed;
 		return 0.0;
 	}
 	
@@ -69,6 +96,7 @@ public class Sensors {
 	double getRainRate() {
 		// update: 
 		// data field rain_rate
+		//inches per hour
 		return 0.0;
 	}
 	
