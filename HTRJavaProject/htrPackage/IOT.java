@@ -9,9 +9,49 @@ public class IOT extends Sensors {
 		//some file io method – write/append into a file
 	}
 	
+	String windReport() {
+		if(getWindSpeed() >= 50) {
+			return "The wind speed is " + getWindSpeed() + " mph. Recommendation: Reduce the speed of the train.";
+		} else {
+			return "The wind speed is " + getWindSpeed() + " mph.";
+		}
+	}
+	
+	String rainReport() {
+		if(getRainRate() >= 0.3) {
+			return "The rate of rainfall is " + 
+					getRainRate() + 
+					" inches per hour. Recommendation: Turn on the train headlights and reduce the speed of the train.";
+		}
+		return "";
+	}
+	
+	String snowReport() {
+		if(getSnowRate() >= 0.3) {
+			return "The rate of snowfall is " + 
+					getRainRate() + 
+					" inches per hour. Recommendation: Turn on the train headlights and reduce the speed of the train." ;
+		}
+		return "";
+	}
+	
+	String visibilityReport() {
+		if(getVisibility() < 2.0) {
+			return "The visibility is " + getVisibility() + " miles. Recommendation: Turn on the train headlights and reduce the speed of the train.";
+		} else {
+			return "The visibility is at least 2 miles.";
+		}
+	}
+	
 	String obtainWeather() {
 		//print the weather report.
-		return "";
+		String precipitation = "";
+		if(getRainRate() < 0.3 && getSnowRate() < 0.3) {
+			precipitation += "The rate of precipitation is " + (getRainRate() + getSnowRate()) + " inches per hour.";
+			return windReport() + "\n" + precipitation + "\n" + visibilityReport();
+		} else {
+			return windReport() + "\n" + rainReport() + "\n" + snowReport() + "\n" + visibilityReport();
+		}
 	}
 	
 	boolean isObstruction() {
@@ -26,11 +66,6 @@ public class IOT extends Sensors {
 	
 	double objectSpeed() {
 		// 
-		return 0.0;
-	}
-
-	double obtainTimeToImpact() {
-		//distance b/w train and obstacle.
 		return 0.0;
 	}
 	
@@ -59,19 +94,37 @@ public class IOT extends Sensors {
 	}
 	
 	
-	boolean detectSlippage() {
+	String detectSlippage() {
 		//calculate slippage. return true if slippage. false if none.
-		return false;
+		double rpmSpeed = getRPM() * wheel_diameter * Math.PI * 60 / 63360;
+		if (Math.abs(getSpeed() - rpmSpeed) > (getSpeed() * 0.05)) {
+			return "The wheels are slipping. Recommendation: slow down or halt the train.";
+		} else {
+			return "The wheels are not slipping.";
+		}
 	}
 	
 	double computeImpact() {
 		//returns time to impact.
-		return 0.0;
+		return obtainDistanceFromObject()/getSpeed();
 	}
 	
-	boolean gateStatus() {
+	String gateStatus() {
 		//true if gate is open, false if closed.
-		return false;
+		if(getGateDistance() > 2.0) {
+			if(isGateOpen()) {
+				return "The next gate, which is " + getGateDistance() + " miles away, is open.";
+			} else {
+				return "The next gate, which is " + getGateDistance() + " miles away, is closed.";
+			}
+		} else {
+			if(isGateOpen()) {
+				return "The next gate, which is " + getGateDistance() + " miles away, is open.";
+			} else {
+				return "The next gate, which is " + getGateDistance() + 
+						" miles away, is closed. Recommendation: Stop the train immediately & wait for the gate to open.";
+			}
+		}
 	}
 	
 }
