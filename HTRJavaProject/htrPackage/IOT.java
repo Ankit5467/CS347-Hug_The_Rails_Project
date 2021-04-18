@@ -37,7 +37,8 @@ public class IOT extends Sensors {
 	
 	String visibilityReport() {
 		if(getVisibility() < 2.0) {
-			return "The visibility is " + getVisibility() + " miles. Recommendation: Turn on the train headlights and reduce the speed of the train.";
+			return "The visibility is " + getVisibility() + 
+					" miles. Recommendation: Turn on the train headlights and reduce the speed of the train.";
 		} else {
 			return "The visibility is at least 2 miles.";
 		}
@@ -90,9 +91,7 @@ public class IOT extends Sensors {
 		 * 		
 		 */
 		
-		
 	}
-	
 	
 	String detectSlippage() {
 		//calculate slippage. return true if slippage. false if none.
