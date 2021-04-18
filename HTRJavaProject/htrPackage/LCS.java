@@ -79,5 +79,4 @@ public class LCS extends IOT{
 		}
 		scan.close();
 	}
-
 }
