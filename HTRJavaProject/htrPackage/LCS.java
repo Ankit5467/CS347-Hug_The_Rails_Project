@@ -129,7 +129,6 @@ public class LCS extends IOT {
 					break;
 				case "log off":
 					// log out (but dont exit the program)
-//					logoff = true;
 					System.out.println("Logged off");
 					logoff = true;
 					break;
