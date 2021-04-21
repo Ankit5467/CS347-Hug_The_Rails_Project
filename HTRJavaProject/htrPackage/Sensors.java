@@ -12,7 +12,7 @@ public class Sensors {
 	 
 	private double gate_distance;
 	private boolean gate_status;
-	
+
 	private boolean moving_obstruction;
 	private boolean stationary_obstruction;
 	private double distance_from_obstruction;
