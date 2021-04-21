@@ -9,7 +9,7 @@ public class IOT extends Sensors {
 		//some file io method – write/append into a file
 	}
 	
-	String windReport() {
+	static String windReport() {
 		if(getWindSpeed() >= 50) {
 			return "The wind speed is " + getWindSpeed() + " mph. Recommendation: Reduce the speed of the train.";
 		} else {
@@ -17,7 +17,7 @@ public class IOT extends Sensors {
 		}
 	}
 	
-	String rainReport() {
+	static String rainReport() {
 		if(getRainRate() >= 0.3) {
 			return "The rate of rainfall is " + 
 					getRainRate() + 
@@ -26,7 +26,7 @@ public class IOT extends Sensors {
 		return "";
 	}
 	
-	String snowReport() {
+	static String snowReport() {
 		if(getSnowRate() >= 0.3) {
 			return "The rate of snowfall is " + 
 					getRainRate() + 
@@ -35,7 +35,7 @@ public class IOT extends Sensors {
 		return "";
 	}
 	
-	String visibilityReport() {
+	static String visibilityReport() {
 		if(getVisibility() < 2.0) {
 			return "The visibility is " + getVisibility() + 
 					" miles. Recommendation: Turn on the train headlights and reduce the speed of the train.";
@@ -44,7 +44,7 @@ public class IOT extends Sensors {
 		}
 	}
 	
-	String obtainWeather() {
+	static String obtainWeather() {
 		//print the weather report.
 		String precipitation = "";
 		if(getRainRate() < 0.3 && getSnowRate() < 0.3) {
@@ -124,6 +124,16 @@ public class IOT extends Sensors {
 						" miles away, is closed. Recommendation: Stop the train immediately & wait for the gate to open.";
 			}
 		}
+	}
+	
+	static void helpMessage() {
+		
+		System.out.println("help Message:\n" + 
+				"\tEnter \"Help\" to display the help message\n" +
+				"\tEnter \"exit\" to exit LCS\n" +
+				"Command Options:\n" +
+				"\twifi \n\tlocation \n\tweather \n\tspeed" +
+				"\n\trpm \n\trecommend \n\tstatus");
 	}
 	
 }
