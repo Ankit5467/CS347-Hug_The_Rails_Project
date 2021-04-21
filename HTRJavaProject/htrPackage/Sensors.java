@@ -9,7 +9,7 @@ public class Sensors {
 	//Data fields:
 	private static double longitude;
 	private static double latitude;
-	
+	 
 	private double gate_distance;
 	private boolean gate_status;
 	
