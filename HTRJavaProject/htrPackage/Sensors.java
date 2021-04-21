@@ -7,8 +7,8 @@ public class Sensors {
 	protected double wheel_diameter;
 	
 	//Data fields:
-	private double longitude;
-	private double latitude;
+	private static double longitude;
+	private static double latitude;
 	
 	private double gate_distance;
 	private boolean gate_status;
@@ -33,7 +33,7 @@ public class Sensors {
 		latitude = 0.0;
 	}
 	
-	String getLocation() {
+	static String getLocation() {
 		//update longitude,latitude.
 		return "" + longitude + ", " + latitude;
 	}
@@ -75,38 +75,38 @@ public class Sensors {
 		return dist;
 	}
 	
-	int getRPM() {
+	static int getRPM() {
 		// update data field rpm w/ new rpm
 		// return rpm
 		return 0;
 	}
 	
-	double getSpeed() {
+	static double getSpeed() {
 		// update: 
 		// data field speed, GPS speed;
 		return 0.0;
 	}
 	
-	double getWindSpeed() {
+	static double getWindSpeed() {
 		// update: 
 		// data field wind_speed
 		return 0.0;
 	}
 	
-	double getRainRate() {
+	static double getRainRate() {
 		// update: 
 		// data field rain_rate
 		//inches per hour
 		return 0.0;
 	}
 	
-	double getSnowRate() {
+	static double getSnowRate() {
 		// update: 
 		// data field snow_rate
 		return 0.0;
 	}
 	
-	double getVisibility() {
+	static double getVisibility() {
 		// update: 
 		// data field visibility
 		return 0.0;	
