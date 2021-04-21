@@ -1,4 +1,4 @@
-package htrPackage;
+
 
 public class IOT extends Sensors {
 	
@@ -6,7 +6,7 @@ public class IOT extends Sensors {
 	//
 	
 	void writeToLog() {
-		//some file io method – write/append into a file
+		//some file io method ï¿½ write/append into a file
 	}
 	
 	static String windReport() {
