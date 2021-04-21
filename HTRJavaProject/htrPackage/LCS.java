@@ -4,11 +4,11 @@ import java.util.Scanner;
 public class LCS extends IOT{
 
 	//data fields
-	private static final String userOP = "yo";
-	private static final String passOP = "mama";
-	private static final String userAD = "";
-	private static final String passAD = "";
-	private boolean isConnected;
+	private static final String userOP = "operator";
+	private static final String passOP = "qwerty";
+	private static final String userAD = "admin";
+	private static final String passAD = "password";
+	private static boolean isConnected;
 	
 	//methods:
 	
@@ -21,38 +21,38 @@ public class LCS extends IOT{
 		return false;
 	}
 
-	boolean isConnectedWifi() {
+	static boolean isConnectedWifi() {
 		return isConnected;
 	}
 	
 	//(long,lat)
-	String displayLocation() {
+	static String displayLocation() {
 		//call the sensor
 		return "(" + getLocation() + ")";
 	}
 	
-	String displayWeather() {
+	static String displayWeather() {
 		//call the sensor
 		return obtainWeather();
 	}
 	
-	double displaySpeed() {
+	static double displaySpeed() {
 		//call the sensor
 		return getSpeed();
 	}
 	
-	int displayRPM() {
+	static int displayRPM() {
 		//call the sensor
 		return getRPM();
 	}
 	
-	String recommend(String field) {
+	static String recommend(String field) {
 		//field = speed, weather, obstacle, gate
 		return "";
 	}
 	
 	
-	String getStatus() {
+	static String getStatus() {
 		//use stringbuilder
 		
 //		recommend(speed);
@@ -66,7 +66,7 @@ public class LCS extends IOT{
 		
 		Scanner scan = new Scanner(System.in);
 		
-		while(true) {
+		while (true) {
 			System.out.println("Enter your username: ");
 			String username = scan.nextLine();
 			System.out.println("Enter your password: ");
@@ -77,6 +77,52 @@ public class LCS extends IOT{
 				System.out.println("Incorrect credentials");
 			}
 		}
+		
+		boolean cont = true;
+		while (cont && !isConnectedWifi()) {
+			//print status report:
+			System.out.print("-------------------------------\nEnter a command: ");
+			String command = scan.nextLine();
+			
+			switch(command) {
+			case "help": 
+				helpMessage();
+				break;
+			case "exit":
+				cont = false;
+				break;
+			case "wifi":
+				System.out.println("Connected to wifi: " + isConnectedWifi());
+				break;
+			case "location":
+				System.out.println("Location: " + displayLocation());
+				break;
+			case "weather":
+				System.out.println("Weather: " + displayWeather());
+				break;
+			case "speed":	
+				System.out.println("Speed: " + displaySpeed() + "mph.");
+				break;
+			case "rpm":		
+				System.out.println("Wheel rpm: " + displayRPM());
+				break;
+			case "status":
+				System.out.println("Status Report: " + getStatus());
+				break;
+			default: 
+				System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
+				break;
+			}
+			
+//			break;
+		}
+		if (isConnectedWifi()) {
+			System.out.println("LCS is connected to WiFi. LCS is only meant to be used when there is no wifi.");
+			System.exit(-1);
+		}
+		
 		scan.close();
+		System.out.println("LCS has shut off successfully.");
 	}
+	
 }
