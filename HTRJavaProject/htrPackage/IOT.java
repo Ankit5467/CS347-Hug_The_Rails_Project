@@ -6,7 +6,7 @@ public class IOT extends Sensors {
 	//
 	
 	void writeToLog() {
-		//some file io method – write/append into a file
+		//some file io method to write/append into a file
 	}
 	
 	static String windReport() {
@@ -121,7 +121,8 @@ public class IOT extends Sensors {
 				return "The next gate, which is " + getGateDistance() + " miles away, is open.";
 			} else {
 				return "The next gate, which is " + getGateDistance() + 
-						" miles away, is closed. Recommendation: Stop the train immediately & wait for the gate to open.";
+						" miles away, is closed.\n" +
+						" Recommendation: Stop the train immediately & wait for the gate to open.";
 			}
 		}
 	}
@@ -129,10 +130,11 @@ public class IOT extends Sensors {
 	static void helpMessage() {
 		
 		System.out.println("help Message:\n" + 
-				"\tEnter \"Help\" to display the help message\n" +
+				"\tEnter \"help\" to display the help message\n" +
 				"\tEnter \"exit\" to exit LCS\n" +
+				"\tEnter \"log off\" to log out of LCS\n" +
 				"Command Options:\n" +
-				"\twifi \n\tlocation \n\tweather \n\tspeed" +
+				"\twifi \n\tadd user \n\tlocation \n\tweather \n\tspeed" +
 				"\n\trpm \n\trecommend \n\tstatus");
 	}
 	
