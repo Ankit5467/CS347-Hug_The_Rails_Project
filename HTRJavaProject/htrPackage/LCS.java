@@ -1,24 +1,33 @@
-package htrPackage;
+
 import java.util.Scanner;
 
 public class LCS extends IOT{
 
 	//data fields
-	private static final String userOP = "operator";
-	private static final String passOP = "qwerty";
+	private static final String userOP = "Username";
+	private static final String passOP = "Password";
 	private static final String userAD = "admin";
 	private static final String passAD = "password";
 	private static boolean isConnected;
 	
 	//methods:
 	
-	static boolean checkCredentials(String username, String password) {
+	/* static boolean checkCredentials(String username, String password) {
 		if (username.equals(userOP) && password.equals(passOP)) {
 			return true;
 		} else if(username.equals(userAD) && password.equals(passAD)) {
 			return true;
 		}
 		return false;
+	}*/
+	public static boolean checkCredential(String text, String text2) {
+		if (text.equals(userOP) && text2.equals(passOP)) {
+			return true;
+		} else if(text.equals(userAD) && text2.equals(passAD)) {
+			return true;
+		}
+		return false;
+		
 	}
 
 	static boolean isConnectedWifi() {
@@ -71,7 +80,7 @@ public class LCS extends IOT{
 			String username = scan.nextLine();
 			System.out.println("Enter your password: ");
 			String password = scan.nextLine();
-			if(checkCredentials(username,password)) {
+			if(checkCredential(username,password)) {
 				break;
 			} else {
 				System.out.println("Incorrect credentials");
@@ -124,5 +133,15 @@ public class LCS extends IOT{
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
 	}
+
+/*	public boolean checkCredential(String text, String text2) {
+		if (text.equals(userOP) && text2.equals(passOP)) {
+			return true;
+		} else if(text.equals(userAD) && text2.equals(passAD)) {
+			return true;
+		}
+		return false;
+		
+	}*/
 	
 }
