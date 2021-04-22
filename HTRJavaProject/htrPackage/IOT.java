@@ -1,15 +1,10 @@
-
+package htrPackage;
 
 public class IOT extends Sensors {
 	
 	//data fields:
 	
 	void writeToLog() {
-<<<<<<< HEAD
-		//some file io method � write/append into a file
-=======
-		//some file io method to write/append into a file
->>>>>>> 1e8a3143d157f6ad2bb4da395eeb6bc8ed303da7
 	}
 	
 	static String windReport() {
