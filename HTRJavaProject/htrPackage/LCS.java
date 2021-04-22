@@ -180,6 +180,9 @@ public class LCS extends IOT {
 				case "status":
 					System.out.println("Status Report: " + getStatus());
 					break;
+				case "recommend":
+					System.out.println("No Recommendations.");
+					break;
 				default:
 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
 					break;
