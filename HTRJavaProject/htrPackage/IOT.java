@@ -3,7 +3,6 @@ package htrPackage;
 public class IOT extends Sensors {
 	
 	//data fields:
-	//
 	
 	void writeToLog() {
 		//some file io method to write/append into a file
@@ -93,6 +92,27 @@ public class IOT extends Sensors {
 		
 	}
 	
+	/**
+	 * 
+	 * @return the wheel diameter
+	 */
+	static double getWheelDiameter() {
+		return wheel_diameter;
+	}
+	
+	/**
+	 * sets the wheel diameter to @param diameter.
+	 * @return 0 on success. -1 on failure.
+	 */
+	static int setWheelDiameter(double diameter) {
+		if (diameter < 1.0) {
+			return -1;
+		} else {
+			wheel_diameter = diameter;
+			return 0;
+		}
+	}	
+	
 	String detectSlippage() {
 		//calculate slippage. return true if slippage. false if none.
 		double rpmSpeed = getRPM() * wheel_diameter * Math.PI * 60 / 63360;
@@ -133,9 +153,10 @@ public class IOT extends Sensors {
 				"\tEnter \"help\" to display the help message\n" +
 				"\tEnter \"exit\" to exit LCS\n" +
 				"\tEnter \"log off\" to log out of LCS\n" +
+				"\tWheel Diamater: " + getWheelDiameter() + " inches.\n" +
 				"Command Options:\n" +
 				"\twifi \n\tadd user \n\tlocation \n\tweather \n\tspeed" +
-				"\n\trpm \n\trecommend \n\tstatus");
+				"\n\trpm \n\trecommend \n\tstatus \n\tset diameter");
 	}
 	
 }

@@ -3,10 +3,11 @@ package htrPackage;
 
 public class Sensors {
 
-	//hardware:
-	protected double wheel_diameter;
+	/* hardware: */
+	/** Wheel diamater in inches **/
+	protected static double wheel_diameter;
 	
-	//Data fields:
+	/* Data fields: */
 	private static double longitude;
 	private static double latitude;
 	 
@@ -28,6 +29,14 @@ public class Sensors {
 	private double visibility;
 	
 	
+//	double getWheelDiameter() {
+//		return wheel_diameter;
+//	}
+//	
+//	void setWheelDiameter(double diameter) {
+//		wheel_diameter = diameter;
+//	}
+	
 	void setLocation() {
 		longitude = 0.0;
 		latitude = 0.0;
@@ -35,7 +44,7 @@ public class Sensors {
 	
 	static String getLocation() {
 		//update longitude,latitude.
-		return "" + longitude + ", " + latitude;
+		return "(" + longitude + ", " + latitude + ")";
 	}
 	
 	//combine the get & sets:

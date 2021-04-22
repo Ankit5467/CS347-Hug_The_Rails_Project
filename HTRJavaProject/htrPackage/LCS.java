@@ -8,18 +8,15 @@ import java.util.Scanner;
 
 public class LCS extends IOT {
 
-	// data fields
-	private static final String userOP = "operator";
-	private static final String passOP = "qwerty";
-	private static final String userAD = "admin";
-	private static final String passAD = "password";
+	/* data fields */
 	private static boolean isConnected;
 
 	/* Use a HashMap to store Login information. */
 	/* Add default login info for operator & administrator */
 	private static Map<String, String> login_info = new HashMap<String, String>();
+//	static final Scanner scan = new Scanner(System.in);
 
-	// methods:
+	/* methods: */
 	
 	/**
 	 * @returns the Map containing all usernames & passwords.
@@ -35,10 +32,6 @@ public class LCS extends IOT {
 	 * 		false otherwise.
 	 */
 	static boolean checkCredentials(String username, String password) {
-//		for (Map.Entry<String, String> entry : getLoginInfo().entrySet()) {
-//		    System.out.println(entry.getKey()+" : "+entry.getValue());
-//		}
-		
 		return getLoginInfo().getOrDefault(username, "").equals(password);
 	}
 
@@ -60,25 +53,25 @@ public class LCS extends IOT {
 	}
 
 	// (long,lat)
-	static String displayLocation() {
-		// call the sensor
-		return "(" + getLocation() + ")";
-	}
+//	static String displayLocation() {
+//		// call the sensor
+//		return "(" + getLocation() + ")";
+//	}
 
-	static String displayWeather() {
-		// call the sensor
-		return obtainWeather();
-	}
+//	static String displayWeather() {
+//		// call the sensor
+//		return obtainWeather();
+//	}
 
-	static double displaySpeed() {
-		// call the sensor
-		return getSpeed();
-	}
+//	static double displaySpeed() {
+//		// call the sensor
+//		return getSpeed();
+//	}
 
-	static int displayRPM() {
-		// call the sensor
-		return getRPM();
-	}
+//	static int displayRPM() {
+//		// call the sensor
+//		return getRPM();
+//	}
 
 	static String recommend(String field) {
 		// field = speed, weather, obstacle, gate
@@ -96,8 +89,12 @@ public class LCS extends IOT {
 
 	public static void main(String[] args) {
 
-		getLoginInfo().put("operator", "qwerty");
-		getLoginInfo().put("admin", "password");
+		/* LCS initialized with default values. */
+		addLoginInfo("operator", "qwerty");
+		addLoginInfo("admin", "password");
+		setWheelDiameter(40.0);
+		
+		
 		Scanner scan = new Scanner(System.in);
 
 		boolean logoff = false; // true when the user wants to log off. false otherwise.
@@ -117,7 +114,6 @@ public class LCS extends IOT {
 
 			boolean cont = true;
 			while (cont && !isConnectedWifi() && !logoff) {
-				// print status report:
 				System.out.print("-------------------------------\nEnter a command: ");
 				String command = scan.nextLine().toLowerCase();
 
@@ -146,17 +142,29 @@ public class LCS extends IOT {
 					System.out.println("Connected to wifi: " + isConnectedWifi());
 					break;
 				case "location":
-					System.out.println("Location: " + displayLocation());
+					System.out.println("Location: " + getLocation());
 					break;
 				case "weather":
-					System.out.println("Weather: " + displayWeather());
+					System.out.println("Weather: " + obtainWeather());
 					break;
 				case "speed":
-					System.out.println("Speed: " + displaySpeed() + "mph.");
+					System.out.println("Speed: " + getSpeed() + "mph.");
 					break;
 				case "rpm":
-					System.out.println("Wheel rpm: " + displayRPM());
+					System.out.println("Wheel rpm: " + getRPM());
 					break;
+//				case "set diameter":
+//					System.out.println("The wheel diameter is currently set to "
+//							+ getWheelDiameter() + " inches. " 
+//							+ "Enter the updated wheel diameter in inches: ");
+//					double newDiameter = scan.nextDouble(); /* BUG: This causes "enter a command ..." to be printed twice.*/
+//					if (setWheelDiameter(newDiameter) == -1) {
+//						System.out.println("Error: Invalid wheel diameter. Wheel Diameter must be at least 1 inch.\n");
+//					} else {
+//						System.out.println("Sucess: The wheel diameter has been set to "
+//								+ getWheelDiameter() + " inches.\n");
+//					}
+//					break;
 				case "status":
 					System.out.println("Status Report: " + getStatus());
 					break;
@@ -172,8 +180,10 @@ public class LCS extends IOT {
 				System.exit(-1);
 			}
 			if (!cont) {
+				System.out.println("Shutting off ...");
 				break;
 			} else if (logoff) {
+				System.out.println("Logging off ...");
 				logoff = false; 
 			}
 
@@ -181,5 +191,4 @@ public class LCS extends IOT {
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
 	}
-
 }
