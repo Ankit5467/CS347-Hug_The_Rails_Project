@@ -1,26 +1,23 @@
-<<<<<<< HEAD
 
-=======
 package htrPackage;
 
 //import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
->>>>>>> 1e8a3143d157f6ad2bb4da395eeb6bc8ed303da7
+
 import java.util.Scanner;
 //import java.util.*;
 
 public class LCS extends IOT {
 
-<<<<<<< HEAD
 	//data fields
 	private static final String userOP = "Username";
 	private static final String passOP = "Password";
 	private static final String userAD = "admin";
 	private static final String passAD = "password";
-=======
+
 	/* data fields */
->>>>>>> 1e8a3143d157f6ad2bb4da395eeb6bc8ed303da7
+
 	private static boolean isConnected;
 
 	/* Use a HashMap to store Login information. */
@@ -44,7 +41,7 @@ public class LCS extends IOT {
 	 * @return true if the pair (username,password) is a valid login credential,
 	 * 		false otherwise.
 	 */
-	static boolean checkCredentials(String username, String password) {
+	public static boolean checkCredentials(String username, String password) {
 		return getLoginInfo().getOrDefault(username, "").equals(password);
 	}
 
@@ -59,7 +56,7 @@ public class LCS extends IOT {
 			return;
 		}
 		getLoginInfo().put(username, password);
->>>>>>> 1e8a3143d157f6ad2bb4da395eeb6bc8ed303da7
+
 	}
 
 	static boolean isConnectedWifi() {
@@ -124,7 +121,7 @@ public class LCS extends IOT {
 				} else {
 					System.out.println("Incorrect credentials");
 				}
->>>>>>> 1e8a3143d157f6ad2bb4da395eeb6bc8ed303da7
+
 			}
 
 			boolean cont = true;
@@ -206,4 +203,9 @@ public class LCS extends IOT {
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
 	}
+
+	static boolean checkCredentialB(String text, String text2) {
+		return true;
+	}
+}
 
