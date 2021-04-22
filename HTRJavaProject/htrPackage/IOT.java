@@ -3,10 +3,13 @@
 public class IOT extends Sensors {
 	
 	//data fields:
-	//
 	
 	void writeToLog() {
+<<<<<<< HEAD
 		//some file io method � write/append into a file
+=======
+		//some file io method to write/append into a file
+>>>>>>> 1e8a3143d157f6ad2bb4da395eeb6bc8ed303da7
 	}
 	
 	static String windReport() {
@@ -93,6 +96,27 @@ public class IOT extends Sensors {
 		
 	}
 	
+	/**
+	 * 
+	 * @return the wheel diameter
+	 */
+	static double getWheelDiameter() {
+		return wheel_diameter;
+	}
+	
+	/**
+	 * sets the wheel diameter to @param diameter.
+	 * @return 0 on success. -1 on failure.
+	 */
+	static int setWheelDiameter(double diameter) {
+		if (diameter < 1.0) {
+			return -1;
+		} else {
+			wheel_diameter = diameter;
+			return 0;
+		}
+	}	
+	
 	String detectSlippage() {
 		//calculate slippage. return true if slippage. false if none.
 		double rpmSpeed = getRPM() * wheel_diameter * Math.PI * 60 / 63360;
@@ -121,7 +145,8 @@ public class IOT extends Sensors {
 				return "The next gate, which is " + getGateDistance() + " miles away, is open.";
 			} else {
 				return "The next gate, which is " + getGateDistance() + 
-						" miles away, is closed. Recommendation: Stop the train immediately & wait for the gate to open.";
+						" miles away, is closed.\n" +
+						" Recommendation: Stop the train immediately & wait for the gate to open.";
 			}
 		}
 	}
@@ -129,11 +154,13 @@ public class IOT extends Sensors {
 	static void helpMessage() {
 		
 		System.out.println("help Message:\n" + 
-				"\tEnter \"Help\" to display the help message\n" +
+				"\tEnter \"help\" to display the help message\n" +
 				"\tEnter \"exit\" to exit LCS\n" +
+				"\tEnter \"log off\" to log out of LCS\n" +
+				"\tWheel Diamater: " + getWheelDiameter() + " inches.\n" +
 				"Command Options:\n" +
-				"\twifi \n\tlocation \n\tweather \n\tspeed" +
-				"\n\trpm \n\trecommend \n\tstatus");
+				"\twifi \n\tadd user \n\tlocation \n\tweather \n\tspeed" +
+				"\n\trpm \n\trecommend \n\tstatus \n\tset diameter");
 	}
 	
 }
