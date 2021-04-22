@@ -1,3 +1,5 @@
+package htrPackage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -89,7 +91,7 @@ public class TestDriver extends JFrame implements ActionListener
      if(e.getSource() == loginButton)
      {
        //If login button was selected
-       loginInfo= lcs.checkCredential(usernameInput.getText(),passwordInput.getText() );
+       loginInfo= lcs.checkCredentialB(usernameInput.getText(),passwordInput.getText() );
        System.out.println(loginInfo);
      }
      if(e.getSource()==t)
