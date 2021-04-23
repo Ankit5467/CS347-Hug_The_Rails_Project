@@ -13,6 +13,7 @@ public class LCS extends IOT {
 
 	private boolean isConnected;
 	private boolean isLoggedIn;
+	private boolean wantToCont;
 	// static final Scanner scan = new Scanner(System.in);
 
 	/* Use a HashMap to store Login information. */
@@ -46,6 +47,7 @@ public class LCS extends IOT {
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
 		this.isLoggedIn = false;
+		this.wantToCont = true;
 
 		/* Initialize the default login credentials. */
 		// addLoginInfo("operator", "qwerty");
@@ -134,8 +136,8 @@ public class LCS extends IOT {
 		
 		Scanner scan = new Scanner(System.in);
 
-		boolean logoff = false; // true when the user wants to log off. false otherwise.
-		while (!logoff) {
+		// myTrain.isLoggedIn = false; // true when the user wants to log off. false otherwise.
+		while (!myTrain.isLoggedIn) {
 
 			while (true) {
 				System.out.println("Enter your username: ");
@@ -143,15 +145,15 @@ public class LCS extends IOT {
 				System.out.println("Enter your password: ");
 				String password = scan.nextLine();
 				if (myTrain.checkCredentials(username, password)) {
+					myTrain.isLoggedIn =true;
 					break;
 				} else {
 					System.out.println("Incorrect credentials");
 				}
-
 			}
-
-			boolean cont = true;
-			while (cont && !myTrain.getWifi() && !logoff) {
+			
+			// boolean cont = true;
+			while (myTrain.wantToCont && !myTrain.getWifi() && myTrain.isLoggedIn) {
 				System.out.print("-------------------------------\nEnter a command: ");
 				String command = scan.nextLine().toLowerCase();
 
@@ -162,9 +164,9 @@ public class LCS extends IOT {
 					System.out.println(myTrain.helpMessage());
 					break;
 				case "log off":
-					// log out (but dont exit the program)
-					System.out.println("Logged off");
-					logoff = true;
+					// log out (but don't exit the program)
+					System.out.println("Logging off ...");
+					myTrain.isLoggedIn = false;
 					break;
 				case "add user":
 					System.out.print("Enter a username: ");
@@ -174,7 +176,7 @@ public class LCS extends IOT {
 					myTrain.addLoginInfo(newUser, newPass);
 					break;
 				case "exit":
-					cont = false;
+					myTrain.wantToCont = false;
 					break;
 				case "wifi":
 					System.out.println("Connected to wifi: " + myTrain.getWifi());
@@ -186,23 +188,30 @@ public class LCS extends IOT {
 					System.out.println("Weather: " + myTrain.obtainWeather());
 					break;
 				case "speed":
-					System.out.println("Speed: " + myTrain.getSpeed() + "mph.");
+					System.out.println("Speed: " + myTrain.getSpeed() + " mph.");
 					break;
 				case "rpm":
 					System.out.println("Wheel rpm: " + myTrain.getRPM());
 					break;
-//				case "set diameter":
-//					System.out.println("The wheel diameter is currently set to "
-//							+ getWheelDiameter() + " inches. " 
-//							+ "Enter the updated wheel diameter in inches: ");
-//					double newDiameter = scan.nextDouble(); /* BUG: This causes "enter a command ..." to be printed twice.*/
-//					if (setWheelDiameter(newDiameter) == -1) {
-//						System.out.println("Error: Invalid wheel diameter. Wheel Diameter must be at least 1 inch.\n");
-//					} else {
-//						System.out.println("Sucess: The wheel diameter has been set to "
-//								+ getWheelDiameter() + " inches.\n");
-//					}
-//					break;
+				case "set diameter":
+					System.out.print("The wheel diameter is currently set to "
+							+ myTrain.getWheelDiameter() + " inches. " 
+							+ "Enter the updated wheel diameter in inches: ");
+					double newDiameter;
+					try {
+						newDiameter = Double.parseDouble(scan.nextLine());
+					} catch (Exception e) {
+						System.out.println("Error: Invalid wheel diameter. Wheel diameter must be numerical.\n");
+						break;
+					}
+					
+					if (myTrain.setWheelDiameter(newDiameter) == -1) {
+						System.out.println("Error: Invalid wheel diameter. Wheel Diameter must be at least 1 inch.\n");
+					} else {
+						System.out.println("Sucess: The wheel diameter has been set to "
+								+ myTrain.getWheelDiameter() + " inches.\n");
+					}
+					break;
 				case "status":
 					System.out.println("Status Report: " + myTrain.getStatus());
 					break;
@@ -220,12 +229,11 @@ public class LCS extends IOT {
 						.println("LCS is connected to WiFi. LCS is only meant " + "to be used when there is no wifi.");
 				System.exit(-1);
 			}
-			if (!cont) {
+			if (!myTrain.wantToCont) {
 				System.out.println("Shutting off ...");
 				break;
-			} else if (logoff) {
-				System.out.println("Logging off ...");
-				logoff = false; 
+			} else if (!myTrain.isLoggedIn) {
+				System.out.println("Logged off");
 			}
 
 		}
