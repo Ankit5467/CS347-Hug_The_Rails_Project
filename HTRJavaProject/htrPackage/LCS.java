@@ -1,4 +1,3 @@
-
 package htrPackage;
 
 //import java.io.*;
@@ -9,30 +8,60 @@ import java.util.Scanner;
 //import java.util.*;
 
 public class LCS extends IOT {
+	
+		/* data fields */
 
-	//data fields
-	private static final String userOP = "Username";
-	private static final String passOP = "Password";
-	private static final String userAD = "admin";
-	private static final String passAD = "password";
-
-	/* data fields */
-
-	private static boolean isConnected;
+	private boolean isConnected;
+	private boolean isLoggedIn;
+	// static final Scanner scan = new Scanner(System.in);
 
 	/* Use a HashMap to store Login information. */
 	/* Add default login info for operator & administrator */
-	private static Map<String, String> login_info = new HashMap<String, String>();
-//	static final Scanner scan = new Scanner(System.in);
+	private Map<String, String> login_info = new HashMap<String, String>();
+	// this.login_info.addLoginInfo("operator", "qwerty");
+	// this.login_info.addLoginInfo("admin", "password");
 
-	/* methods: */
-	
+		/* Constructor & object-initializer methods */
+
+	/**
+	 * 	If the given username and password are valid (at least 5 chars long), then
+	 * 	add the (username,password) pair to the table of valid login credentials.
+	 */
+	void addLoginInfo(String username, String password) {
+		if (username.length() < 5 || password.length() < 5) {
+			System.out.println("Error: Failed to add new user. Username " 
+						+ "& password must be at least 5 characters.");
+			return;
+		}
+		this.getLoginInfo().put(username, password);
+		// this.login_info.put(username, password);
+
+	}
+
+	/**
+	 * Constructor for LCS object.
+	 */
+	private LCS() {
+//		super(wheel_diameter); /* set wheel diameter */
+		super();
+		this.isConnected = false; /* By default, assume there is no wifi connection. */
+		this.isLoggedIn = false;
+
+		/* Initialize the default login credentials. */
+		// addLoginInfo("operator", "qwerty");
+		this.addLoginInfo("operator", "qwerty");
+		this.addLoginInfo("admin", "password");
+	}
+
+		/* Regular methods: */
+
+	/* Log in Credential Methods */
 
 	/**
 	 * @returns the Map containing all usernames & passwords.
 	 */
-	static Map<String, String> getLoginInfo() {
-		return login_info;
+	Map<String, String> getLoginInfo() {
+		return this.login_info;
 	}
 
 	/**
@@ -41,55 +70,44 @@ public class LCS extends IOT {
 	 * @return true if the pair (username,password) is a valid login credential,
 	 * 		false otherwise.
 	 */
-	public static boolean checkCredentials(String username, String password) {
-		return getLoginInfo().getOrDefault(username, "").equals(password);
+	private boolean checkCredentials(String username, String password) {
+		return this.getLoginInfo().getOrDefault(username, "").equals(password);
 	}
 
-	/**
-	 * 	If the given username and password are valid (at least 5 chars long), then
-	 * 	add the (username,password) pair to the table of valid login credentials.
-	 */
-	static void addLoginInfo(String username, String password) {
-		if (username.length() < 5 || password.length() < 5) {
-			System.out.println("Error: Failed to add new user. Username " 
-						+ "& password must be at least 5 characters.");
-			return;
-		}
-		getLoginInfo().put(username, password);
+	/* Wifi Connection Methods */
 
+	@SuppressWarnings("unused")
+	private void setWifi(boolean b) {
+		this.isConnected = b;
 	}
 
-	static boolean isConnectedWifi() {
-		return isConnected;
+	private boolean getWifi() {
+		return this.isConnected;
 	}
 
 	// (long,lat)
-//	static String displayLocation() {
-//		// call the sensor
-//		return "(" + getLocation() + ")";
-//	}
+	String displayLocation() {
+		return "(" + this.getLatitude() + ", " + this.getLongitude() + ")";
+	}
 
-//	static String displayWeather() {
-//		// call the sensor
-//		return obtainWeather();
-//	}
+	// String displayWeather() {
+	// 	return obtainWeather();
+	// }
 
-//	static double displaySpeed() {
-//		// call the sensor
-//		return getSpeed();
-//	}
+	// double displaySpeed() {
+	// 	return getSpeed();
+	// }
 
-//	static int displayRPM() {
-//		// call the sensor
-//		return getRPM();
-//	}
+	// int displayRPM() {
+	// 	return getRPM();
+	// }
 
-	static String recommend(String field) {
+	private String recommend(String field) {
 		// field = speed, weather, obstacle, gate
 		return "";
 	}
 
-	static String getStatus() {
+	private String getStatus() {
 		// use stringbuilder
 
 //		recommend(speed);
@@ -99,11 +117,19 @@ public class LCS extends IOT {
 	}
 
 	public static void main(String[] args) {
+		
+		LCS myTrain = new LCS();
+//		myObj.isConnected = true;
+		Sensors mySens = new Sensors();
+		
+		// System.out.println("is connected: " + myObj.getWifi());
+		// myObj.setWifi(true);
+		// System.out.println("is connected: " + myObj.getWifi());
 
-		/* LCS initialized with default values. */
-		addLoginInfo("operator", "qwerty");
-		addLoginInfo("admin", "password");
-		setWheelDiameter(40.0);
+//		/* LCS initialized with default values. */
+//		addLoginInfo("operator", "qwerty");
+//		addLoginInfo("admin", "password");
+		// setWheelDiameter(40.0);
 		
 		
 		Scanner scan = new Scanner(System.in);
@@ -116,7 +142,7 @@ public class LCS extends IOT {
 				String username = scan.nextLine();
 				System.out.println("Enter your password: ");
 				String password = scan.nextLine();
-				if (checkCredentials(username, password)) {
+				if (myTrain.checkCredentials(username, password)) {
 					break;
 				} else {
 					System.out.println("Incorrect credentials");
@@ -125,7 +151,7 @@ public class LCS extends IOT {
 			}
 
 			boolean cont = true;
-			while (cont && !isConnectedWifi() && !logoff) {
+			while (cont && !myTrain.getWifi() && !logoff) {
 				System.out.print("-------------------------------\nEnter a command: ");
 				String command = scan.nextLine().toLowerCase();
 
@@ -133,7 +159,7 @@ public class LCS extends IOT {
 				case "":
 					break;
 				case "help":
-					helpMessage();
+					System.out.println(myTrain.helpMessage());
 					break;
 				case "log off":
 					// log out (but dont exit the program)
@@ -145,25 +171,25 @@ public class LCS extends IOT {
 					String newUser = scan.nextLine();
 					System.out.print("Enter a password: ");
 					String newPass = scan.nextLine();
-					addLoginInfo(newUser, newPass);
+					myTrain.addLoginInfo(newUser, newPass);
 					break;
 				case "exit":
 					cont = false;
 					break;
 				case "wifi":
-					System.out.println("Connected to wifi: " + isConnectedWifi());
+					System.out.println("Connected to wifi: " + myTrain.getWifi());
 					break;
 				case "location":
-					System.out.println("Location: " + getLocation());
+					System.out.println("Location: " + myTrain.displayLocation());
 					break;
 				case "weather":
-					System.out.println("Weather: " + obtainWeather());
+					System.out.println("Weather: " + myTrain.obtainWeather());
 					break;
 				case "speed":
-					System.out.println("Speed: " + getSpeed() + "mph.");
+					System.out.println("Speed: " + myTrain.getSpeed() + "mph.");
 					break;
 				case "rpm":
-					System.out.println("Wheel rpm: " + getRPM());
+					System.out.println("Wheel rpm: " + myTrain.getRPM());
 					break;
 //				case "set diameter":
 //					System.out.println("The wheel diameter is currently set to "
@@ -178,7 +204,7 @@ public class LCS extends IOT {
 //					}
 //					break;
 				case "status":
-					System.out.println("Status Report: " + getStatus());
+					System.out.println("Status Report: " + myTrain.getStatus());
 					break;
 				case "recommend":
 					System.out.println("No Recommendations.");
@@ -189,7 +215,7 @@ public class LCS extends IOT {
 				}
 
 			}
-			if (isConnectedWifi()) {
+			if (myTrain.getWifi()) {
 				System.out
 						.println("LCS is connected to WiFi. LCS is only meant " + "to be used when there is no wifi.");
 				System.exit(-1);
@@ -205,10 +231,6 @@ public class LCS extends IOT {
 		}
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
-	}
-
-	static boolean checkCredentialB(String text, String text2) {
-		return true;
 	}
 }
 
