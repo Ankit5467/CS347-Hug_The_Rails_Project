@@ -3,7 +3,8 @@ package htrPackage;
 //import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 //import java.util.*;
 
@@ -11,33 +12,15 @@ public class LCS extends IOT {
 	
 		/* data fields */
 
-	private boolean isConnected;
-	private boolean isLoggedIn;
-	private boolean wantToCont;
-	// static final Scanner scan = new Scanner(System.in);
+	private boolean isConnected;	/* tracks if the LCS system is connected to wifi */
+	private boolean isLoggedIn;		/* tracks if the user is logged into LCS */
+	private boolean wantToCont;		/* tracks if the user wants to exit from LCS */
 
 	/* Use a HashMap to store Login information. */
 	/* Add default login info for operator & administrator */
 	private Map<String, String> login_info = new HashMap<String, String>();
-	// this.login_info.addLoginInfo("operator", "qwerty");
-	// this.login_info.addLoginInfo("admin", "password");
 
-		/* Constructor & object-initializer methods */
-
-	/**
-	 * 	If the given username and password are valid (at least 5 chars long), then
-	 * 	add the (username,password) pair to the table of valid login credentials.
-	 */
-	void addLoginInfo(String username, String password) {
-		if (username.length() < 5 || password.length() < 5) {
-			System.out.println("Error: Failed to add new user. Username " 
-						+ "& password must be at least 5 characters.");
-			return;
-		}
-		this.getLoginInfo().put(username, password);
-		// this.login_info.put(username, password);
-
-	}
+		/* Constructor */
 
 	/**
 	 * Constructor for LCS object.
@@ -50,7 +33,6 @@ public class LCS extends IOT {
 		this.wantToCont = true;
 
 		/* Initialize the default login credentials. */
-		// addLoginInfo("operator", "qwerty");
 		this.addLoginInfo("operator", "qwerty");
 		this.addLoginInfo("admin", "password");
 	}
@@ -58,6 +40,20 @@ public class LCS extends IOT {
 		/* Regular methods: */
 
 	/* Log in Credential Methods */
+
+	/**
+	 * 	If the given username and password are valid (at least 5 chars long), then
+	 * 	add the (username,password) pair to the table of valid login credentials.
+	 */
+	void addLoginInfo(String username, String password) {
+		if (username.length() < 5 || password.length() < 5) {
+			System.out.println("Error: Failed to add new user. Username " 
+						+ "& password must be at least 5 characters.");
+			return;
+		}
+		this.getLoginInfo().put(username, password);
+
+	}
 
 	/**
 	 * @returns the Map containing all usernames & passwords.
@@ -121,19 +117,7 @@ public class LCS extends IOT {
 	public static void main(String[] args) {
 		
 		LCS myTrain = new LCS();
-//		myObj.isConnected = true;
-		Sensors mySens = new Sensors();
-		
-		// System.out.println("is connected: " + myObj.getWifi());
-		// myObj.setWifi(true);
-		// System.out.println("is connected: " + myObj.getWifi());
-
-//		/* LCS initialized with default values. */
-//		addLoginInfo("operator", "qwerty");
-//		addLoginInfo("admin", "password");
-		// setWheelDiameter(40.0);
-		
-		
+		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
 
 		// myTrain.isLoggedIn = false; // true when the user wants to log off. false otherwise.
