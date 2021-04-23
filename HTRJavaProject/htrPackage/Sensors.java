@@ -34,6 +34,8 @@ public class Sensors {
 	 */
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
+		//TODO: Changes these values to 0 after testing.
+		this.wheel_diameter = 40.0;
 		this.wind_speed = 40.0;
 		this.longitude = 1.0000;
 		this.latitude = 1.0000;
@@ -42,10 +44,10 @@ public class Sensors {
 		this.moving_obstruction = false;
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 2.0;
-		this.rpm = 0;
-		this.speed = 0.0;
+		this.rpm = 100;
+		this.speed = 10.0;
 		this.wind_speed = 10.0;
-		this.rate_rain = 0.0;
+		this.rate_rain = 1.0;
 		this.rate_snow = 0.2;
 		this.visibility = 2.0;
 	}
@@ -54,9 +56,9 @@ public class Sensors {
 	 * sets the wheel diameter to @param diameter.
 	 * @return 0 on success. -1 on failure.
 	 */
-	public int setWheelDiameter(double diameter) {
+	int setWheelDiameter(double diameter) {
 		if (diameter < 1.0) {
-			System.out.println("Error: Diameter must be at least 1 inch!");
+//			System.out.println("Error: Diameter must be at least 1 inch!");
 			return -1;
 		} else {
 			this.wheel_diameter = diameter;
