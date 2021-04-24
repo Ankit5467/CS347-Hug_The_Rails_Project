@@ -33,9 +33,7 @@ public class LCS extends IOT {
 	/**
 	 * Constructor for LCS object.
 	 */
-
-	protected LCS() {
-//		super(wheel_diameter); /* set wheel diameter */
+	private LCS() {
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
 		this.isLoggedIn = false;
@@ -331,5 +329,6 @@ public class LCS extends IOT {
 		System.out.println("LCS has shut off successfully.");
 
 	}
+
 }
 
