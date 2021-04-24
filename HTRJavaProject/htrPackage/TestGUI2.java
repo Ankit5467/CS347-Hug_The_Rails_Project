@@ -22,6 +22,7 @@ public class TestGUI2 extends JFrame {
 	private JPanel contentPane;
 	private JTextField userField;
 	private JPasswordField passField;
+	LCS lcs;
 
 	/**
 	 * Launch the application.
@@ -43,6 +44,7 @@ public class TestGUI2 extends JFrame {
 	 * Create the frame.
 	 */
 	public TestGUI2() {
+		lcs = new LCS();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 475);
 		contentPane = new JPanel();
@@ -64,10 +66,10 @@ public class TestGUI2 extends JFrame {
 		
 		JLabel lblPass = new JLabel("PASSWORD:");
 		
-		userField = new JTextField();
-		userField.setColumns(10);
-		passField = new JPasswordField();
+		userField = new JTextField(20);
+		passField = new JPasswordField(20);
 		
+		if(userField.getText().equals(lblPass));
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
