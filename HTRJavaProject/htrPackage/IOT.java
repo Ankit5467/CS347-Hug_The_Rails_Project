@@ -24,6 +24,8 @@ public class IOT extends Sensors {
 		String rec = "";
 		if (this.getRainRate() >= 0.3) {
 			rec += " Recommendation: Turn on the train headlights and reduce the speed of the train.";
+			return "The rate of rainfall is " +  this.getRainRate() + " inches per hour.\n" +
+			"Recommendation: Turn on the train headlights and reduce the speed of the train.";
 		} 
 			return data + rec;
 	}

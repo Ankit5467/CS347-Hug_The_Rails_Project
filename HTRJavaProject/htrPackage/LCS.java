@@ -33,7 +33,9 @@ public class LCS extends IOT {
 	/**
 	 * Constructor for LCS object.
 	 */
-	private LCS() {
+
+	protected LCS() {
+//		super(wheel_diameter); /* set wheel diameter */
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
 		this.isLoggedIn = false;
@@ -174,10 +176,6 @@ public class LCS extends IOT {
 //		recommend(weather);
 		// ...
 		return "";
-	}
-	public LCS()
-	{
-		
 	}
 
 	public String toString() {
@@ -332,14 +330,6 @@ public class LCS extends IOT {
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
 
-	}
-
-	static boolean checkCredentialB(String text, String text2) {
-		return true;
-
-		date=java.util.Calendar.getInstance().getTime();
-		myTrain.writeToLog("" + date + "-- Session was successfully terminated by user \'" + username + "\'.\n");
-		myTrain.writeToLog(myTrain.toString());
 	}
 }
 
