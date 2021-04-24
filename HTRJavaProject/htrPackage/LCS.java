@@ -216,7 +216,7 @@ public class LCS extends IOT {
 		LCS myTrain = new LCS();
 		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
-		myTrain.testDoc();
+		
 
 		Date date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
