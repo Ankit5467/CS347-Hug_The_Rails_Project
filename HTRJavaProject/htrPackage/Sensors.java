@@ -118,12 +118,11 @@ public class Sensors {
 			moving_obstruction=false;
 			lastoff++;
 		}
-		if(data.get(lastoff).equals("True"));
+		if(data.get(lastoff).equals("True"))
 		{
 			stationary_obstruction = true;
 		}
-		else
-		{
+		else{
 			stationary_obstruction = false;
 		}
 		//1 - rpm
