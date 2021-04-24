@@ -1,10 +1,14 @@
 package htrPackage;
 
+import java.util.Date;
 //import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 //import java.util.*;
 
@@ -15,11 +19,26 @@ public class LCS extends IOT {
 	private boolean isConnected;	/* tracks if the LCS system is connected to wifi */
 	private boolean isLoggedIn;		/* tracks if the user is logged into LCS */
 	private boolean wantToCont;		/* tracks if the user wants to exit from LCS */
+	
+	private Path logFileName;
+	private File log;				/* LCS log stores lots of information */
 
 	/* Use a HashMap to store Login information. */
 	/* Add default login info for operator & administrator */
 	private Map<String, String> login_info = new HashMap<String, String>();
 
+	// try {
+	// 	// File log = new File("LCS_Log.txt");
+	// 	if (log.createNewFile()) {
+	// 	  System.out.println("Log created: " + log.getName());
+	// 	} else {
+	// 	  System.out.println("File already exists.");
+	// 	  writeUsingBufferedWriter(log, "\n*************************************\n");
+	// 	}
+	//   } catch (IOException e) {
+	// 	System.out.println("An error occurred.");
+	// 	e.printStackTrace();
+	//   }
 		/* Constructor */
 
 	/**
@@ -35,9 +54,56 @@ public class LCS extends IOT {
 		/* Initialize the default login credentials. */
 		this.addLoginInfo("operator", "qwerty");
 		this.addLoginInfo("admin", "password");
+
+		/* Initialize the log for this session. */
+		try {
+			this.initializeLog();
+		} catch (Exception e) {
+			System.out.println("Error: Unable to initialize log.\n");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 		/* Regular methods: */
+
+	/* Log-related methods */
+
+	void initializeLog() throws Exception {
+		String filename = "LCS_Log.txt";
+		
+		//create the log file:
+		try {
+			this.log = new File(filename);
+			this.log.createNewFile();
+		} catch (Exception e) {
+			System.out.println("An error occurred.\n");
+		}
+
+		// set its filename/path and write a line to it
+		this.logFileName = Path.of(filename);
+		// Files.writeString(this.logFileName, "******************************************\n");
+		try {
+			Files.write(this.logFileName, 
+				 "******************************************\n".getBytes(), StandardOpenOption.APPEND);
+			System.out.println("Log has been initialized for this session.\n");
+		} catch (IOException e) {
+			System.out.println("Error: Unable to initialize log.\n");
+			e.printStackTrace();
+		}
+
+	}
+
+	void writeToLog(String str) {
+		try {
+			Files.write(this.logFileName, str.getBytes(),StandardOpenOption.APPEND);
+			// System.out.println("Updated Log.\n");
+		} catch (IOException e) {
+			System.out.println("Error: Unable to write to log.\n");
+			e.printStackTrace();
+		}
+		// Files.writeString(this.logFileName,"hello World!\n");
+	}
 
 	/* Log in Credential Methods */
 
@@ -120,7 +186,11 @@ public class LCS extends IOT {
 		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
 
-		// myTrain.isLoggedIn = false; // true when the user wants to log off. false otherwise.
+
+		Date date=java.util.Calendar.getInstance().getTime();
+		myTrain.writeToLog("" + date + "-- LCS session started.\n");
+		//TODO: Write LCS.toString() to log
+
 		while (!myTrain.isLoggedIn) {
 
 			while (true) {
@@ -128,11 +198,14 @@ public class LCS extends IOT {
 				String username = scan.nextLine();
 				System.out.println("Enter your password: ");
 				String password = scan.nextLine();
+				date=java.util.Calendar.getInstance().getTime();
 				if (myTrain.checkCredentials(username, password)) {
 					myTrain.isLoggedIn =true;
+					myTrain.writeToLog("" + date + "-- User " + username + " logged in.\n");
 					break;
 				} else {
 					System.out.println("Incorrect credentials");
+					myTrain.writeToLog("" + date + "-- Failed login attempt.\n");
 				}
 			}
 			
@@ -147,8 +220,7 @@ public class LCS extends IOT {
 				case "help":
 					System.out.println(myTrain.helpMessage());
 					break;
-				case "log off":
-					// log out (but don't exit the program)
+				case "log off": /* log out (but don't exit the program) */
 					System.out.println("Logging off ...");
 					myTrain.isLoggedIn = false;
 					break;
@@ -206,6 +278,8 @@ public class LCS extends IOT {
 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
 					break;
 				}
+				date = java.util.Calendar.getInstance().getTime();
+				myTrain.writeToLog("" + date + "-- User entered the following command \'" + command + "\'.\n");
 
 			}
 			if (myTrain.getWifi()) {
@@ -215,14 +289,22 @@ public class LCS extends IOT {
 			}
 			if (!myTrain.wantToCont) {
 				System.out.println("Shutting off ...");
+				date=java.util.Calendar.getInstance().getTime();
+				myTrain.writeToLog("" + date + "-- User terminated LCS session.\n");
 				break;
 			} else if (!myTrain.isLoggedIn) {
 				System.out.println("Logged off");
+				date=java.util.Calendar.getInstance().getTime();
+				myTrain.writeToLog("" + date + "-- User logged off successfully.\n");
+			} else {
+				//TODO: Write LCS.toString() to log.
 			}
-
+			
 		}
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
+		date=java.util.Calendar.getInstance().getTime();
+		myTrain.writeToLog("" + date + "-- Session was successfully terminated.\n");
 	}
 }
 
