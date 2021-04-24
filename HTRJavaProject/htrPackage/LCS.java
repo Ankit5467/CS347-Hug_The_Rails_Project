@@ -97,6 +97,10 @@ public class LCS extends IOT {
 		// ...
 		return "";
 	}
+	public LCS()
+	{
+		
+	}
 
 	public static void main(String[] args) {
 
@@ -202,6 +206,7 @@ public class LCS extends IOT {
 		}
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
+		
 	}
 
 	static boolean checkCredentialB(String text, String text2) {
