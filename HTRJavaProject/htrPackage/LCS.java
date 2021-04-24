@@ -156,11 +156,11 @@ public class LCS extends IOT {
 		}
 	}
 
-	private String getPassword() {
+	String getPassword() {
 		return this.pass;
 	}
 
-	private String getUsername() {
+	String getUsername() {
 		return this.user;
 	}
 
