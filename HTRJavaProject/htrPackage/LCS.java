@@ -156,11 +156,11 @@ public class LCS extends IOT {
 		}
 	}
 
-	String getPassword() {
+	public String getPassword() {
 		return this.pass;
 	}
 
-	String getUsername() {
+	public String getUsername() {
 		return this.user;
 	}
 
@@ -216,7 +216,7 @@ public class LCS extends IOT {
 		LCS myTrain = new LCS();
 		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
-		myTrain.testDoc();
+//		myTrain.testDoc();
 
 		Date date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
@@ -313,6 +313,9 @@ public class LCS extends IOT {
 					break;
 				case "view log":			/* Access the log */	
 						myTrain.readFromLog(username.equals("operator"));
+					break;
+				case "obstruction":
+					myTrain.ProcessObject();
 					break;
 				default:
 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
