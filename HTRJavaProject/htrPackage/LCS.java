@@ -33,6 +33,7 @@ public class LCS extends IOT {
 	/**
 	 * Constructor for LCS object.
 	 */
+
 	protected LCS() {
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
@@ -175,6 +176,9 @@ public class LCS extends IOT {
 		// ...
 		return "";
 	}
+
+
+
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append("\tLocation: " + this.displayLocation());
