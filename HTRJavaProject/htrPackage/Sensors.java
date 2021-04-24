@@ -31,13 +31,13 @@ public class Sensors {
 	private double rate_snow;
 	
 	private double visibility;
-	protected Scanner doc;
-	private ArrayList data;
+	protected Scanner docc;
+	private ArrayList <String> data;
 
 	/**
 	 * constructor for Sensor object.
 	 */
-	protected Sensors() {
+	private Sensors() {
 		/* Initialize the sensor object with the following default values */
 		//TODO: Chaßnges these values to 0 after testing.
 		/*this.wheel_diameter = 40.0;
@@ -54,35 +54,35 @@ public class Sensors {
 		this.rate_rain = 1.0;
 		this.rate_snow = 0.2;
 		this.visibility = 2.0;*/
-		data = new ArrayList<>();
-		
-		try
-		{
-			File txtF = new File("inputText.txt");
-			doc = new Scanner(txtF);
-			while(doc.hasNextLine())
-		{
-
-			data.add(doc.nextLine());
-		}
-		
-		}
-		catch(FileNotFoundException e)
-		{
-			System.out.println("File not Found");
-		}
-		doc.close();
-		
-
+	
 		
 	}
-	void updateValues()
+	 public void updateValues()
 	{
+		data = new ArrayList<String>();
+		
+		try {
+          
+
+            Scanner input = new Scanner(System.in);
+
+            File file = new File("LCS_Log.txt");
+
+            input = new Scanner(file);
 
 
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                System.out.println(line);
+            }
+            input.close();
 
-	}
-	void testDoc()
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+	 }
+		//doc.close();
+	public void testDoc()
 	{
 		for(int i = 0; i<data.size();i++)
 		{
@@ -341,6 +341,8 @@ public class Sensors {
 	public static void main(String[]args)
 	{
 		Sensors s = new Sensors();
+		System.out.println("kpppp");
+		s.updateValues();
 		s.testDoc();
 	}
 	
