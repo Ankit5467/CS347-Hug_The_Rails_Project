@@ -33,7 +33,7 @@ public class LCS extends IOT {
 	/**
 	 * Constructor for LCS object.
 	 */
-	private LCS() {
+	protected LCS() {
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
 		this.isLoggedIn = false;
@@ -175,11 +175,6 @@ public class LCS extends IOT {
 		// ...
 		return "";
 	}
-	public LCS()
-	{
-		
-	}
-
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append("\tLocation: " + this.displayLocation());
@@ -200,7 +195,7 @@ public class LCS extends IOT {
 		LCS myTrain = new LCS();
 		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
-
+		myTrain.testDoc();
 
 		Date date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
@@ -334,12 +329,6 @@ public class LCS extends IOT {
 
 	}
 
-	static boolean checkCredentialB(String text, String text2) {
-		return true;
-
-		date=java.util.Calendar.getInstance().getTime();
-		myTrain.writeToLog("" + date + "-- Session was successfully terminated by user \'" + username + "\'.\n");
-		myTrain.writeToLog(myTrain.toString());
-	}
+	
 }
 
