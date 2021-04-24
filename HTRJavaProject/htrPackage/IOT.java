@@ -169,6 +169,7 @@ public class IOT extends Sensors {
 				"\tEnter \"help\" to display the help message\n" +
 				"\tEnter \"exit\" to exit LCS\n" +
 				"\tEnter \"log off\" to log out of LCS\n" +
+				"\tEnter \"view log\" to view the log. (Only available for the operator.\n" +
 				"\tWheel Diamater: " + this.getWheelDiameter() + " inches.\n" +
 				"Command Options:\n" +
 				"\twifi \n\tadd user \n\tlocation \n\tweather \n\tspeed" +

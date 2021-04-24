@@ -12,3 +12,29 @@ Fri Apr 23 22:29:06 EDT 2021-- User operator logged in.
 Fri Apr 23 22:29:10 EDT 2021-- User entered the following command 'exit'.
 Fri Apr 23 22:29:10 EDT 2021-- User terminated LCS session.
 Fri Apr 23 22:29:10 EDT 2021-- Session was successfully terminated.
+******************************************
+Sat Apr 24 12:37:41 EDT 2021-- LCS session started.
+Sat Apr 24 12:37:49 EDT 2021-- User operator logged in.
+Sat Apr 24 12:37:51 EDT 2021-- User entered the following command 'help'.
+Sat Apr 24 12:37:55 EDT 2021-- User entered the following command 'log'.
+******************************************
+Sat Apr 24 12:40:00 EDT 2021-- LCS session started.
+Sat Apr 24 12:40:07 EDT 2021-- User admin logged in.
+Sat Apr 24 12:40:08 EDT 2021-- User entered the following command 'log'.
+Sat Apr 24 12:40:21 EDT 2021-- User entered the following command 'log off'.
+Sat Apr 24 12:40:21 EDT 2021-- User 'admin' logged off successfully.
+Sat Apr 24 12:40:39 EDT 2021-- User operator logged in.
+Sat Apr 24 12:40:40 EDT 2021-- User entered the following command 'log'.
+******************************************
+Sat Apr 24 12:41:28 EDT 2021-- LCS session started.
+Sat Apr 24 12:41:35 EDT 2021-- User operator logged in.
+Sat Apr 24 12:41:36 EDT 2021-- User entered the following command 'log'.
+******************************************
+Sat Apr 24 12:43:23 EDT 2021-- LCS session started.
+Sat Apr 24 12:43:26 EDT 2021-- User 'admin' logged in.
+Sat Apr 24 12:43:36 EDT 2021-- User entered the following command 'log off'.
+Sat Apr 24 12:43:36 EDT 2021-- User 'admin' logged off successfully.
+Sat Apr 24 12:43:42 EDT 2021-- User 'admin' logged in.
+Sat Apr 24 12:43:43 EDT 2021-- User entered the following command 'exit'.
+Sat Apr 24 12:43:43 EDT 2021-- User 'admin' terminated LCS session.
+Sat Apr 24 12:43:43 EDT 2021-- Session was successfully terminated by user 'admin'.
