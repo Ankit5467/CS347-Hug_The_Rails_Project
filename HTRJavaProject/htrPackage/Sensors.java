@@ -14,6 +14,7 @@ public class Sensors {
 
 	/* Data fields: */
 
+	private int lastoff=0;
 	private double longitude;
 	private double latitude;
 
@@ -76,31 +77,41 @@ public class Sensors {
 			}
 			input.close();
 
-			while (input.hasNextLine()) {
-				String line = input.nextLine();
-				data.add(line);
-			}
-			input.close();
+            while (input.hasNextLine()) {
+                String line = input.nextLine();
+                data.add(line);
+            }
+            input.close();
 
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+	 }
+		//doc.close();
+	public void updateValuesSensors()
+	{
+		speed=Double.valueOf((data.get(lastoff)));
+		lastoff++;
+		rpm = Integer.valueOf((data.get(lastoff)));
+		longitude=Double.valueOf((data.get(lastoff)));
+		latitude=Double.valueOf((data.get(lastoff)));
+		
+		//0-speed
+		//1 - rpm
+		//2-lat
+		//3 long
+		//4- gate
+		//5- moving obstruction
+		//6- stationaty
+		//7-distance
+		//8- rain
+		//9- snow
+		//10- wind
+		//11- visibality
+		
 
-	// doc.close();
-	public void updateValuesSensors() {
-		// 0-speed
-		// 1 - rpm
-		// 2-location
-		// 3- gate
-		// 4- moving obstruction
-		// 5- stationaty
-		// 6-distance
-		// 7- rain
-		// 8- snow
-		// 9- wind
-		// 10- visibality
 
+		
 	}
 	// void updateValues()
 	// {

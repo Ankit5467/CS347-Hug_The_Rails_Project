@@ -134,7 +134,7 @@ public class IOT extends Sensors {
 
 	String detectSlippage() {
 		// calculate slippage. return true if slippage. false if none.
-		double rpmSpeed = this.getRPM() * this.getWheelDiameter() * Math.PI * 60 / 63360;
+		double rpmSpeed = (double)this.getRPM() * this.getWheelDiameter() * Math.PI * (double)60 / (double)63360;
 		if (Math.abs(this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.05)) {
 			return "The wheels are slipping. Recommendation: slow down or halt the train.";
 		} else {
