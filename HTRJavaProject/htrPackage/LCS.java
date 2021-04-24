@@ -156,11 +156,11 @@ public class LCS extends IOT {
 		}
 	}
 
-	private String getPassword() {
+	public String getPassword() {
 		return this.pass;
 	}
 
-	private String getUsername() {
+	public String getUsername() {
 		return this.user;
 	}
 
@@ -313,6 +313,9 @@ public class LCS extends IOT {
 					break;
 				case "view log":			/* Access the log */	
 						myTrain.readFromLog(username.equals("operator"));
+					break;
+				case "obstruction":
+					myTrain.ProcessObject();
 					break;
 				default:
 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
