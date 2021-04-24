@@ -66,10 +66,10 @@ public class IOT extends Sensors {
 		return this.getDetectStationaryObject() || getDetectMovingObject();
 	}
 
-	boolean ObjectPosition() {
-		// true if object is in front of train. False otherwise.
-		return this.obtainDistanceFromObject() >= 0;
-	}
+//	boolean ObjectPosition() {
+//		// true if object is in front of train. False otherwise.
+//		return this.obtainDistanceFromObject() >= 0;
+//	}
 
 	/**
 	 * @returns the speed of the object relative to the train. Positive speed
@@ -80,8 +80,7 @@ public class IOT extends Sensors {
 	 */
 	double objectSpeed() {
 		// get 2 distance measurements.
-		// TODO
-		return 4.0; /* return randomly generated number b/w 1 and 15 */
+		return ((double) ((int) ((1 + (Math.random() * ((15 - 1) + 1))) * 100))) / 100; /* generate random speed b/w [1,15] */
 	}
 
 	/**
@@ -90,32 +89,32 @@ public class IOT extends Sensors {
 	 */
 	double computeImpact() {
 		// returns time to impact.
-		return this.obtainDistanceFromObject() / (88 * this.getSpeed());
+		return ((double) ((int)((this.obtainDistanceFromObject() / (88 * this.getSpeed())) * 100))) / 100;
 	}
 
 	void ProcessObject() {
 
 		if (!this.isObstruction()) {
-			System.out.println("There is no obstruction.\n");
+			System.out.println("There is no obstruction.");
 		} else {
 			if (this.obtainDistanceFromObject() < 0) { /* obstruction behind train */
 				System.out.println(
-						"There is an obstruction " + this.obtainDistanceFromObject() + " feet behind the train.\n");
+						"There is an obstruction " + this.obtainDistanceFromObject() + " feet behind the train.");
 				if (this.getDetectMovingObject()) {
-					System.out.println("Obstruction is moving. It's speed is " + this.objectSpeed() + " mph.\n");
+					System.out.println("Obstruction is moving. It's speed is " + this.objectSpeed() + " mph.");
 				} else {
-					System.out.println("Obstruction is stationary.\n");
+					System.out.println("Obstruction is stationary.");
 				}
 
 			} else { /* obstruction in front of train */
 				System.out.println("There is an obstruction " + this.obtainDistanceFromObject()
-						+ " feet in front of the train.\n");
+						+ " feet in front of the train.");
 				if (this.getDetectMovingObject()) {
-					System.out.println("Obstruction is moving. It's speed is " + this.objectSpeed() + " mph.\n");
+					System.out.println("Obstruction is moving. It's speed is " + this.objectSpeed() + " mph.");
 				} else {
-					System.out.println("Obstruction is stationary.\n");
+					System.out.println("Obstruction is stationary.");
 				}
-				System.out.println("Estimated time to impact: " + this.computeImpact() + " minutes.\n");
+				System.out.println("Estimated time to impact: " + this.computeImpact() + " minutes.");
 			}
 		}
 
