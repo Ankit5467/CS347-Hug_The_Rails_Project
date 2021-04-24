@@ -93,21 +93,51 @@ public class Sensors {
 		speed=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
+		lastoff++;
 		longitude=Double.valueOf((data.get(lastoff)));
+		lastoff++;
 		latitude=Double.valueOf((data.get(lastoff)));
-		
-		//0-speed
+		lastoff++;
+		gate_distance = Double.valueOf((data.get(lastoff)));
+		lastoff++;
+		if(data.get(lastoff).equals("True"))
+		{
+			gate_status=true;
+			lastoff++;
+		}
+		else{
+			gate_status=false;
+			lastoff++;
+		}
+		if(data.get(lastoff).equals("True"))
+		{
+			moving_obstruction=true;
+			lastoff++;
+		}
+		else{
+			moving_obstruction=false;
+			lastoff++;
+		}
+		if(data.get(lastoff).equals("True"));
+		{
+			stationary_obstruction = true;
+		}
+		else
+		{
+			stationary_obstruction = false;
+		}
 		//1 - rpm
 		//2-lat
 		//3 long
-		//4- gate
-		//5- moving obstruction
-		//6- stationaty
-		//7-distance
-		//8- rain
-		//9- snow
-		//10- wind
-		//11- visibality
+		//4- gate distance
+		//5 - gate status
+		//6- moving obstruction
+		//7- stationaty
+		//8-distance
+		//9- rain
+		//10- snow
+		//11- wind
+		//12- visibality
 		
 
 
