@@ -28,25 +28,12 @@ public class LCS extends IOT {
 	/* Add default login info for operator & administrator */
 	private Map<String, String> login_info = new HashMap<String, String>();
 
-	// try {
-	// 	// File log = new File("LCS_Log.txt");
-	// 	if (log.createNewFile()) {
-	// 	  System.out.println("Log created: " + log.getName());
-	// 	} else {
-	// 	  System.out.println("File already exists.");
-	// 	  writeUsingBufferedWriter(log, "\n*************************************\n");
-	// 	}
-	//   } catch (IOException e) {
-	// 	System.out.println("An error occurred.");
-	// 	e.printStackTrace();
-	//   }
 		/* Constructor */
 
 	/**
 	 * Constructor for LCS object.
 	 */
 	private LCS() {
-//		super(wheel_diameter); /* set wheel diameter */
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
 		this.isLoggedIn = false;
@@ -61,7 +48,6 @@ public class LCS extends IOT {
 			this.initializeLog();
 		} catch (Exception e) {
 			System.out.println("Error: Unable to initialize log.\n");
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -176,22 +162,10 @@ public class LCS extends IOT {
 		return "(" + this.getLatitude() + ", " + this.getLongitude() + ")";
 	}
 
-	// String displayWeather() {
-	// 	return obtainWeather();
+	// private String recommend(String field) {
+	// 	// field = speed, weather, obstacle, gate
+	// 	return "";
 	// }
-
-	// double displaySpeed() {
-	// 	return getSpeed();
-	// }
-
-	// int displayRPM() {
-	// 	return getRPM();
-	// }
-
-	private String recommend(String field) {
-		// field = speed, weather, obstacle, gate
-		return "";
-	}
 
 	private String getStatus() {
 		// use stringbuilder
@@ -200,6 +174,21 @@ public class LCS extends IOT {
 //		recommend(weather);
 		// ...
 		return "";
+	}
+
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("\tLocation: " + this.displayLocation());
+		str.append("\tGate Distance: " + this.getGateDistance());
+		str.append("\tGate Status: " + this.getGateStatus());
+		str.append("\tObstruction Present?: " + this.isObstruction());
+		str.append("\n\tRPM: " + this.getRPM());
+		str.append("\t\tSpeed: " + this.getSpeed());
+		str.append("\t\tWind Speed: " + this.getWindSpeed());
+		str.append("\tRain Rate: " + this.getRainRate());
+		str.append("\n\tSnow Rate: " + this.getSnowRate());
+		str.append("\t\tVisibility: " + this.getVisibility() + "\n");
+		return str.toString();
 	}
 
 	public static void main(String[] args) {
@@ -212,6 +201,9 @@ public class LCS extends IOT {
 		Date date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
 		//TODO: Write LCS.toString() to log
+		// System.out.println(myTrain.toString());
+
+		myTrain.writeToLog(myTrain.toString());
 
 		String username = "";
 		String password = "";
@@ -308,6 +300,8 @@ public class LCS extends IOT {
 				}
 				date = java.util.Calendar.getInstance().getTime();
 				myTrain.writeToLog("" + date + "-- User entered the following command \'" + command + "\'.\n");
+				myTrain.writeToLog(myTrain.toString());
+
 
 			}
 			if (myTrain.getWifi()) {
@@ -319,11 +313,13 @@ public class LCS extends IOT {
 				System.out.println("Shutting off ...");
 				date=java.util.Calendar.getInstance().getTime();
 				myTrain.writeToLog("" + date + "-- User \'" + username + "\' terminated LCS session.\n");
+				myTrain.writeToLog(myTrain.toString());
 				break;
 			} else if (!myTrain.isLoggedIn) {
 				System.out.println("Logged off");
 				date=java.util.Calendar.getInstance().getTime();
 				myTrain.writeToLog("" + date + "-- User \'" + username + "\' logged off successfully.\n");
+				myTrain.writeToLog(myTrain.toString());
 			} else {
 				//TODO: Write LCS.toString() to log.
 			}
@@ -333,6 +329,7 @@ public class LCS extends IOT {
 		System.out.println("LCS has shut off successfully.");
 		date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- Session was successfully terminated by user \'" + username + "\'.\n");
+		myTrain.writeToLog(myTrain.toString());
 	}
 }
 
