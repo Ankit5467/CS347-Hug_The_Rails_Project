@@ -65,29 +65,16 @@ public class TestGUI2 extends JFrame {
 		
 		userField = new JTextField(20);
 		passField = new JPasswordField(20);
-//		passField.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				if(credUser.equals(userField.getText()) && arrayPass.equals(passField.getPassword())) {
-//					TestGUI t = new TestGUI();
-//					t.setVisible(true);
-//					setVisible(false);
-//				}
-//			}
-//		});
 		
 		JButton newWindow = new JButton("ENTER");
 		newWindow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(credUser.equals(userField.getText()) && arrayPass.equals(passField.getPassword())) {
+				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword()))) {
+					//lcs.isL
 					TestGUI t = new TestGUI();
 					t.setVisible(true);
 					dispose();
-					setVisible(false);
 				}
-//				TestGUI t = new TestGUI();
-//				t.setVisible(true);
-//				setVisible(false);
-//				dispose();
 			}
 		});
 		

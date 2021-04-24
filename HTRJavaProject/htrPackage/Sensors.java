@@ -67,7 +67,7 @@ public class Sensors {
 
 			Scanner input = new Scanner(System.in);
 
-            File file = new File("poop.txt");
+			File file = new File("poop.txt");
 
 			input = new Scanner(file);
 
@@ -373,7 +373,7 @@ public class Sensors {
 		Sensors s = new Sensors();
 		System.out.println("kpppp");
 		s.updateValues();
-		
+
 	}
 
 }

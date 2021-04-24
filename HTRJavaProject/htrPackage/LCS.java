@@ -146,7 +146,7 @@ public class LCS extends IOT {
 	 * @return true if the pair (username,password) is a valid login credential,
 	 * 		false otherwise.
 	 */
-	private boolean checkCredentials(String username, String password) {
+	protected boolean checkCredentials(String username, String password) {
 		if(this.getLoginInfo().getOrDefault(username, "").equals(password)) {
 			this.user = username;
 			this.pass = password;
@@ -216,7 +216,7 @@ public class LCS extends IOT {
 		LCS myTrain = new LCS();
 		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
-		
+//		myTrain.testDoc();
 
 		Date date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
