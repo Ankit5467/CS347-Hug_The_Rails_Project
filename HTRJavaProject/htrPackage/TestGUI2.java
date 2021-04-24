@@ -45,6 +45,12 @@ public class TestGUI2 extends JFrame {
 	 */
 	public TestGUI2() {
 		lcs = new LCS();
+		String credUser = lcs.getUsername();
+		String credPass = lcs.getPassword();
+		char[] arrayPass = new char[credPass.length()];
+		for(int i = 0; i < credPass.length(); i++)
+			arrayPass[i] = credPass.charAt(i);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 475);
 		contentPane = new JPanel();
@@ -53,23 +59,35 @@ public class TestGUI2 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		JButton newWindow = new JButton("ENTER");
-		newWindow.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				TestGUI t = new TestGUI();
-				t.setVisible(true);
-				setVisible(false);
-			}
-		});
-		
 		JLabel lblUser = new JLabel("USERNAME:");
 		
 		JLabel lblPass = new JLabel("PASSWORD:");
 		
 		userField = new JTextField(20);
 		passField = new JPasswordField(20);
+//		passField.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				if(credUser.equals(userField.getText()) && arrayPass.equals(passField.getPassword())) {
+//					TestGUI t = new TestGUI();
+//					t.setVisible(true);
+//					setVisible(false);
+//				}
+//			}
+//		});
 		
-		if(userField.getText().equals(lcs.getUsername()) && passField.getPassword().equals(lcs.getPassword()));
+		JButton newWindow = new JButton("ENTER");
+		newWindow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(credUser.equals(userField.getText()) || arrayPass.equals(passField.getPassword())) {
+					TestGUI t = new TestGUI();
+					t.setVisible(true);
+					setVisible(false);
+				}
+//				TestGUI t = new TestGUI();
+//				t.setVisible(true);
+//				setVisible(false);
+			}
+		});
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
