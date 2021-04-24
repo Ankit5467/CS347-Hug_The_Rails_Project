@@ -1,5 +1,8 @@
 package htrPackage;
-//import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Sensors {
 
@@ -28,6 +31,8 @@ public class Sensors {
 	private double rate_snow;
 	
 	private double visibility;
+	private Scanner doc;
+	private ArrayList data;
 
 	/**
 	 * constructor for Sensor object.
@@ -35,7 +40,7 @@ public class Sensors {
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
 		//TODO: Changes these values to 0 after testing.
-		this.wheel_diameter = 40.0;
+		/*this.wheel_diameter = 40.0;
 		this.longitude = 1.0000;
 		this.latitude = 1.0000;
 		this.gate_distance = 1.0;
@@ -48,7 +53,36 @@ public class Sensors {
 		this.wind_speed = 100.0;
 		this.rate_rain = 1.0;
 		this.rate_snow = 0.2;
-		this.visibility = 2.0;
+		this.visibility = 2.0;*/
+		data = new ArrayList<>();
+		try
+		{
+			doc = new Scanner(new File("inputText.txt"));
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("File not Found");
+		}
+		while(doc.hasNextLine())
+		{
+
+			data.add(doc.nextLine());
+		}
+
+		
+	}
+	void updateValues()
+	{
+
+
+
+	}
+	void testDoc()
+	{
+		for(int i = 0; i<data.size();i++)
+		{
+			System.out.println(data.get(i));
+		}
 	}
 
 	/**
