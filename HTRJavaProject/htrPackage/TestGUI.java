@@ -60,8 +60,6 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setEditable(false);
 		display.setWrapStyleWord(true);
 		display.setLineWrap(true);
-	    //JScrollPane scroll = new JScrollPane(display);
-	    //scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
 		display.setText("Welcome, Operator.");
 		
