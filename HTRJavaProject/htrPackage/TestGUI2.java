@@ -69,7 +69,7 @@ public class TestGUI2 extends JFrame {
 		userField = new JTextField(20);
 		passField = new JPasswordField(20);
 		
-		if(userField.getText().equals(lblPass));
+		if(userField.getText().equals(lcs.getUsername()) && passField.getPassword().equals(lcs.getPassword()));
 		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
