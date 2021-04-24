@@ -121,10 +121,24 @@ public class Sensors {
 		if(data.get(lastoff).equals("True"))
 		{
 			stationary_obstruction = true;
+			lastoff++;
 		}
 		else{
 			stationary_obstruction = false;
+			lastoff++;
 		}
+		distance_from_obstruction = Double.valueOf((data.get(lastoff)));
+		lastoff++;
+		rate_rain =  Double.valueOf((data.get(lastoff)));
+		lastoff++;
+		rate_snow =  Double.valueOf((data.get(lastoff)));
+		lastoff++;
+		wind_speed = Double.valueOf((data.get(lastoff)));
+		lastoff++;
+		visibility  = Double.valueOf((data.get(lastoff)));
+		lastoff++;
+
+		//0-speed
 		//1 - rpm
 		//2-lat
 		//3 long
