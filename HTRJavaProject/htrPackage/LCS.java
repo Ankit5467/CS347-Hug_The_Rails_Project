@@ -24,6 +24,9 @@ public class LCS extends IOT {
 	private Path logFileName;
 	private File log;				/* LCS log stores lots of information */
 
+	String user = "";
+	String pass = "";
+
 	/* Use a HashMap to store Login information. */
 	/* Add default login info for operator & administrator */
 	private Map<String, String> login_info = new HashMap<String, String>();
@@ -144,7 +147,21 @@ public class LCS extends IOT {
 	 * 		false otherwise.
 	 */
 	private boolean checkCredentials(String username, String password) {
-		return this.getLoginInfo().getOrDefault(username, "").equals(password);
+		if(this.getLoginInfo().getOrDefault(username, "").equals(password)) {
+			this.user = username;
+			this.pass = password;
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private String getPassword() {
+		return this.pass;
+	}
+
+	private String getUsername() {
+		return this.user;
 	}
 
 	/* Wifi Connection Methods */
