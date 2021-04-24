@@ -93,6 +93,7 @@ public class TestDriver extends JFrame implements ActionListener
        //If login button was selected
        loginInfo= lcs.checkCredentialB(usernameInput.getText(),passwordInput.getText() );
        System.out.println(loginInfo);
+       
      }
      if(e.getSource()==t)
      {
@@ -101,12 +102,13 @@ public class TestDriver extends JFrame implements ActionListener
        if(loginInfo)
        {
         rpmDis.setText("hey");
-        repaint();
+       
 
        }
-        repaint();
+       
+        
      }
-     repaint();
+     
      
    }
 
