@@ -69,7 +69,7 @@ public class IOT extends Sensors {
 	
 	boolean ObjectPosition() {
 			//true if object is in front of train. False otherwise.
-		return obtainDistanceFromObject() >= 0;
+		return this.obtainDistanceFromObject() >= 0;
 	}
 	
 	/**
@@ -82,10 +82,41 @@ public class IOT extends Sensors {
 	double objectSpeed() {
 		// get 2 distance measurements.
 		//TODO
-		return 0.0;
+		return 4.0; /* return randomly generated number b/w 1 and 15 */
 	}
 	
+	/**
+	 * 
+	 * @return the number of seconds to impact.
+	 */
+	double computeImpact() {
+		//returns time to impact.
+		return this.obtainDistanceFromObject()/ (88*this.getSpeed());
+	}
+
 	void ProcessObject() {
+
+		if (!this.isObstruction()) {
+			System.out.println("There is no obstruction.\n");
+		} else {
+			if (this.obtainDistanceFromObject() < 0) { /* obstruction behind train */
+				System.out.println("There is an obstruction " + this.obtainDistanceFromObject() + " feet behind the train.\n");
+				if (this.getDetectMovingObject()) {
+					System.out.println("Obstruction is moving. It's speed is " + this.objectSpeed() + " mph.\n");
+				} else {
+					System.out.println("Obstruction is stationary.\n");
+				}
+
+			} else {	/* obstruction in front of train */
+				System.out.println("There is an obstruction " + this.obtainDistanceFromObject() + " feet in front of the train.\n");
+				if (this.getDetectMovingObject()) {
+					System.out.println("Obstruction is moving. It's speed is " + this.objectSpeed() + " mph.\n");
+				} else {
+					System.out.println("Obstruction is stationary.\n");
+				}
+				System.out.println("Estimated time to impact: " + this.computeImpact() + " minutes.\n");
+			}
+		}
 		
 		/* ALGORITHM:
 		 * if (!isObstruction)
@@ -116,11 +147,6 @@ public class IOT extends Sensors {
 		} else {
 			return "The wheels are not slipping.";
 		}
-	}
-	
-	double computeImpact() {
-		//returns time to impact.
-		return this.obtainDistanceFromObject()/this.getSpeed();
 	}
 	
 	String gateStatus() {
