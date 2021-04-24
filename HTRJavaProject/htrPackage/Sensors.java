@@ -31,7 +31,7 @@ public class Sensors {
 	private double rate_snow;
 	
 	private double visibility;
-	private Scanner doc;
+	protected Scanner doc;
 	private ArrayList data;
 
 	/**
@@ -39,7 +39,7 @@ public class Sensors {
 	 */
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
-		//TODO: Changes these values to 0 after testing.
+		//TODO: Chaßnges these values to 0 after testing.
 		/*this.wheel_diameter = 40.0;
 		this.longitude = 1.0000;
 		this.latitude = 1.0000;
@@ -55,19 +55,24 @@ public class Sensors {
 		this.rate_snow = 0.2;
 		this.visibility = 2.0;*/
 		data = new ArrayList<>();
+		
 		try
 		{
-			doc = new Scanner(new File("inputText.txt"));
+			File txtF = new File("inputText.txt");
+			doc = new Scanner(txtF);
+			while(doc.hasNextLine())
+		{
+
+			data.add(doc.nextLine());
+		}
+		
 		}
 		catch(FileNotFoundException e)
 		{
 			System.out.println("File not Found");
 		}
-		while(doc.hasNextLine())
-		{
-
-			data.add(doc.nextLine());
-		}
+		doc.close();
+		
 
 		
 	}
@@ -332,6 +337,11 @@ public class Sensors {
 	 */
 	double getVisibility() {
 		return this.visibility;	
+	}
+	public static void main(String[]args)
+	{
+		Sensors s = new Sensors();
+		s.testDoc();
 	}
 	
 }
