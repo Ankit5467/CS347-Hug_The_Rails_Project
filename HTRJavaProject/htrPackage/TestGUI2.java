@@ -69,8 +69,9 @@ public class TestGUI2 extends JFrame {
 		JButton newWindow = new JButton("ENTER");
 		newWindow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword()))) {
+				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) && (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
 					lcs.setIsLoggedIn(true);
+					lcs.writeToLog("" + "-- User \'" + userField.getText() + "\' logged in.\n");
 					TestGUI t = new TestGUI();
 					t.setVisible(true);
 					dispose();
