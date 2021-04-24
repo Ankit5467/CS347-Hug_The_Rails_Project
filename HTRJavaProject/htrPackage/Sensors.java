@@ -66,7 +66,7 @@ public class Sensors {
 
 			Scanner input = new Scanner(System.in);
 
-            File file = new File("poop.txt");
+			File file = new File("poop.txt");
 
 			input = new Scanner(file);
 
@@ -76,33 +76,31 @@ public class Sensors {
 			}
 			input.close();
 
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
-                data.add(line);
-            }
-            input.close();
+			while (input.hasNextLine()) {
+				String line = input.nextLine();
+				data.add(line);
+			}
+			input.close();
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-	 }
-		//doc.close();
-	public void updateValuesSensors()
-	{
-		//0-speed
-		//1 - rpm
-		//2-location
-		//3- gate
-		//4- moving obstruction
-		//5- stationaty
-		//6-distance
-		//7- rain
-		//8- snow
-		//9- wind
-		//10- visibality
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
 
+	// doc.close();
+	public void updateValuesSensors() {
+		// 0-speed
+		// 1 - rpm
+		// 2-location
+		// 3- gate
+		// 4- moving obstruction
+		// 5- stationaty
+		// 6-distance
+		// 7- rain
+		// 8- snow
+		// 9- wind
+		// 10- visibality
 
-		
 	}
 	// void updateValues()
 	// {
@@ -364,7 +362,7 @@ public class Sensors {
 		Sensors s = new Sensors();
 		System.out.println("kpppp");
 		s.updateValues();
-		
+
 	}
 
 }
