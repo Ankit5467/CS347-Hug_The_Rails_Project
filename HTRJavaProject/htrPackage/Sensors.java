@@ -37,7 +37,7 @@ public class Sensors {
 	/**
 	 * constructor for Sensor object.
 	 */
-	private Sensors() {
+	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
 		//TODO: Chaßnges these values to 0 after testing.
 		/*this.wheel_diameter = 40.0;
