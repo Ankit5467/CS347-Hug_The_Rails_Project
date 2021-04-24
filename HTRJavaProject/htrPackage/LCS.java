@@ -175,10 +175,6 @@ public class LCS extends IOT {
 		// ...
 		return "";
 	}
-	public LCS()
-	{
-		
-	}
 
 	public String toString() {
 		StringBuilder str = new StringBuilder();
@@ -334,12 +330,5 @@ public class LCS extends IOT {
 
 	}
 
-	static boolean checkCredentialB(String text, String text2) {
-		return true;
-
-		date=java.util.Calendar.getInstance().getTime();
-		myTrain.writeToLog("" + date + "-- Session was successfully terminated by user \'" + username + "\'.\n");
-		myTrain.writeToLog(myTrain.toString());
-	}
 }
 

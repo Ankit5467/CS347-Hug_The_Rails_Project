@@ -95,3 +95,33 @@ Sat Apr 24 14:15:55 EDT 2021-- Session was successfully terminated by user 'admi
 	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
 	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
 	Snow Rate: 0.2		Visibility: 2.0
+******************************************
+Sat Apr 24 14:57:56 EDT 2021-- LCS session started.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
+	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
+Sat Apr 24 14:58:02 EDT 2021-- User 'admin' logged in.
+Sat Apr 24 14:58:05 EDT 2021-- User entered the following command 'log off'.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
+	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
+Sat Apr 24 14:58:05 EDT 2021-- User 'admin' logged off successfully.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
+	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
+Sat Apr 24 14:58:08 EDT 2021-- Failed login attempt.
+Sat Apr 24 14:58:10 EDT 2021-- Failed login attempt.
+******************************************
+Sat Apr 24 14:58:52 EDT 2021-- LCS session started.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
+	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
+Sat Apr 24 14:58:57 EDT 2021-- User 'operator' logged in.
+Sat Apr 24 14:59:01 EDT 2021-- User entered the following command 'set diameter'.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
+	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
+Sat Apr 24 14:59:03 EDT 2021-- User entered the following command 'help'.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: false
+	RPM: 100		Speed: 10.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
