@@ -165,6 +165,10 @@ public class LCS extends IOT {
 		return this.user;
 	}
 
+	public boolean getIsLoggedIn() {
+		return this.isLoggedIn;
+	}
+
 	/* Wifi Connection Methods */
 
 	@SuppressWarnings("unused")
