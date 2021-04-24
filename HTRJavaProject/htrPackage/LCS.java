@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,25 +28,12 @@ public class LCS extends IOT {
 	/* Add default login info for operator & administrator */
 	private Map<String, String> login_info = new HashMap<String, String>();
 
-	// try {
-	// 	// File log = new File("LCS_Log.txt");
-	// 	if (log.createNewFile()) {
-	// 	  System.out.println("Log created: " + log.getName());
-	// 	} else {
-	// 	  System.out.println("File already exists.");
-	// 	  writeUsingBufferedWriter(log, "\n*************************************\n");
-	// 	}
-	//   } catch (IOException e) {
-	// 	System.out.println("An error occurred.");
-	// 	e.printStackTrace();
-	//   }
 		/* Constructor */
 
 	/**
 	 * Constructor for LCS object.
 	 */
 	private LCS() {
-//		super(wheel_diameter); /* set wheel diameter */
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
 		this.isLoggedIn = false;
@@ -60,7 +48,6 @@ public class LCS extends IOT {
 			this.initializeLog();
 		} catch (Exception e) {
 			System.out.println("Error: Unable to initialize log.\n");
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -103,6 +90,27 @@ public class LCS extends IOT {
 			e.printStackTrace();
 		}
 		// Files.writeString(this.logFileName,"hello World!\n");
+	}
+
+	void readFromLog(boolean isOperator) {
+		if (isOperator) {
+			try {
+				// File myObj = new File("filename.txt");
+				Scanner myReader = new Scanner(this.log);
+				while (myReader.hasNextLine()) {
+				  String data = myReader.nextLine();
+				  System.out.println(data);
+				}
+				System.out.println("*************** END OF LOG ***************");
+				myReader.close();
+			  } catch (FileNotFoundException e) {
+				System.out.println("Error: Unable to read from the log.\n");
+				e.printStackTrace();
+			  }
+		} else {
+			System.out.println("Error: Only the operator can access the log.\n");
+		}
+		
 	}
 
 	/* Log in Credential Methods */
@@ -154,22 +162,10 @@ public class LCS extends IOT {
 		return "(" + this.getLatitude() + ", " + this.getLongitude() + ")";
 	}
 
-	// String displayWeather() {
-	// 	return obtainWeather();
+	// private String recommend(String field) {
+	// 	// field = speed, weather, obstacle, gate
+	// 	return "";
 	// }
-
-	// double displaySpeed() {
-	// 	return getSpeed();
-	// }
-
-	// int displayRPM() {
-	// 	return getRPM();
-	// }
-
-	private String recommend(String field) {
-		// field = speed, weather, obstacle, gate
-		return "";
-	}
 
 	private String getStatus() {
 		// use stringbuilder
@@ -184,6 +180,21 @@ public class LCS extends IOT {
 		
 	}
 
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("\tLocation: " + this.displayLocation());
+		str.append("\tGate Distance: " + this.getGateDistance());
+		str.append("\tGate Status: " + this.getGateStatus());
+		str.append("\tObstruction Present?: " + this.isObstruction());
+		str.append("\n\tRPM: " + this.getRPM());
+		str.append("\t\tSpeed: " + this.getSpeed());
+		str.append("\t\tWind Speed: " + this.getWindSpeed());
+		str.append("\tRain Rate: " + this.getRainRate());
+		str.append("\n\tSnow Rate: " + this.getSnowRate());
+		str.append("\t\tVisibility: " + this.getVisibility() + "\n");
+		return str.toString();
+	}
+
 	public static void main(String[] args) {
 		
 		LCS myTrain = new LCS();
@@ -194,18 +205,24 @@ public class LCS extends IOT {
 		Date date=java.util.Calendar.getInstance().getTime();
 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
 		//TODO: Write LCS.toString() to log
+		// System.out.println(myTrain.toString());
+
+		myTrain.writeToLog(myTrain.toString());
+
+		String username = "";
+		String password = "";
 
 		while (!myTrain.isLoggedIn) {
 
 			while (true) {
 				System.out.println("Enter your username: ");
-				String username = scan.nextLine();
+				username = scan.nextLine();
 				System.out.println("Enter your password: ");
-				String password = scan.nextLine();
+				password = scan.nextLine();
 				date=java.util.Calendar.getInstance().getTime();
 				if (myTrain.checkCredentials(username, password)) {
 					myTrain.isLoggedIn =true;
-					myTrain.writeToLog("" + date + "-- User " + username + " logged in.\n");
+					myTrain.writeToLog("" + date + "-- User \'" + username + "\' logged in.\n");
 					break;
 				} else {
 					System.out.println("Incorrect credentials");
@@ -278,12 +295,17 @@ public class LCS extends IOT {
 				case "recommend":
 					System.out.println("No Recommendations.");
 					break;
+				case "view log":			/* Access the log */	
+						myTrain.readFromLog(username.equals("operator"));
+					break;
 				default:
 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
 					break;
 				}
 				date = java.util.Calendar.getInstance().getTime();
 				myTrain.writeToLog("" + date + "-- User entered the following command \'" + command + "\'.\n");
+				myTrain.writeToLog(myTrain.toString());
+
 
 			}
 			if (myTrain.getWifi()) {
@@ -294,12 +316,14 @@ public class LCS extends IOT {
 			if (!myTrain.wantToCont) {
 				System.out.println("Shutting off ...");
 				date=java.util.Calendar.getInstance().getTime();
-				myTrain.writeToLog("" + date + "-- User terminated LCS session.\n");
+				myTrain.writeToLog("" + date + "-- User \'" + username + "\' terminated LCS session.\n");
+				myTrain.writeToLog(myTrain.toString());
 				break;
 			} else if (!myTrain.isLoggedIn) {
 				System.out.println("Logged off");
 				date=java.util.Calendar.getInstance().getTime();
-				myTrain.writeToLog("" + date + "-- User logged off successfully.\n");
+				myTrain.writeToLog("" + date + "-- User \'" + username + "\' logged off successfully.\n");
+				myTrain.writeToLog(myTrain.toString());
 			} else {
 				//TODO: Write LCS.toString() to log.
 			}
@@ -314,7 +338,8 @@ public class LCS extends IOT {
 		return true;
 
 		date=java.util.Calendar.getInstance().getTime();
-		myTrain.writeToLog("" + date + "-- Session was successfully terminated.\n");
+		myTrain.writeToLog("" + date + "-- Session was successfully terminated by user \'" + username + "\'.\n");
+		myTrain.writeToLog(myTrain.toString());
 	}
 }
 

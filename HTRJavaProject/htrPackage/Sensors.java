@@ -36,7 +36,6 @@ public class Sensors {
 		/* Initialize the sensor object with the following default values */
 		//TODO: Changes these values to 0 after testing.
 		this.wheel_diameter = 40.0;
-		this.wind_speed = 40.0;
 		this.longitude = 1.0000;
 		this.latitude = 1.0000;
 		this.gate_distance = 1.0;
@@ -46,7 +45,7 @@ public class Sensors {
 		this.distance_from_obstruction = 2.0;
 		this.rpm = 100;
 		this.speed = 10.0;
-		this.wind_speed = 10.0;
+		this.wind_speed = 100.0;
 		this.rate_rain = 1.0;
 		this.rate_snow = 0.2;
 		this.visibility = 2.0;

@@ -9,34 +9,32 @@ public class IOT extends Sensors {
 		// super(wheel_diameter);
 		super();
 	}
-	
-	
-	void writeToLog() {
-	}
-	
+
 	String windReport() {
+		String data = "The wind speed is " + this.getWindSpeed() + " mph. ";
+		String rec = "";
 		if(this.getWindSpeed() >= 50) {
-			return "The wind speed is " + this.getWindSpeed() + " mph. Recommendation:" +
-			" Reduce the speed of the train.";
-		} else {
-			return "The wind speed is " + this.getWindSpeed() + " mph.";
+			rec += "Recommendation: Reduce the speed of the train.";
 		}
+		return data + rec;
 	}
 	
 	String rainReport() {
+		String data = "The rate of rainfall is " +  this.getRainRate() + " inches per hour.";
+		String rec = "";
 		if (this.getRainRate() >= 0.3) {
-			return "The rate of rainfall is " +  this.getRainRate() + " inches per hour." +
-			" Recommendation: Turn on the train headlights and reduce the speed of the train.";
+			rec += " Recommendation: Turn on the train headlights and reduce the speed of the train.";
 		} 
-			return "The rate of rainfall is " +  this.getRainRate() + " inches per hour.";
+			return data + rec;
 	}
 	
 	String snowReport() {
-		if(this.getSnowRate() >= 0.3) {
-			return "The rate of snowfall is " + this.getSnowRate() + " inches per hour." +
-			" Recommendation: Turn on the train headlights and reduce the speed of the train." ;
-		}
-		return "The rate of snowfall is " + this.getSnowRate() + " inches per hour.";
+		String data = "The rate of snowfall is " +  this.getSnowRate() + " inches per hour.";
+		String rec = "";
+		if (this.getSnowRate() >= 0.3) {
+			rec += " Recommendation: Turn on the train headlights and reduce the speed of the train.";
+		} 
+			return data + rec;
 	}
 	
 	String visibilityReport() {
@@ -108,27 +106,6 @@ public class IOT extends Sensors {
 		
 	}
 	
-	// /**
-	//  * 
-	//  * @return the wheel diameter
-	//  */
-	// double getWheelDiameter() {
-	// 	return this.wheel_diameter;
-	// }
-	
-	// /**
-	//  * sets the wheel diameter to @param diameter.
-	//  * @return 0 on success. -1 on failure.
-	//  */
-	// public int setWheelDiameter(double diameter) {
-	// 	if (diameter < 1.0) {
-	// 		return -1;
-	// 	} else {
-	// 		wheel_diameter = diameter;
-	// 		return 0;
-	// 	}
-	// }	
-	
 	String detectSlippage() {
 		//calculate slippage. return true if slippage. false if none.
 		double rpmSpeed = this.getRPM() * this.getWheelDiameter() * Math.PI * 60 / 63360;
@@ -169,6 +146,7 @@ public class IOT extends Sensors {
 				"\tEnter \"help\" to display the help message\n" +
 				"\tEnter \"exit\" to exit LCS\n" +
 				"\tEnter \"log off\" to log out of LCS\n" +
+				"\tEnter \"view log\" to view the log. (Only available for the operator.\n" +
 				"\tWheel Diamater: " + this.getWheelDiameter() + " inches.\n" +
 				"Command Options:\n" +
 				"\twifi \n\tadd user \n\tlocation \n\tweather \n\tspeed" +
