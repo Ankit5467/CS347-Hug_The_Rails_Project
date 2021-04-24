@@ -65,14 +65,10 @@ public class TestGUI2 extends JFrame {
 		JLabel lblPass = new JLabel("PASSWORD:");
 		
 		userField = new JTextField();
-		userField.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
 		userField.setColumns(10);
-		
 		passField = new JPasswordField();
+		
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
