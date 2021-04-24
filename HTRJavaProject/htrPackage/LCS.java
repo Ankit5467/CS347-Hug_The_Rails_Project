@@ -163,6 +163,10 @@ public class LCS extends IOT {
 	public String getUsername() {
 		return this.user;
 	}
+	
+	void setIsLoggedIn(boolean connection) {
+		this.isLoggedIn = connection;
+	}
 
 	/* Wifi Connection Methods */
 
