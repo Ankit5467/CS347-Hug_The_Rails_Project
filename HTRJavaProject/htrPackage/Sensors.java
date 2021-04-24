@@ -49,7 +49,7 @@ public class Sensors {
 		this.gate_status = false;
 		this.moving_obstruction = true;
 		this.stationary_obstruction = false;
-		this.distance_from_obstruction = 1200; /* feet */
+		this.distance_from_obstruction = 1400; /* feet */
 		this.rpm = 100;
 		this.speed = 50.0; /* mph */
 		this.wind_speed = 100.0; /* mph */
