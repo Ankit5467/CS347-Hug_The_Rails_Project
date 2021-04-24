@@ -43,10 +43,11 @@ public class Sensors {
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
 		// TODO: Change these values to 0 after testing.
-		/*
-		 * this.wheel_diameter = 40.0; this.longitude = 1.0000; this.latitude = 1.0000;
-		 * this.gate_distance = 1.0; /* miles
-		 */
+		
+		this.wheel_diameter = 40.0; 
+		this.longitude = 1.0000; 
+		this.latitude = 1.0000;
+		this.gate_distance = 1.0; /* miles*/
 		this.gate_status = false;
 		this.moving_obstruction = true;
 		this.stationary_obstruction = false;

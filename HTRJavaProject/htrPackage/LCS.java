@@ -203,15 +203,15 @@ public class LCS extends IOT {
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append("\tLocation: " + this.displayLocation());
-		str.append("\tGate Distance: " + this.getGateDistance());
+		str.append("\tGate Distance: " + roundTwoDecimals(this.getGateDistance()));
 		str.append("\tGate Status: " + this.getGateStatus());
 		str.append("\tObstruction Present?: " + this.isObstruction());
 		str.append("\n\tRPM: " + this.getRPM());
-		str.append("\t\tSpeed: " + this.getSpeed());
-		str.append("\t\tWind Speed: " + this.getWindSpeed());
-		str.append("\tRain Rate: " + this.getRainRate());
-		str.append("\n\tSnow Rate: " + this.getSnowRate());
-		str.append("\t\tVisibility: " + this.getVisibility() + "\n");
+		str.append("\t\tSpeed: " + roundTwoDecimals(this.getSpeed()));
+		str.append("\t\tWind Speed: " + roundTwoDecimals(this.getWindSpeed()));
+		str.append("\tRain Rate: " + roundTwoDecimals(this.getRainRate()));
+		str.append("\n\tSnow Rate: " + roundTwoDecimals(this.getSnowRate()));
+		str.append("\t\tVisibility: " + roundTwoDecimals(this.getVisibility()) + "\n");
 		return str.toString();
 	}
 
