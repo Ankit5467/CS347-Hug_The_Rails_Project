@@ -1,38 +1,131 @@
-
 package htrPackage;
 
+import java.util.Date;
 //import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 //import java.util.*;
 
 public class LCS extends IOT {
+	
+		/* data fields */
 
-	//data fields
-	private static final String userOP = "Username";
-	private static final String passOP = "Password";
-	private static final String userAD = "admin";
-	private static final String passAD = "password";
-
-	/* data fields */
-
-	private static boolean isConnected;
+	private boolean isConnected;	/* tracks if the LCS system is connected to wifi */
+	private boolean isLoggedIn;		/* tracks if the user is logged into LCS */
+	private boolean wantToCont;		/* tracks if the user wants to exit from LCS */
+	
+	private Path logFileName;
+	private File log;				/* LCS log stores lots of information */
 
 	/* Use a HashMap to store Login information. */
 	/* Add default login info for operator & administrator */
-	private static Map<String, String> login_info = new HashMap<String, String>();
-//	static final Scanner scan = new Scanner(System.in);
+	private Map<String, String> login_info = new HashMap<String, String>();
 
-	/* methods: */
-	
+	// try {
+	// 	// File log = new File("LCS_Log.txt");
+	// 	if (log.createNewFile()) {
+	// 	  System.out.println("Log created: " + log.getName());
+	// 	} else {
+	// 	  System.out.println("File already exists.");
+	// 	  writeUsingBufferedWriter(log, "\n*************************************\n");
+	// 	}
+	//   } catch (IOException e) {
+	// 	System.out.println("An error occurred.");
+	// 	e.printStackTrace();
+	//   }
+		/* Constructor */
+
+	/**
+	 * Constructor for LCS object.
+	 */
+	private LCS() {
+//		super(wheel_diameter); /* set wheel diameter */
+		super();
+		this.isConnected = false; /* By default, assume there is no wifi connection. */
+		this.isLoggedIn = false;
+		this.wantToCont = true;
+
+		/* Initialize the default login credentials. */
+		this.addLoginInfo("operator", "qwerty");
+		this.addLoginInfo("admin", "password");
+
+		/* Initialize the log for this session. */
+		try {
+			this.initializeLog();
+		} catch (Exception e) {
+			System.out.println("Error: Unable to initialize log.\n");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+		/* Regular methods: */
+
+	/* Log-related methods */
+
+	void initializeLog() throws Exception {
+		String filename = "LCS_Log.txt";
+		
+		//create the log file:
+		try {
+			this.log = new File(filename);
+			this.log.createNewFile();
+		} catch (Exception e) {
+			System.out.println("An error occurred.\n");
+		}
+
+		// set its filename/path and write a line to it
+		this.logFileName = Path.of(filename);
+		// Files.writeString(this.logFileName, "******************************************\n");
+		try {
+			Files.write(this.logFileName, 
+				 "******************************************\n".getBytes(), StandardOpenOption.APPEND);
+			System.out.println("Log has been initialized for this session.\n");
+		} catch (IOException e) {
+			System.out.println("Error: Unable to initialize log.\n");
+			e.printStackTrace();
+		}
+
+	}
+
+	void writeToLog(String str) {
+		try {
+			Files.write(this.logFileName, str.getBytes(),StandardOpenOption.APPEND);
+			// System.out.println("Updated Log.\n");
+		} catch (IOException e) {
+			System.out.println("Error: Unable to write to log.\n");
+			e.printStackTrace();
+		}
+		// Files.writeString(this.logFileName,"hello World!\n");
+	}
+
+	/* Log in Credential Methods */
+
+	/**
+	 * 	If the given username and password are valid (at least 5 chars long), then
+	 * 	add the (username,password) pair to the table of valid login credentials.
+	 */
+	void addLoginInfo(String username, String password) {
+		if (username.length() < 5 || password.length() < 5) {
+			System.out.println("Error: Failed to add new user. Username " 
+						+ "& password must be at least 5 characters.");
+			return;
+		}
+		this.getLoginInfo().put(username, password);
+
+	}
 
 	/**
 	 * @returns the Map containing all usernames & passwords.
 	 */
-	static Map<String, String> getLoginInfo() {
-		return login_info;
+	Map<String, String> getLoginInfo() {
+		return this.login_info;
 	}
 
 	/**
@@ -41,55 +134,44 @@ public class LCS extends IOT {
 	 * @return true if the pair (username,password) is a valid login credential,
 	 * 		false otherwise.
 	 */
-	public static boolean checkCredentials(String username, String password) {
-		return getLoginInfo().getOrDefault(username, "").equals(password);
+	private boolean checkCredentials(String username, String password) {
+		return this.getLoginInfo().getOrDefault(username, "").equals(password);
 	}
 
-	/**
-	 * 	If the given username and password are valid (at least 5 chars long), then
-	 * 	add the (username,password) pair to the table of valid login credentials.
-	 */
-	static void addLoginInfo(String username, String password) {
-		if (username.length() < 5 || password.length() < 5) {
-			System.out.println("Error: Failed to add new user. Username " 
-						+ "& password must be at least 5 characters.");
-			return;
-		}
-		getLoginInfo().put(username, password);
+	/* Wifi Connection Methods */
 
+	@SuppressWarnings("unused")
+	private void setWifi(boolean b) {
+		this.isConnected = b;
 	}
 
-	static boolean isConnectedWifi() {
-		return isConnected;
+	private boolean getWifi() {
+		return this.isConnected;
 	}
 
 	// (long,lat)
-//	static String displayLocation() {
-//		// call the sensor
-//		return "(" + getLocation() + ")";
-//	}
+	String displayLocation() {
+		return "(" + this.getLatitude() + ", " + this.getLongitude() + ")";
+	}
 
-//	static String displayWeather() {
-//		// call the sensor
-//		return obtainWeather();
-//	}
+	// String displayWeather() {
+	// 	return obtainWeather();
+	// }
 
-//	static double displaySpeed() {
-//		// call the sensor
-//		return getSpeed();
-//	}
+	// double displaySpeed() {
+	// 	return getSpeed();
+	// }
 
-//	static int displayRPM() {
-//		// call the sensor
-//		return getRPM();
-//	}
+	// int displayRPM() {
+	// 	return getRPM();
+	// }
 
-	static String recommend(String field) {
+	private String recommend(String field) {
 		// field = speed, weather, obstacle, gate
 		return "";
 	}
 
-	static String getStatus() {
+	private String getStatus() {
 		// use stringbuilder
 
 //		recommend(speed);
@@ -103,33 +185,36 @@ public class LCS extends IOT {
 	}
 
 	public static void main(String[] args) {
-
-		/* LCS initialized with default values. */
-		addLoginInfo("operator", "qwerty");
-		addLoginInfo("admin", "password");
-		setWheelDiameter(40.0);
 		
-		
+		LCS myTrain = new LCS();
+		// Sensors mySens = new Sensors();
 		Scanner scan = new Scanner(System.in);
 
-		boolean logoff = false; // true when the user wants to log off. false otherwise.
-		while (!logoff) {
+
+		Date date=java.util.Calendar.getInstance().getTime();
+		myTrain.writeToLog("" + date + "-- LCS session started.\n");
+		//TODO: Write LCS.toString() to log
+
+		while (!myTrain.isLoggedIn) {
 
 			while (true) {
 				System.out.println("Enter your username: ");
 				String username = scan.nextLine();
 				System.out.println("Enter your password: ");
 				String password = scan.nextLine();
-				if (checkCredentials(username, password)) {
+				date=java.util.Calendar.getInstance().getTime();
+				if (myTrain.checkCredentials(username, password)) {
+					myTrain.isLoggedIn =true;
+					myTrain.writeToLog("" + date + "-- User " + username + " logged in.\n");
 					break;
 				} else {
 					System.out.println("Incorrect credentials");
+					myTrain.writeToLog("" + date + "-- Failed login attempt.\n");
 				}
-
 			}
-
-			boolean cont = true;
-			while (cont && !isConnectedWifi() && !logoff) {
+			
+			// boolean cont = true;
+			while (myTrain.wantToCont && !myTrain.getWifi() && myTrain.isLoggedIn) {
 				System.out.print("-------------------------------\nEnter a command: ");
 				String command = scan.nextLine().toLowerCase();
 
@@ -137,80 +222,99 @@ public class LCS extends IOT {
 				case "":
 					break;
 				case "help":
-					helpMessage();
+					System.out.println(myTrain.helpMessage());
 					break;
-				case "log off":
-					// log out (but dont exit the program)
-					System.out.println("Logged off");
-					logoff = true;
+				case "log off": /* log out (but don't exit the program) */
+					System.out.println("Logging off ...");
+					myTrain.isLoggedIn = false;
 					break;
 				case "add user":
 					System.out.print("Enter a username: ");
 					String newUser = scan.nextLine();
 					System.out.print("Enter a password: ");
 					String newPass = scan.nextLine();
-					addLoginInfo(newUser, newPass);
+					myTrain.addLoginInfo(newUser, newPass);
 					break;
 				case "exit":
-					cont = false;
+					myTrain.wantToCont = false;
 					break;
 				case "wifi":
-					System.out.println("Connected to wifi: " + isConnectedWifi());
+					System.out.println("Connected to wifi: " + myTrain.getWifi());
 					break;
 				case "location":
-					System.out.println("Location: " + getLocation());
+					System.out.println("Location: " + myTrain.displayLocation());
 					break;
 				case "weather":
-					System.out.println("Weather: " + obtainWeather());
+					System.out.println("Weather: " + myTrain.obtainWeather());
 					break;
 				case "speed":
-					System.out.println("Speed: " + getSpeed() + "mph.");
+					System.out.println("Speed: " + myTrain.getSpeed() + " mph.");
 					break;
 				case "rpm":
-					System.out.println("Wheel rpm: " + getRPM());
+					System.out.println("Wheel rpm: " + myTrain.getRPM());
 					break;
-//				case "set diameter":
-//					System.out.println("The wheel diameter is currently set to "
-//							+ getWheelDiameter() + " inches. " 
-//							+ "Enter the updated wheel diameter in inches: ");
-//					double newDiameter = scan.nextDouble(); /* BUG: This causes "enter a command ..." to be printed twice.*/
-//					if (setWheelDiameter(newDiameter) == -1) {
-//						System.out.println("Error: Invalid wheel diameter. Wheel Diameter must be at least 1 inch.\n");
-//					} else {
-//						System.out.println("Sucess: The wheel diameter has been set to "
-//								+ getWheelDiameter() + " inches.\n");
-//					}
-//					break;
+				case "set diameter":
+					System.out.print("The wheel diameter is currently set to "
+							+ myTrain.getWheelDiameter() + " inches. " 
+							+ "Enter the updated wheel diameter in inches: ");
+					double newDiameter;
+					try {
+						newDiameter = Double.parseDouble(scan.nextLine());
+					} catch (Exception e) {
+						System.out.println("Error: Invalid wheel diameter. Wheel diameter must be numerical.\n");
+						break;
+					}
+					
+					if (myTrain.setWheelDiameter(newDiameter) == -1) {
+						System.out.println("Error: Invalid wheel diameter. Wheel Diameter must be at least 1 inch.\n");
+					} else {
+						System.out.println("Sucess: The wheel diameter has been set to "
+								+ myTrain.getWheelDiameter() + " inches.\n");
+					}
+					break;
 				case "status":
-					System.out.println("Status Report: " + getStatus());
+					System.out.println("Status Report: " + myTrain.getStatus());
+					break;
+				case "recommend":
+					System.out.println("No Recommendations.");
 					break;
 				default:
 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
 					break;
 				}
+				date = java.util.Calendar.getInstance().getTime();
+				myTrain.writeToLog("" + date + "-- User entered the following command \'" + command + "\'.\n");
 
 			}
-			if (isConnectedWifi()) {
+			if (myTrain.getWifi()) {
 				System.out
 						.println("LCS is connected to WiFi. LCS is only meant " + "to be used when there is no wifi.");
 				System.exit(-1);
 			}
-			if (!cont) {
+			if (!myTrain.wantToCont) {
 				System.out.println("Shutting off ...");
+				date=java.util.Calendar.getInstance().getTime();
+				myTrain.writeToLog("" + date + "-- User terminated LCS session.\n");
 				break;
-			} else if (logoff) {
-				System.out.println("Logging off ...");
-				logoff = false; 
+			} else if (!myTrain.isLoggedIn) {
+				System.out.println("Logged off");
+				date=java.util.Calendar.getInstance().getTime();
+				myTrain.writeToLog("" + date + "-- User logged off successfully.\n");
+			} else {
+				//TODO: Write LCS.toString() to log.
 			}
-
+			
 		}
 		scan.close();
 		System.out.println("LCS has shut off successfully.");
-		
+
 	}
 
 	static boolean checkCredentialB(String text, String text2) {
 		return true;
+
+		date=java.util.Calendar.getInstance().getTime();
+		myTrain.writeToLog("" + date + "-- Session was successfully terminated.\n");
 	}
 }
 

@@ -1,0 +1,14 @@
+******************************************
+Fri Apr 23 22:28:40 EDT 2021-- LCS session started.
+Fri Apr 23 22:28:45 EDT 2021-- User admin logged in.
+Fri Apr 23 22:28:46 EDT 2021-- User entered the following command 'help'.
+Fri Apr 23 22:28:49 EDT 2021-- User entered the following command 'speed'.
+Fri Apr 23 22:28:52 EDT 2021-- User entered the following command 'exit'.
+Fri Apr 23 22:28:52 EDT 2021-- User terminated LCS session.
+Fri Apr 23 22:28:52 EDT 2021-- Session was successfully terminated.
+******************************************
+Fri Apr 23 22:29:00 EDT 2021-- LCS session started.
+Fri Apr 23 22:29:06 EDT 2021-- User operator logged in.
+Fri Apr 23 22:29:10 EDT 2021-- User entered the following command 'exit'.
+Fri Apr 23 22:29:10 EDT 2021-- User terminated LCS session.
+Fri Apr 23 22:29:10 EDT 2021-- Session was successfully terminated.
