@@ -70,7 +70,6 @@ public class TestGUI2 extends JFrame {
 		newWindow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword()))) {
-					//lcs.isL
 					TestGUI t = new TestGUI();
 					t.setVisible(true);
 					dispose();
