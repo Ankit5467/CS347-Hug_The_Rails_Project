@@ -22,7 +22,7 @@ public class TestGUI2 extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField userField;
-	private JPasswordField passField;
+	private	 JPasswordField passField;
 	
 	Date date = java.util.Calendar.getInstance().getTime();
 	LCS lcs;
@@ -72,7 +72,7 @@ public class TestGUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
 						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
-					//userField.setText(userField.getText());
+					//inputUser = userField.getText();
 					lcs.setUsername(userField.getText());
 					lcs.setIsLoggedIn(true);
 					date = java.util.Calendar.getInstance().getTime();

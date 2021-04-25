@@ -70,12 +70,12 @@ public class TestGUI extends JFrame implements ActionListener{
 		scroll.setViewportView(display);
 		
 		//
-		if(lcs.getUsername().equals("operator")) {
+		/**if(lcs.getUsername().equals("operator")) {
 			display.setText(lcs.readFromLog2());
 		} else {
 			display.setText("Welcome, admin.");
-		}
-		//display.setText("Welcome, Operator.");
+		}*/
+		display.setText("Welcome, Operator.");
 		//display.setText(lcs.readFromLog2());
 		
 		JTextPane speedPane = new JTextPane();
@@ -108,7 +108,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
 				display.setBackground(Color.WHITE);
-				display.append(lcs.rainReport() + "\n");
+				display.append(lcs.rainReport() + "\n");lcs.writeToLog("something");
 			}
 		});
 		
@@ -137,6 +137,8 @@ public class TestGUI extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
+				display.append(lcs.snowReport() + "\n");
+				lcs.setSnowRate(0.25);
 				display.setBackground(Color.WHITE);
 				display.append(lcs.snowReport() + "\n");
 			}
