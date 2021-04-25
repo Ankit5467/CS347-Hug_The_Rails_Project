@@ -46,21 +46,21 @@ public class Sensors {
 		// TODO: Change these values to 0 after testing.
 		
 		//this.wheel_diameter = 40.0; 
-		this.longitude1 = 1.0000; 	/* most recent longitude */
-		this.latitude1 = 1.0000; 	/* most recent latitude */
-		this.longitude2 = 1.0000; 	/* older longitude */
-		this.latitude2 = 1.0000;	/* older latitude */
-		this.gate_distance = 1.0; 	/* miles*/
+		this.longitude1 = 0.0000; 	/* most recent longitude */
+		this.latitude1 = 0.0000; 	/* most recent latitude */
+		this.longitude2 = 0.0000; 	/* older longitude */
+		this.latitude2 = 0.0000;	/* older latitude */
+		this.gate_distance = 10.0; 	/* miles*/
 		this.gate_status = false;	/* false = closed. true = open. */
 		this.moving_obstruction = true;
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 1400; /* feet */
 		this.rpm = 100;
-		this.speed = 50.0;			/* mph */
-		this.wind_speed = 100.0; 	/* mph */
-		this.rate_rain = 1.0; 		/* inches per hour */
-		this.rate_snow = 0.2; 		/* inches per hour */
-		this.visibility = 2.0; 	/* miles */
+		this.speed = 10.0;			/* mph */
+		this.wind_speed = 10.0; 	/* mph */
+		this.rate_rain = .3; 		/* inches per hour */
+		this.rate_snow = 0.02; 		/* inches per hour */
+		this.visibility = 2.0;	 	/* miles */
 		updateValues();
 
 	}
