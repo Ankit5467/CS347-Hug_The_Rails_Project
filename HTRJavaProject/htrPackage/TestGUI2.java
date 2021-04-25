@@ -70,7 +70,10 @@ public class TestGUI2 extends JFrame {
 		JButton newWindow = new JButton("ENTER");
 		newWindow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) && (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
+				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
+						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
+					//userField.setText(userField.getText());
+					lcs.setUsername(userField.getText());
 					lcs.setIsLoggedIn(true);
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");

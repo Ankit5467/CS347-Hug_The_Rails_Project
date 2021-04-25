@@ -179,6 +179,10 @@ public class LCS extends IOT {
 			return false;
 		}
 	}
+	
+	void setUsername(String input) {
+		this.user = input;
+	}
 
 	public String getPassword() {
 		return this.pass;

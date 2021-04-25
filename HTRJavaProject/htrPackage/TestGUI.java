@@ -68,7 +68,14 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setLineWrap(true);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
 		scroll.setViewportView(display);
-		display.setText("Welcome, Operator.");
+		
+		//
+		if(lcs.getUsername().equals("operator")) {
+			display.setText(lcs.readFromLog2());
+		} else {
+			display.setText("Welcome, admin.");
+		}
+		//display.setText("Welcome, Operator.");
 		//display.setText(lcs.readFromLog2());
 		
 		JTextPane speedPane = new JTextPane();
@@ -120,7 +127,7 @@ public class TestGUI extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
-				display.setBackground(Color.GREEN);
+				display.setBackground(Color.WHITE);
 				display.append(lcs.windReport() + "\n");
 			}
 		});
@@ -130,29 +137,29 @@ public class TestGUI extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
-				display.setBackground(Color.RED);
+				display.setBackground(Color.WHITE);
 				display.append(lcs.snowReport() + "\n");
 			}
 		});
 		
 		JButton btnObstr = new JButton("OBSTRUCTION");
+		btnObstr.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnObstr.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
-				display.setBackground(Color.RED);
-				//display.append(lcs.processObstruction() + "\n");
+				display.setBackground(Color.WHITE);
+				display.append(lcs.ProcessObject() + "\n");
 			}
 		});
-		btnObstr.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
 		JButton btnSlip = new JButton("SLIPPAGE");
 		btnSlip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
-				display.setBackground(Color.RED);
-				display.append(lcs.snowReport() + "\n");
+				display.setBackground(Color.WHITE);
+				display.append(lcs.detectSlippage() + "\n");
 			}
 		});
 		
@@ -161,8 +168,8 @@ public class TestGUI extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
-				display.setBackground(Color.RED);
-				display.append(lcs.snowReport() + "\n");
+				display.setBackground(Color.WHITE);
+				display.append(lcs.gateStatus() + "\n");
 			}
 		});
 		

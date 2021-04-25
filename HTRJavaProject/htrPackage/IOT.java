@@ -159,7 +159,7 @@ public class IOT extends Sensors {
 				return "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is open.";
 			} else {
 				return "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is closed.\n"
-						+ " Recommendation: Stop the train immediately & wait for the gate to open.";
+						+ "Recommendation: Stop the train immediately & wait for the gate to open.";
 			}
 		}
 	}
