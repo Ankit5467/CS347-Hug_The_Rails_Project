@@ -51,7 +51,7 @@ public class Sensors {
 		this.longitude2 = 1.0000; 	/* older longitude */
 		this.latitude2 = 1.0000;	/* older latitude */
 		this.gate_distance = 1.0; 	/* miles*/
-		this.gate_status = false;
+		this.gate_status = false;	/* false = closed. true = open. */
 		this.moving_obstruction = true;
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 1400; /* feet */
@@ -98,8 +98,11 @@ public class Sensors {
 		lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
+		//setLocation((data.get(lastoff)),data.get(lastoff+1));
+		longitude2 = longitude1;
 		longitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
+		latitude2 = latitude1;
 		latitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		gate_distance = Double.valueOf((data.get(lastoff)));
