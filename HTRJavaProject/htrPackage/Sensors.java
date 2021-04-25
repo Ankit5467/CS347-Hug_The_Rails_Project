@@ -166,6 +166,14 @@ public class Sensors {
 	//
 	//
 	// }
+	void makerpmNumber(double speed )
+	{
+		System.out.println(	speed/ (WHEEL_DIAMETER * Math.PI * (double)60 / (double)63360));
+	}
+	void makeLongAndLong(double speed, double ogLat, double ogLong)
+	{
+		System.out.println("Long: "+  );
+	}
 	// void testDoc()
 	// {
 	// for(int i = 0; i<data.size();i++)
@@ -436,8 +444,9 @@ public class Sensors {
 
 	public static void main(String[] args) {
 		Sensors s = new Sensors();
-		System.out.println("kpppp");
-		s.updateValues();
+		
+		s.makerpmNumber(85);
+		
 
 	}
 
