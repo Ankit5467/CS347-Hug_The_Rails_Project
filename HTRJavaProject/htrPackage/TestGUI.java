@@ -53,9 +53,10 @@ public class TestGUI extends JFrame implements ActionListener{
 	 */
 	public TestGUI() {
 		lcs = new LCS();
+		lcs.setIsLoggedIn(true);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 475);
+		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -69,12 +70,11 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
 		scroll.setViewportView(display);
 		
-		//
-		/**if(lcs.getUsername().equals("operator")) {
-			display.setText(lcs.readFromLog2());
-		} else {
-			display.setText("Welcome, admin.");
-		}*/
+//		if(userInput.equals("operator")) {
+//			display.setText(lcs.readFromLog2());
+//		} else {
+//			display.setText("Welcome, admin.");
+//		}
 		display.setText("Welcome, Operator.");
 		//display.setText(lcs.readFromLog2());
 		
@@ -99,9 +99,6 @@ public class TestGUI extends JFrame implements ActionListener{
 		rpmPane.setBackground(Color.GREEN);
 		rpmPane.setFont(new Font("Tahoma", Font.BOLD, 50));
 		rpmPane.setText(String.valueOf(lcs.getRPM()));
-		//rpmPane.setText(String.valueOf(lcs.getWheelDiameter()));
-		//rpmPane.setText(String.valueOf(lcs.WHEEL_DIAMETER));
-		
 		JButton btnRain = new JButton("RAIN");
 		btnRain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
