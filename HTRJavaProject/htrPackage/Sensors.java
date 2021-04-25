@@ -60,7 +60,8 @@ public class Sensors {
 		this.wind_speed = 100.0; 	/* mph */
 		this.rate_rain = 1.0; 		/* inches per hour */
 		this.rate_snow = 0.2; 		/* inches per hour */
-		this.visibility = 2.0; 		/* miles */
+		this.visibility = 2.0; 	/* miles */
+		updateValues();
 
 	}
 
@@ -95,7 +96,7 @@ public class Sensors {
 	public void updateValuesSensors()
 	{
 		//speed=Double.valueOf((data.get(lastoff)));
-		lastoff++;
+		//lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
 		//setLocation((data.get(lastoff)),data.get(lastoff+1));
@@ -145,19 +146,19 @@ public class Sensors {
 		visibility  = Double.valueOf((data.get(lastoff)));
 		lastoff++;
 
-		//0-speed
-		//1 - rpm
-		//2-lat
-		//3 long
-		//4- gate distance
-		//5 - gate status
-		//6- moving obstruction
-		//7- stationaty
-		//8-distance
-		//9- rain
-		//10- snow
-		//11- wind
-		//12- visibality
+		//not needed 0-speed
+		//0 - rpm
+		//1-lat
+		//2 long
+		//3- gate distance
+		//4 - gate status
+		//5- moving obstruction
+		//6- stationaty
+		//7-distance
+		//8- rain
+		//9- snow
+		//10- wind
+		//11- visibality
 		
 
 
@@ -169,10 +170,10 @@ public class Sensors {
 	//
 	//
 	// }
-//	void makerpmNumber(double speed )
-//	{
-//		System.out.println(	speed/ (WHEEL_DIAMETER * Math.PI * (double)60 / (double)63360));
-//	}
+void makerpmNumber(double speed )
+{
+		System.out.println(	speed/ (WHEEL_DIAMETER * Math.PI * (double)60 / (double)63360));
+	}
 //	void makeLongAndLong(double speed, double ogLat, double ogLong)
 //	{
 //		System.out.println("Long: "+  );
@@ -447,8 +448,10 @@ public class Sensors {
 
 	public static void main(String[] args) {
 		Sensors s = new Sensors();
+		System.out.println(s.wind_speed);
+		s.updateValuesSensors();
+		System.out.println(s.wind_speed);
 		
-		//s.makerpmNumber(85);
 		
 
 	}
