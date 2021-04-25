@@ -24,7 +24,7 @@ public class Sensors {
 
 	private boolean moving_obstruction;
 	private boolean stationary_obstruction;
-	private double distance_from_obstruction;
+	private double distance_from_obstruction; /* [-2,2] miles */
 
 	private int rpm;
 
