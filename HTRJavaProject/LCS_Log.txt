@@ -1,0 +1,14 @@
+******************************************
+Sun Apr 25 15:21:55 EDT 2021-- LCS session started.
+	Location: (1.0, 1.0)	Gate Distance: 1.0	Gate Status: false	Obstruction Present?: true
+	RPM: 100		Speed: 50.0		Wind Speed: 100.0	Rain Rate: 1.0
+	Snow Rate: 0.2		Visibility: 2.0
+Sun Apr 25 15:22:02 EDT 2021-- User 'operator' logged in.
+******************************************
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'RAIN'.
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'SNOW'.
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'VISIBILITY'.
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'WIND'.
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'GATE'.
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'OBSTRUCTION'.
+Sun Apr 25 15:22:02 EDT 2021-- User entered the following command 'SLIPPAGE'.

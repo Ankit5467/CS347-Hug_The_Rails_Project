@@ -28,7 +28,7 @@ public class TestGUI extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	LCS lcs;
-	Date date;
+	Date date = java.util.Calendar.getInstance().getTime();
 	Timer loop = new Timer();
 
 	/**
@@ -108,7 +108,8 @@ public class TestGUI extends JFrame implements ActionListener{
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
 				display.setBackground(Color.WHITE);
-				display.append(lcs.rainReport() + "\n");lcs.writeToLog("something");
+				display.append(lcs.rainReport() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "RAIN" + "\'.\n");
 			}
 		});
 		
@@ -119,6 +120,7 @@ public class TestGUI extends JFrame implements ActionListener{
 					display.setText("");
 				display.setBackground(Color.WHITE);
 				display.append(lcs.visibilityReport() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "VISIBILITY" + "\'.\n");
 			}
 		});
 		
@@ -129,6 +131,7 @@ public class TestGUI extends JFrame implements ActionListener{
 					display.setText("");
 				display.setBackground(Color.WHITE);
 				display.append(lcs.windReport() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "WIND" + "\'.\n");
 			}
 		});
 		
@@ -141,6 +144,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				lcs.setSnowRate(0.25);
 				display.setBackground(Color.WHITE);
 				display.append(lcs.snowReport() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SNOW" + "\'.\n");
 			}
 		});
 		
@@ -152,6 +156,7 @@ public class TestGUI extends JFrame implements ActionListener{
 					display.setText("");
 				display.setBackground(Color.WHITE);
 				display.append(lcs.ProcessObject() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "OBSTRUCTION" + "\'.\n");
 			}
 		});
 		
@@ -162,6 +167,7 @@ public class TestGUI extends JFrame implements ActionListener{
 					display.setText("");
 				display.setBackground(Color.WHITE);
 				display.append(lcs.detectSlippage() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SLIPPAGE" + "\'.\n");
 			}
 		});
 		
@@ -172,6 +178,7 @@ public class TestGUI extends JFrame implements ActionListener{
 					display.setText("");
 				display.setBackground(Color.WHITE);
 				display.append(lcs.gateStatus() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "GATE" + "\'.\n");
 			}
 		});
 		
