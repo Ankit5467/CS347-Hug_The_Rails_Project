@@ -45,11 +45,6 @@ public class TestGUI2 extends JFrame {
 	 */
 	public TestGUI2() {
 		lcs = new LCS();
-		String credUser = lcs.getUsername();
-		String credPass = lcs.getPassword();
-		char[] arrayPass = new char[credPass.length()];
-		for(int i = 0; i < credPass.length(); i++)
-			arrayPass[i] = credPass.charAt(i);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 475);
