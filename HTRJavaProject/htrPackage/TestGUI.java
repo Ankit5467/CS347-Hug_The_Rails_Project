@@ -69,85 +69,12 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
 		display.setText("Welcome, Operator.");
 		
-		
-		TimerTask task = new TimerTask() {
-			public void run() {
-				totalMilliseconds += 15000;
-				lcs.updateValuesSensors();
-				
-				if(lcs.getRainRate() >= 0.3) {
-					display.append(lcs.rainReport() + "\n");
-					lcs.writeToLog("" + date + "-- User entered the following command \'" + "RAIN" + "\'.\n");
-					lcs.writeToLog(lcs.toString());
-				}
-				
-				if(lcs.getWindSpeed() >= 50.0) {
-					display.append(lcs.windReport() + "\n");
-					lcs.writeToLog("" + date + "-- User entered the following command \'" + "WIND" + "\'.\n");
-					lcs.writeToLog(lcs.toString());
-				}
-				
-				if(lcs.getSnowRate() >= 0.3) {
-					display.append(lcs.snowReport() + "\n");
-					lcs.writeToLog("" + date + "-- User entered the following command \'" + "SNOW" + "\'.\n");
-					lcs.writeToLog(lcs.toString());
-				}
-				
-				if(lcs.getVisibility() < 2.0) {
-					display.append(lcs.visibilityReport() + "\n");
-					lcs.writeToLog("" + date + "-- User entered the following command \'" + "VISIBILITY" + "\'.\n");
-					lcs.writeToLog(lcs.toString());
-				}
-				
-				if(lcs.isObstruction()) {
-					display.append(lcs.ProcessObject() + "\n");
-					lcs.writeToLog("" + date + "-- User entered the following command \'" + "OBSTRUCTION" + "\'.\n");
-					lcs.writeToLog(lcs.toString());
-				}
-				
-				display.append(lcs.detectSlippage() + "\n");
-				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SLIPPAGE" + "\'.\n");
-				lcs.writeToLog(lcs.toString());
-				
-				display.append(lcs.gateStatus() + "\n");
-				lcs.writeToLog("" + date + "-- User entered the following command \'" + "GATE" + "\'.\n");
-				lcs.writeToLog(lcs.toString());
-					
-			}
-		};
-		//totalMilliseconds == 420000
-		if(totalMilliseconds == 420000) {
-			loop.cancel();
-		} else {
-			loop.scheduleAtFixedRate(task, 15000, 15000);
-		}
-//		while(totalMilliseconds != 420000) {
-//			loop.scheduleAtFixedRate(task, 15000, 15000);
-//		}
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 600);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		
-//		JScrollPane scroll = new JScrollPane();
-//		scroll.setBounds(285, 42, 576, 245);
-//		JTextArea display = new JTextArea();
-//		scroll.setViewportView(display);
-//		display.setEditable(false);
-//		display.setWrapStyleWord(true);
-//		display.setLineWrap(true);
-//		display.setFont(new Font("Monospaced", Font.BOLD, 16));
-//		display.setText("Welcome, Operator.");
-		
 		JTextPane speedPane = new JTextPane();
 		speedPane.setBounds(72, 83, 128, 67);
 		speedPane.setEditable(false);
 		speedPane.setBackground(Color.GREEN);
 		speedPane.setFont(new Font("Tahoma", Font.BOLD, 50));
-		speedPane.setText(String.valueOf(lcs.getSpeed()));
+		//speedPane.setText(String.valueOf(lcs.getSpeed()));
 		
 		JLabel lblSpeed = new JLabel("SPEED");
 		lblSpeed.setBounds(92, 39, 87, 34);
@@ -166,7 +93,101 @@ public class TestGUI extends JFrame implements ActionListener{
 		rpmPane.setEditable(false);
 		rpmPane.setBackground(Color.GREEN);
 		rpmPane.setFont(new Font("Tahoma", Font.BOLD, 50));
-		rpmPane.setText(String.valueOf(lcs.getRPM()));
+		//rpmPane.setText(String.valueOf(lcs.getRPM()));
+		
+		
+		TimerTask task = new TimerTask() {
+			public void run() {
+				totalMilliseconds += 15000;
+				lcs.updateValuesSensors();
+				
+				speedPane.setText(String.valueOf(lcs.getSpeed()));
+				rpmPane.setText(String.valueOf(lcs.getRPM()));
+				
+				if(lcs.getRainRate() >= 0.3) {
+					display.append(lcs.rainReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "RAIN" + "\'.\n");
+				}
+				
+				if(lcs.getWindSpeed() >= 50.0) {
+					display.append(lcs.windReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "WIND" + "\'.\n");
+				}
+				
+				if(lcs.getSnowRate() >= 0.3) {
+					display.append(lcs.snowReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "SNOW" + "\'.\n");
+				}
+				
+				if(lcs.getVisibility() < 2.0) {
+					display.append(lcs.visibilityReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "VISIBILITY" + "\'.\n");
+				}
+				
+				if(lcs.isObstruction()) {
+					display.append(lcs.ProcessObject() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "OBSTRUCTION" + "\'.\n");
+				}
+				
+				display.append(lcs.detectSlippage() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SLIPPAGE" + "\'.\n");
+				
+				display.append(lcs.gateStatus() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "GATE" + "\'.\n");
+				
+				lcs.writeToLog(lcs.toString());
+					
+			}
+		};
+		
+		if(totalMilliseconds == 420000) {
+			loop.cancel();
+		} else {
+			loop.scheduleAtFixedRate(task, 15000, 15000);
+		}
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 900, 600);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+//		JScrollPane scroll = new JScrollPane();
+//		scroll.setBounds(285, 42, 576, 245);
+//		JTextArea display = new JTextArea();
+//		scroll.setViewportView(display);
+//		display.setEditable(false);
+//		display.setWrapStyleWord(true);
+//		display.setLineWrap(true);
+//		display.setFont(new Font("Monospaced", Font.BOLD, 16));
+//		display.setText("Welcome, Operator.");
+		
+//		JTextPane speedPane = new JTextPane();
+//		speedPane.setBounds(72, 83, 128, 67);
+//		speedPane.setEditable(false);
+//		speedPane.setBackground(Color.GREEN);
+//		speedPane.setFont(new Font("Tahoma", Font.BOLD, 50));
+//		speedPane.setText(String.valueOf(lcs.getSpeed()));
+//		
+//		JLabel lblSpeed = new JLabel("SPEED");
+//		lblSpeed.setBounds(92, 39, 87, 34);
+//		lblSpeed.setForeground(Color.YELLOW);
+//		lblSpeed.setFont(new Font("Tahoma", Font.BOLD, 14));
+//		lblSpeed.setHorizontalAlignment(JLabel.CENTER);
+//		
+//		JLabel lblRPM = new JLabel("RPM");
+//		lblRPM.setBounds(72, 160, 128, 34);
+//		lblRPM.setForeground(Color.YELLOW);
+//		lblRPM.setFont(new Font("Tahoma", Font.BOLD, 14));
+//		lblRPM.setHorizontalAlignment(SwingConstants.CENTER);
+//		
+//		JTextPane rpmPane = new JTextPane();
+//		rpmPane.setBounds(82, 193, 103, 61);
+//		rpmPane.setEditable(false);
+//		rpmPane.setBackground(Color.GREEN);
+//		rpmPane.setFont(new Font("Tahoma", Font.BOLD, 50));
+//		rpmPane.setText(String.valueOf(lcs.getRPM()));
 		
 		JButton btnRain = new JButton("RAIN");
 		btnRain.setBounds(443, 311, 118, 71);

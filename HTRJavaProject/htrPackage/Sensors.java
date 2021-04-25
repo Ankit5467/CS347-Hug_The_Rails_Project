@@ -146,6 +146,7 @@ public class Sensors {
 		lastoff++;
 		visibility  = Double.valueOf((data.get(lastoff)));
 		lastoff++;
+		setSpeed();
 
 		//not needed 0-speed
 		//0 - rpm
