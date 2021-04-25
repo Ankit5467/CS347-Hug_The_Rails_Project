@@ -53,7 +53,7 @@ public class TestGUI2 extends JFrame {
 		lcs.writeToLog(lcs.toString());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 475);
+		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setForeground(Color.WHITE);
@@ -72,9 +72,9 @@ public class TestGUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
 						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
-					//inputUser = userField.getText();
-					lcs.setUsername(userField.getText());
-					lcs.setIsLoggedIn(true);
+					//userInput = userField.getText();
+					//lcs.setUsername(userField.getText());
+					//lcs.setIsLoggedIn(true);
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
 					TestGUI t = new TestGUI();
