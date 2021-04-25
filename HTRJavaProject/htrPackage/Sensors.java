@@ -76,14 +76,15 @@ public class Sensors {
 
 			input = new Scanner(file);
 
-			while (input.hasNextLine()) {
-				String line = input.nextLine();
-				System.out.println(line);
-			}
-			input.close();
+			//while (input.hasNextLine()) {
+				//System.out.println("pooop")
+				//System.out.println(line);
+			//}
+		
 
             while (input.hasNextLine()) {
                 String line = input.nextLine();
+				//System.out.println("pooop")
                 data.add(line);
             }
             input.close();
