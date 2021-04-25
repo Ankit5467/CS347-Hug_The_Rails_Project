@@ -84,7 +84,7 @@ public class Sensors {
 
             while (input.hasNextLine()) {
                 String line = input.nextLine();
-				System.out.println("pooop");
+				//System.out.println("pooop");
                 data.add(line);
             }
             //input.close();
