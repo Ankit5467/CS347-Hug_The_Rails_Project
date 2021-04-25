@@ -23,13 +23,15 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Scrollbar;
 import java.util.Date;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class TestGUI extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	LCS lcs;
 	Date date = java.util.Calendar.getInstance().getTime();
-	Timer loop = new Timer();
+	//Timer loop = new Timer();
+	Timer loop;
 
 	/**
 	 * Launch the application.
@@ -52,6 +54,8 @@ public class TestGUI extends JFrame implements ActionListener{
 	 * Create the frame.
 	 */
 	public TestGUI() {
+		loop = new Timer();
+		//TimerTask task = new TimerTask();
 		lcs = new LCS();
 		lcs.setIsLoggedIn(true);
 		
