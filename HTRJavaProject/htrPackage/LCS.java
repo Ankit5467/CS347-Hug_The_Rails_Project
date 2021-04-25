@@ -125,6 +125,7 @@ public class LCS extends IOT {
 				Scanner myReader = new Scanner(this.log);
 				while (myReader.hasNextLine()) {
 				  data += myReader.nextLine();
+				  data += "\n";
 				  //System.out.println(data);
 				}
 				//System.out.println("*************** END OF LOG ***************");
