@@ -98,8 +98,11 @@ public class Sensors {
 		lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
+		//setLocation((data.get(lastoff)),data.get(lastoff+1));
+		longitude2 = longitude1;
 		longitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
+		latitude2 = latitude1;
 		latitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		gate_distance = Double.valueOf((data.get(lastoff)));
