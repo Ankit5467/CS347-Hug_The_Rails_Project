@@ -70,14 +70,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setWrapStyleWord(true);
 		display.setLineWrap(true);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
-		
-//		if(userInput.equals("operator")) {
-//			display.setText(lcs.readFromLog2());
-//		} else {
-//			display.setText("Welcome, admin.");
-//		}
 		display.setText("Welcome, Operator.");
-		//display.setText(lcs.readFromLog2());
 		
 		JTextPane speedPane = new JTextPane();
 		speedPane.setBounds(72, 83, 128, 67);
