@@ -94,7 +94,7 @@ public class Sensors {
 		//doc.close();
 	public void updateValuesSensors()
 	{
-		speed=Double.valueOf((data.get(lastoff)));
+		//speed=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
@@ -210,20 +210,20 @@ public class Sensors {
 	/**
 	 * sets the longitude & latitude. Returns 0 on success, -1 on failure.
 	 */
-	int setLocation(double latitude, double longitude) {
+	/*int setLocation(double latitude, double longitude) {
 		if (Math.abs(latitude) > 90 || longitude < 0 || longitude > 180) {
 			System.out.println("Error: Invalid coordinates");
 			return -1;
 		}
 
 		/* The most recent data becomes the old data.  */
-		this.latitude2 = this.latitude1;
+		/*this.latitude2 = this.latitude1;
 		this.longitude2 = this.longitude1;
 
 		this.longitude1 = longitude; /* use randomizer */
-		this.latitude1 = latitude; /* use randomizer */
-		return 0;
-	}
+		//this.latitude1 = latitude; /* use randomizer */
+		//return 0;
+	//}
 
 	/**
 	 * @return the most recent latitude.
