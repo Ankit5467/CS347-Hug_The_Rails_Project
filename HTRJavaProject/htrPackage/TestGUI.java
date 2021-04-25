@@ -23,13 +23,16 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Scrollbar;
 import java.util.Date;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class TestGUI extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	LCS lcs;
 	Date date = java.util.Calendar.getInstance().getTime();
-	Timer loop = new Timer();
+	//Timer loop = new Timer();
+	//Timer loop;
+	int totalMilliseconds;
 
 	/**
 	 * Launch the application.
@@ -54,13 +57,7 @@ public class TestGUI extends JFrame implements ActionListener{
 	public TestGUI() {
 		lcs = new LCS();
 		lcs.setIsLoggedIn(true);
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 600);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.GRAY);
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		Timer loop = new Timer();
 		
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(285, 42, 576, 245);
@@ -70,14 +67,80 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setWrapStyleWord(true);
 		display.setLineWrap(true);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
-		
-//		if(userInput.equals("operator")) {
-//			display.setText(lcs.readFromLog2());
-//		} else {
-//			display.setText("Welcome, admin.");
-//		}
 		display.setText("Welcome, Operator.");
-		//display.setText(lcs.readFromLog2());
+		
+		
+		TimerTask task = new TimerTask() {
+			public void run() {
+				totalMilliseconds += 15000;
+				lcs.updateValuesSensors();
+				
+				if(lcs.getRainRate() >= 0.3) {
+					display.append(lcs.rainReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "RAIN" + "\'.\n");
+					lcs.writeToLog(lcs.toString());
+				}
+				
+				if(lcs.getWindSpeed() >= 50.0) {
+					display.append(lcs.windReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "WIND" + "\'.\n");
+					lcs.writeToLog(lcs.toString());
+				}
+				
+				if(lcs.getSnowRate() >= 0.3) {
+					display.append(lcs.snowReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "SNOW" + "\'.\n");
+					lcs.writeToLog(lcs.toString());
+				}
+				
+				if(lcs.getVisibility() < 2.0) {
+					display.append(lcs.visibilityReport() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "VISIBILITY" + "\'.\n");
+					lcs.writeToLog(lcs.toString());
+				}
+				
+				if(lcs.isObstruction()) {
+					display.append(lcs.ProcessObject() + "\n");
+					lcs.writeToLog("" + date + "-- User entered the following command \'" + "OBSTRUCTION" + "\'.\n");
+					lcs.writeToLog(lcs.toString());
+				}
+				
+				display.append(lcs.detectSlippage() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SLIPPAGE" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
+				
+				display.append(lcs.gateStatus() + "\n");
+				lcs.writeToLog("" + date + "-- User entered the following command \'" + "GATE" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
+					
+			}
+		};
+		//totalMilliseconds == 420000
+		if(totalMilliseconds == 420000) {
+			loop.cancel();
+		} else {
+			loop.scheduleAtFixedRate(task, 15000, 15000);
+		}
+//		while(totalMilliseconds != 420000) {
+//			loop.scheduleAtFixedRate(task, 15000, 15000);
+//		}
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 900, 600);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.GRAY);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+//		JScrollPane scroll = new JScrollPane();
+//		scroll.setBounds(285, 42, 576, 245);
+//		JTextArea display = new JTextArea();
+//		scroll.setViewportView(display);
+//		display.setEditable(false);
+//		display.setWrapStyleWord(true);
+//		display.setLineWrap(true);
+//		display.setFont(new Font("Monospaced", Font.BOLD, 16));
+//		display.setText("Welcome, Operator.");
 		
 		JTextPane speedPane = new JTextPane();
 		speedPane.setBounds(72, 83, 128, 67);
@@ -114,6 +177,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setBackground(Color.WHITE);
 				display.append(lcs.rainReport() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "RAIN" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -126,6 +190,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setBackground(Color.WHITE);
 				display.append(lcs.visibilityReport() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "VISIBILITY" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -138,6 +203,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setBackground(Color.WHITE);
 				display.append(lcs.windReport() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "WIND" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -147,11 +213,12 @@ public class TestGUI extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
 					display.setText("");
-				display.append(lcs.snowReport() + "\n");
-				lcs.setSnowRate(0.25);
+				//display.append(lcs.snowReport() + "\n");
+				//lcs.setSnowRate(0.25);
 				display.setBackground(Color.WHITE);
 				display.append(lcs.snowReport() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SNOW" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -165,6 +232,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setBackground(Color.WHITE);
 				display.append(lcs.ProcessObject() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "OBSTRUCTION" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -177,6 +245,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setBackground(Color.WHITE);
 				display.append(lcs.detectSlippage() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "SLIPPAGE" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -189,6 +258,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setBackground(Color.WHITE);
 				display.append(lcs.gateStatus() + "\n");
 				lcs.writeToLog("" + date + "-- User entered the following command \'" + "GATE" + "\'.\n");
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		
@@ -197,6 +267,7 @@ public class TestGUI extends JFrame implements ActionListener{
 			public void actionPerformed(ActionEvent e) {
 				display.setText("");
 				display.setText(lcs.readFromLog2());
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		btnLog.setBounds(743, 411, 118, 71);
@@ -213,6 +284,8 @@ public class TestGUI extends JFrame implements ActionListener{
 		JButton btnLogOff = new JButton("LOG OFF");
 		btnLogOff.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lcs.writeToLog("" + date + "-- User \'" + "operator" + "\' logged off successfully.\n");
+				lcs.writeToLog(lcs.toString());
 				TestGUI2 login = new TestGUI2();
 				login.setVisible(true);
 				dispose();
