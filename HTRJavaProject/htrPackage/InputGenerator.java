@@ -53,6 +53,11 @@ public class InputGenerator {
 									//past 15 seconds (in miles).
 		
 //		int[] rpm_data = {534, 554, 90}; /* Enter the the rpm every 15 seconds. */
+		
+		/*****
+		 * FILL THIS ARRAY WITH THE SPEEDS AT EVERY 15 SECOND INTERVAL. THIS PROGRAM WILL
+		 * RETURN THE COORDINATES (LATITUDE & LONGITUDE) AT EVERY 15 SECOND INTERVAL.
+		 ***********/
 		double[] speeds = {135, 140, 150}; /* Stores the speed at every 15 second interval */
 		
 		
