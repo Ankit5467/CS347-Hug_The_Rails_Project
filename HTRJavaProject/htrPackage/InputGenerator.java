@@ -1,0 +1,85 @@
+/**
+ * 
+ */
+package htrPackage;
+
+/**
+ * @author Ankit
+ *
+ */
+public class InputGenerator {
+	
+	/**
+	 * 
+	 * @param time - duration at which you travel at that speed.
+	 * @param speed in miles per hour.
+	 * @return the distance traveled in miles.
+	 */
+	public static double computeDistTraveled(final int time, double speed) {
+//		System.out.println("time : "+ time);
+//		System.out.println("speed given : "+ speed);
+		return ((double) time/3600)*speed;
+	}
+	
+	public static double computeRpmSpeed(int rpm, int WD) {
+		return rpm*WD*Math.PI*60/63360;
+		
+	}
+	
+	public static int computeRpm(double speed, int WD) {
+		return (int) ((63360*speed)/((double)WD*60*Math.PI));
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int timer = 0;			/* Keeps track of the elapsed time. */
+		final int update_time = 15; /* How often new measurements are taken. */
+		final int wd = 85; // wheel diameter
+		final double weight = 0.30; /* weight % of the distance traveled contributes to the latitude. */
+		double lat_old = 0.0;
+		double long_old = 0.0;
+		
+		double lat_new = 0.0;
+		double long_new = 0.0;
+		
+		int rpm = 0;
+//		double speed_from_rpm = 0.0;
+		double dist_traveled = 0.0; //stores the dist traveled in 
+									//past 15 seconds (in miles).
+		
+//		int[] rpm_data = {534, 554, 90}; /* Enter the the rpm every 15 seconds. */
+		double[] speeds = {135, 140, 150}; /* Stores the speed at every 15 second interval */
+		
+		
+		for ( int i = 0; i < speeds.length; i++) {
+			timer += 15;
+//			rpm = rpm_data[i];
+//			speed_from_rpm = computeRpmSpeed(rpm, wd);
+			
+			rpm = computeRpm(speeds[i], wd);
+//			System.out.println(speed_from_rpm);
+			
+			dist_traveled = computeDistTraveled(update_time, speeds[i]);
+//			System.out.println(dist_traveled);
+			
+			//update the coordinates
+			lat_new = lat_old + (weight * dist_traveled);
+			long_new = long_old + Math.sqrt(Math.pow(dist_traveled, 2.0) - 
+					Math.pow(weight *dist_traveled, 2.0));
+			
+			//print the updated speed and the updated coordinates.
+			System.out.println("Time: " + timer + " seconds. Distance Traveled: " + dist_traveled
+					+ ". New Speed: " + speeds[i] +  ". New long: " + long_new + 
+					". New lat: " + lat_new + ". RPM: " + rpm);
+			
+		}
+		
+		
+	}
+
+}
