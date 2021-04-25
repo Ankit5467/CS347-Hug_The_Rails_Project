@@ -13,11 +13,11 @@ public class Sensors {
 
 	/* Data fields: */
 	private int lastoff=0;
-	private double longitude1;
-	private double latitude1;
+	private double longitude1; /* miles from origin */
+	private double latitude1; /* miles from origin */
 
-	private double longitude2;
-	private double latitude2;
+	private double longitude2;	/* miles from origin */
+	private double latitude2;	/* miles from origin */
 
 	private double gate_distance;
 	private boolean gate_status;
