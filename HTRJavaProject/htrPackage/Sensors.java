@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Sensors {
 
 	/* hardware: */
-	public double wheel_diameter;		/* Wheel diameter in inches */
+	public final double WHEEL_DIAMETER = 85.0;		/* Wheel diameter in inches */
 	public final int REFRESH_TIME = 30; /* How often to refresh the data (in seconds) */
 
 	/* Data fields: */
@@ -45,7 +45,7 @@ public class Sensors {
 		/* Initialize the sensor object with the following default values */
 		// TODO: Change these values to 0 after testing.
 		
-		this.wheel_diameter = 40.0; 
+		//this.wheel_diameter = 40.0; 
 		this.longitude1 = 1.0000; 	/* most recent longitude */
 		this.latitude1 = 1.0000; 	/* most recent latitude */
 		this.longitude2 = 1.0000; 	/* older longitude */
@@ -179,7 +179,7 @@ public class Sensors {
 	 * 
 	 * @return 0 on success. -1 on failure.
 	 */
-	int setWheelDiameter(double diameter) {
+	/**int setWheelDiameter(double diameter) {
 		if (diameter < 1.0) {
 			// System.out.println("Error: Diameter must be at least 1 inch!");
 			return -1;
@@ -187,13 +187,13 @@ public class Sensors {
 			this.wheel_diameter = diameter;
 			return 0;
 		}
-	}
+	}*/
 
 	/**
 	 * @return the wheel diameter (in inches).
 	 */
 	double getWheelDiameter() {
-		return this.wheel_diameter; /* use randomizer only once? */
+		return WHEEL_DIAMETER;        /* use randomizer only once? */
 	}
 
 	/**

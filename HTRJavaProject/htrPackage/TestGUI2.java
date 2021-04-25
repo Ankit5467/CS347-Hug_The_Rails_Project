@@ -16,12 +16,15 @@ import javax.swing.JLabel;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
+import java.util.Date;
 
 public class TestGUI2 extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField userField;
 	private JPasswordField passField;
+	
+	Date date = java.util.Calendar.getInstance().getTime();
 	LCS lcs;
 
 	/**
@@ -45,6 +48,9 @@ public class TestGUI2 extends JFrame {
 	 */
 	public TestGUI2() {
 		lcs = new LCS();
+		date = java.util.Calendar.getInstance().getTime();
+		lcs.writeToLog("" + date + "-- LCS session started.\n");
+		lcs.writeToLog(lcs.toString());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 475);
@@ -66,10 +72,14 @@ public class TestGUI2 extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) && (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
 					lcs.setIsLoggedIn(true);
-					lcs.writeToLog("" + "-- User \'" + userField.getText() + "\' logged in.\n");
+					date = java.util.Calendar.getInstance().getTime();
+					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
 					TestGUI t = new TestGUI();
 					t.setVisible(true);
 					dispose();
+				} else {
+					date = java.util.Calendar.getInstance().getTime();
+					lcs.writeToLog("" + date + "-- Failed login attempt.\n");
 				}
 			}
 		});

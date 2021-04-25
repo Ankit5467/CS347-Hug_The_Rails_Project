@@ -116,6 +116,30 @@ public class LCS extends IOT {
 		}
 		
 	}
+	
+	String readFromLog2() {
+		//if (isOperator) {
+			String data = "";
+			try {
+				// File myObj = new File("filename.txt");
+				Scanner myReader = new Scanner(this.log);
+				while (myReader.hasNextLine()) {
+				  data += myReader.nextLine();
+				  //System.out.println(data);
+				}
+				//System.out.println("*************** END OF LOG ***************");
+				data += "*************** END OF LOG ***************";
+				myReader.close();
+			  } catch (FileNotFoundException e) {
+				System.out.println("Error: Unable to read from the log.\n");
+				e.printStackTrace();
+			  }
+		//} else {
+			//System.out.println("Error: Only the operator can access the log.\n");
+		//}
+		
+		return data;
+	}
 
 	/* Log in Credential Methods */
 
@@ -290,7 +314,7 @@ public class LCS extends IOT {
 				case "rpm":
 					System.out.println("Wheel rpm: " + myTrain.getRPM());
 					break;
-				case "set diameter":
+				/**case "set diameter":
 					System.out.print("The wheel diameter is currently set to "
 							+ myTrain.getWheelDiameter() + " inches. " 
 							+ "Enter the updated wheel diameter in inches: ");
@@ -308,7 +332,7 @@ public class LCS extends IOT {
 						System.out.println("Sucess: The wheel diameter has been set to "
 								+ myTrain.getWheelDiameter() + " inches.\n");
 					}
-					break;
+					break;*/
 				case "status":
 					System.out.println("Status Report: " + myTrain.getStatus());
 					break;

@@ -21,11 +21,15 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.border.EmptyBorder;
 import java.awt.Scrollbar;
+import java.util.Date;
+import java.util.Timer;
 
 public class TestGUI extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	LCS lcs;
+	Date date;
+	Timer loop = new Timer();
 
 	/**
 	 * Launch the application.
@@ -49,6 +53,8 @@ public class TestGUI extends JFrame implements ActionListener{
 	 */
 	public TestGUI() {
 		lcs = new LCS();
+		String user = "operator";
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 475);
 		contentPane = new JPanel();
@@ -62,6 +68,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		display.setLineWrap(true);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
 		display.setText("Welcome, Operator.");
+		display.setText(lcs.readFromLog2());
 		
 		JButton btnRain = new JButton("RAIN");
 		btnRain.addActionListener(new ActionListener() {
@@ -69,7 +76,7 @@ public class TestGUI extends JFrame implements ActionListener{
 				display.setText("");
 				display.setBackground(Color.WHITE);
 				//textArea.setText("Rain Data");
-				display.append(lcs.rainReport());
+				display.setText(lcs.rainReport());
 			}
 		});
 		
