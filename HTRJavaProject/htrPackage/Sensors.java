@@ -72,7 +72,7 @@ public class Sensors {
 
 			Scanner input = new Scanner(System.in);
 
-			File file = new File("poop.txt");
+			File file = new File("test.txt");
 
 			input = new Scanner(file);
 
@@ -146,6 +146,7 @@ public class Sensors {
 		lastoff++;
 		visibility  = Double.valueOf((data.get(lastoff)));
 		lastoff++;
+		setSpeed();
 
 		//not needed 0-speed
 		//0 - rpm
@@ -447,14 +448,11 @@ void makerpmNumber(double speed )
 		return this.visibility;
 	}
 
-	public static void main(String[] args) {
-		Sensors s = new Sensors();
-		System.out.println(s.wind_speed);
-		s.updateValuesSensors();
-		System.out.println(s.wind_speed);
-		
-		
-
-	}
+//	public static void main(String[] args) {
+//		Sensors s = new Sensors();
+//		System.out.println(s.wind_speed);
+//		s.updateValuesSensors();
+//		System.out.println(s.wind_speed);	
+//	}
 
 }
