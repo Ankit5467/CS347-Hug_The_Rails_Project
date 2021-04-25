@@ -80,7 +80,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		//display.setText(lcs.readFromLog2());
 		
 		JTextPane speedPane = new JTextPane();
-		speedPane.setBounds(62, 93, 151, 67);
+		speedPane.setBounds(72, 83, 128, 67);
 		speedPane.setEditable(false);
 		speedPane.setBackground(Color.GREEN);
 		speedPane.setFont(new Font("Tahoma", Font.BOLD, 50));
@@ -93,19 +93,20 @@ public class TestGUI extends JFrame implements ActionListener{
 		lblSpeed.setHorizontalAlignment(JLabel.CENTER);
 		
 		JLabel lblRPM = new JLabel("RPM");
-		lblRPM.setBounds(72, 182, 128, 34);
+		lblRPM.setBounds(72, 160, 128, 34);
 		lblRPM.setForeground(Color.YELLOW);
 		lblRPM.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblRPM.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JTextPane rpmPane = new JTextPane();
-		rpmPane.setBounds(87, 226, 103, 61);
+		rpmPane.setBounds(82, 193, 103, 61);
 		rpmPane.setEditable(false);
 		rpmPane.setBackground(Color.GREEN);
 		rpmPane.setFont(new Font("Tahoma", Font.BOLD, 50));
 		rpmPane.setText(String.valueOf(lcs.getRPM()));
+		
 		JButton btnRain = new JButton("RAIN");
-		btnRain.setBounds(443, 311, 103, 75);
+		btnRain.setBounds(443, 311, 118, 71);
 		btnRain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
@@ -117,7 +118,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		});
 		
 		JButton btnVisibility = new JButton("VISIBILITY");
-		btnVisibility.setBounds(599, 311, 112, 75);
+		btnVisibility.setBounds(599, 311, 118, 71);
 		btnVisibility.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
@@ -129,7 +130,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		});
 		
 		JButton btnWind = new JButton("WIND");
-		btnWind.setBounds(599, 409, 112, 75);
+		btnWind.setBounds(599, 409, 118, 71);
 		btnWind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
@@ -141,7 +142,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		});
 		
 		JButton btnSnow = new JButton("SNOW");
-		btnSnow.setBounds(443, 409, 103, 75);
+		btnSnow.setBounds(443, 409, 118, 71);
 		btnSnow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(display.getText().equals("Welcome, Operator."))
@@ -155,7 +156,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		});
 		
 		JButton btnObstr = new JButton("OBSTRUCTION");
-		btnObstr.setBounds(285, 311, 118, 75);
+		btnObstr.setBounds(285, 311, 118, 71);
 		btnObstr.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnObstr.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -200,6 +201,15 @@ public class TestGUI extends JFrame implements ActionListener{
 		});
 		btnLog.setBounds(743, 411, 118, 71);
 		
+		JButton btnClear = new JButton("CLEAR");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				display.setText("");
+			}
+		});
+		btnClear.setFont(new Font("Tahoma", Font.BOLD, 10));
+		btnClear.setBounds(87, 311, 118, 71);
+		
 		JButton btnLogOff = new JButton("LOG OFF");
 		btnLogOff.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -208,8 +218,8 @@ public class TestGUI extends JFrame implements ActionListener{
 				dispose();
 			}
 		});
-		btnLogOff.setFont(new Font("Tahoma", Font.BOLD, 10));
-		btnLogOff.setBounds(26, 338, 234, 120);
+		btnLogOff.setFont(new Font("Tahoma", Font.BOLD, 14));
+		btnLogOff.setBounds(87, 411, 118, 71);
 		
 		JButton btnExit = new JButton("X");
 		btnExit.addActionListener(new ActionListener() {
@@ -238,6 +248,7 @@ public class TestGUI extends JFrame implements ActionListener{
 		contentPane.add(btnLog);
 		contentPane.add(btnExit);
 		contentPane.add(btnLogOff);
+		contentPane.add(btnClear);
 	}
 
 	@Override
