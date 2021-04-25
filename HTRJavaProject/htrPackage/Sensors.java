@@ -94,12 +94,15 @@ public class Sensors {
 		//doc.close();
 	public void updateValuesSensors()
 	{
-		speed=Double.valueOf((data.get(lastoff)));
+		//speed=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
+		//setLocation((data.get(lastoff)),data.get(lastoff+1));
+		longitude2 = longitude1;
 		longitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
+		latitude2 = latitude1;
 		latitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		gate_distance = Double.valueOf((data.get(lastoff)));
@@ -166,14 +169,14 @@ public class Sensors {
 	//
 	//
 	// }
-	void makerpmNumber(double speed )
-	{
-		System.out.println(	speed/ (WHEEL_DIAMETER * Math.PI * (double)60 / (double)63360));
-	}
-	void makeLongAndLong(double speed, double ogLat, double ogLong)
-	{
-		System.out.println("Long: "+  );
-	}
+//	void makerpmNumber(double speed )
+//	{
+//		System.out.println(	speed/ (WHEEL_DIAMETER * Math.PI * (double)60 / (double)63360));
+//	}
+//	void makeLongAndLong(double speed, double ogLat, double ogLong)
+//	{
+//		System.out.println("Long: "+  );
+//	}
 	// void testDoc()
 	// {
 	// for(int i = 0; i<data.size();i++)
@@ -207,20 +210,20 @@ public class Sensors {
 	/**
 	 * sets the longitude & latitude. Returns 0 on success, -1 on failure.
 	 */
-	int setLocation(double latitude, double longitude) {
+	/*int setLocation(double latitude, double longitude) {
 		if (Math.abs(latitude) > 90 || longitude < 0 || longitude > 180) {
 			System.out.println("Error: Invalid coordinates");
 			return -1;
 		}
 
 		/* The most recent data becomes the old data.  */
-		this.latitude2 = this.latitude1;
+		/*this.latitude2 = this.latitude1;
 		this.longitude2 = this.longitude1;
 
 		this.longitude1 = longitude; /* use randomizer */
-		this.latitude1 = latitude; /* use randomizer */
-		return 0;
-	}
+		//this.latitude1 = latitude; /* use randomizer */
+		//return 0;
+	//}
 
 	/**
 	 * @return the most recent latitude.
@@ -445,7 +448,7 @@ public class Sensors {
 	public static void main(String[] args) {
 		Sensors s = new Sensors();
 		
-		s.makerpmNumber(85);
+		//s.makerpmNumber(85);
 		
 
 	}
