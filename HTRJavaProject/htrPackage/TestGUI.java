@@ -53,7 +53,6 @@ public class TestGUI extends JFrame implements ActionListener{
 	 */
 	public TestGUI() {
 		lcs = new LCS();
-		String user = "operator";
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 475);
@@ -62,56 +61,21 @@ public class TestGUI extends JFrame implements ActionListener{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
+		JScrollPane scroll = new JScrollPane();
 		JTextArea display = new JTextArea();
 		display.setEditable(false);
 		display.setWrapStyleWord(true);
 		display.setLineWrap(true);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
+		scroll.setViewportView(display);
 		display.setText("Welcome, Operator.");
-		display.setText(lcs.readFromLog2());
-		
-		JButton btnRain = new JButton("RAIN");
-		btnRain.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				display.setText("");
-				display.setBackground(Color.WHITE);
-				//textArea.setText("Rain Data");
-				display.setText(lcs.rainReport());
-			}
-		});
-		
-		JButton btnVisibility = new JButton("VISIBILITY");
-		btnVisibility.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				display.setText("");
-				display.setBackground(Color.WHITE);
-				display.setText("Visibility Data");
-			}
-		});
-		
-		JButton btnWind = new JButton("WIND");
-		btnWind.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				display.setText("");
-				display.setBackground(Color.GREEN);
-				display.setText("Wind Data");
-			}
-		});
-		
-		JButton btnSnow = new JButton("SNOW");
-		btnSnow.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				display.setText("");
-				display.setBackground(Color.RED);
-				display.setText("Snow Data");
-			}
-		});
+		//display.setText(lcs.readFromLog2());
 		
 		JTextPane speedPane = new JTextPane();
 		speedPane.setEditable(false);
 		speedPane.setBackground(Color.GREEN);
 		speedPane.setFont(new Font("Tahoma", Font.BOLD, 50));
-		speedPane.setText("120");
+		speedPane.setText(String.valueOf(lcs.getSpeed()));
 		
 		JLabel lblSpeed = new JLabel("SPEED");
 		lblSpeed.setForeground(Color.YELLOW);
@@ -125,13 +89,94 @@ public class TestGUI extends JFrame implements ActionListener{
 		
 		JTextPane rpmPane = new JTextPane();
 		rpmPane.setEditable(false);
+		rpmPane.setBackground(Color.GREEN);
+		rpmPane.setFont(new Font("Tahoma", Font.BOLD, 50));
+		rpmPane.setText(String.valueOf(lcs.getRPM()));
+		//rpmPane.setText(String.valueOf(lcs.getWheelDiameter()));
+		//rpmPane.setText(String.valueOf(lcs.WHEEL_DIAMETER));
+		
+		JButton btnRain = new JButton("RAIN");
+		btnRain.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.WHITE);
+				display.append(lcs.rainReport() + "\n");
+			}
+		});
+		
+		JButton btnVisibility = new JButton("VISIBILITY");
+		btnVisibility.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.WHITE);
+				display.append(lcs.visibilityReport() + "\n");
+			}
+		});
+		
+		JButton btnWind = new JButton("WIND");
+		btnWind.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.GREEN);
+				display.append(lcs.windReport() + "\n");
+			}
+		});
+		
+		JButton btnSnow = new JButton("SNOW");
+		btnSnow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.RED);
+				display.append(lcs.snowReport() + "\n");
+			}
+		});
 		
 		JButton btnObstr = new JButton("OBSTRUCTION");
+		btnObstr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.RED);
+				//display.append(lcs.processObstruction() + "\n");
+			}
+		});
 		btnObstr.setFont(new Font("Tahoma", Font.BOLD, 10));
 		
 		JButton btnSlip = new JButton("SLIPPAGE");
+		btnSlip.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.RED);
+				display.append(lcs.snowReport() + "\n");
+			}
+		});
 		
 		JButton btnGate = new JButton("GATE");
+		btnGate.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(display.getText().equals("Welcome, Operator."))
+					display.setText("");
+				display.setBackground(Color.RED);
+				display.append(lcs.snowReport() + "\n");
+			}
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
@@ -144,7 +189,7 @@ public class TestGUI extends JFrame implements ActionListener{
 					.addComponent(lblRPM, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap(648, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(180)
 							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
@@ -163,9 +208,9 @@ public class TestGUI extends JFrame implements ActionListener{
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addContainerGap()
 							.addComponent(speedPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-							.addComponent(display, GroupLayout.PREFERRED_SIZE, 593, GroupLayout.PREFERRED_SIZE)))
-					.addGap(51))
+							.addGap(18)
+							.addComponent(scroll)))
+					.addContainerGap(53, Short.MAX_VALUE))
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblSpeed, GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
@@ -183,7 +228,8 @@ public class TestGUI extends JFrame implements ActionListener{
 							.addComponent(lblRPM, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
 							.addPreferredGap(ComponentPlacement.RELATED)
 							.addComponent(rpmPane, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
-						.addComponent(display, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
+						.addComponent(scroll))
+					.addGap(16)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(18)
@@ -200,7 +246,7 @@ public class TestGUI extends JFrame implements ActionListener{
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(64)
 							.addComponent(btnGate, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(20, Short.MAX_VALUE))
+					.addContainerGap(11, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
