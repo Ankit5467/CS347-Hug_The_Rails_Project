@@ -17,7 +17,7 @@ public class IOT extends Sensors {
 	String windReport() {
 		String data = "The wind speed is " + roundTwoDecimals(this.getWindSpeed()) + " mph. ";
 		String rec = "";
-		if (this.getWindSpeed() >= 50) {
+		if (this.getWindSpeed() >= 50.0) {
 			rec += "Recommendation: Reduce the speed of the train.";
 		}
 		return data + rec;
