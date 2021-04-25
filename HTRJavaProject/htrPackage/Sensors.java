@@ -72,7 +72,7 @@ public class Sensors {
 
 			Scanner input = new Scanner(System.in);
 
-			File file = new File("poop.txt");
+			File file = new File("test.txt");
 
 			input = new Scanner(file);
 
@@ -447,14 +447,11 @@ void makerpmNumber(double speed )
 		return this.visibility;
 	}
 
-	public static void main(String[] args) {
-		Sensors s = new Sensors();
-		System.out.println(s.wind_speed);
-		s.updateValuesSensors();
-		System.out.println(s.wind_speed);
-		
-		
-
-	}
+//	public static void main(String[] args) {
+//		Sensors s = new Sensors();
+//		System.out.println(s.wind_speed);
+//		s.updateValuesSensors();
+//		System.out.println(s.wind_speed);	
+//	}
 
 }
