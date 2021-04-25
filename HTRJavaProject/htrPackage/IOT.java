@@ -93,29 +93,32 @@ public class IOT extends Sensors {
 		return ((this.obtainDistanceFromObject() / (88 * this.getSpeed())));
 	}
 
-	void ProcessObject() {
+	String ProcessObject() {
+		StringBuilder str = new StringBuilder();
 
 		if (!this.isObstruction()) {
-			System.out.println("There is no obstruction.");
+			str.append("There is no obstruction.");
+			return str.toString();
 		} else {
 			if (this.obtainDistanceFromObject() < 0) { /* obstruction behind train */
-				System.out.println(
+				str.append(
 						"There is an obstruction " + roundTwoDecimals(this.obtainDistanceFromObject()) + " feet behind the train.");
 				if (this.getDetectMovingObject()) {
-					System.out.println("Obstruction is moving. It's speed is " + roundTwoDecimals(this.objectSpeed()) + " mph.");
+					str.append("Obstruction is moving. It's speed is " + roundTwoDecimals(this.objectSpeed()) + " mph.");
 				} else {
-					System.out.println("Obstruction is stationary.");
+					str.append("Obstruction is stationary.");
 				}
-
+				return str.toString();
 			} else { /* obstruction in front of train */
-				System.out.println("There is an obstruction " + roundTwoDecimals(this.obtainDistanceFromObject())
+				str.append("There is an obstruction " + roundTwoDecimals(this.obtainDistanceFromObject())
 						+ " feet in front of the train.");
 				if (this.getDetectMovingObject()) {
-					System.out.println("Obstruction is moving. It's speed is " + roundTwoDecimals(this.objectSpeed()) + " mph.");
+					str.append("Obstruction is moving. It's speed is " + roundTwoDecimals(this.objectSpeed()) + " mph.");
 				} else {
-					System.out.println("Obstruction is stationary.");
+					str.append("Obstruction is stationary.");
 				}
-				System.out.println("Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
+				str.append("Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
+				return str.toString();
 			}
 		}
 
