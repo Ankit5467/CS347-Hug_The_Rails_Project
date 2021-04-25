@@ -55,7 +55,11 @@ public class TestGUI extends JFrame implements ActionListener{
 	 */
 	public TestGUI() {
 		loop = new Timer();
-		//TimerTask task = new TimerTask();
+		TimerTask task = new TimerTask() {
+			public void run() {
+				lcs.updateValuesSensors();
+			}
+		};
 		lcs = new LCS();
 		lcs.setIsLoggedIn(true);
 		
