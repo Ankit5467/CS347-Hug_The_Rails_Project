@@ -70,11 +70,6 @@ public class IOT extends Sensors {
 		return this.getDetectStationaryObject() || getDetectMovingObject();
 	}
 
-//	boolean ObjectPosition() {
-//		// true if object is in front of train. False otherwise.
-//		return this.obtainDistanceFromObject() >= 0;
-//	}
-
 	/**
 	 * @returns the speed of the object relative to the train. Positive speed
 	 *          indicates object is moving away from the train. Negative speed

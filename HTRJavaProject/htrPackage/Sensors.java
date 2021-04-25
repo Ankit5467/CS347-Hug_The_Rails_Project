@@ -8,15 +8,16 @@ import java.util.ArrayList;
 public class Sensors {
 
 	/* hardware: */
-
-	public double wheel_diameter;
-	/** Wheel diameter in inches **/
+	public double wheel_diameter;		/* Wheel diameter in inches */
+	public final int REFRESH_TIME = 30; /* How often to refresh the data (in seconds) */
 
 	/* Data fields: */
-
 	private int lastoff=0;
-	private double longitude;
-	private double latitude;
+	private double longitude1;
+	private double latitude1;
+
+	private double longitude2;
+	private double latitude2;
 
 	private double gate_distance;
 	private boolean gate_status;
@@ -45,19 +46,21 @@ public class Sensors {
 		// TODO: Change these values to 0 after testing.
 		
 		this.wheel_diameter = 40.0; 
-		this.longitude = 1.0000; 
-		this.latitude = 1.0000;
-		this.gate_distance = 1.0; /* miles*/
+		this.longitude1 = 1.0000; 	/* most recent longitude */
+		this.latitude1 = 1.0000; 	/* most recent latitude */
+		this.longitude2 = 1.0000; 	/* older longitude */
+		this.latitude2 = 1.0000;	/* older latitude */
+		this.gate_distance = 1.0; 	/* miles*/
 		this.gate_status = false;
 		this.moving_obstruction = true;
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 1400; /* feet */
 		this.rpm = 100;
-		this.speed = 50.0; /* mph */
-		this.wind_speed = 100.0; /* mph */
-		this.rate_rain = 1.0; /* inches per hour */
-		this.rate_snow = 0.2; /* inches per hour */
-		this.visibility = 2.0; /* miles */
+		this.speed = 50.0;			/* mph */
+		this.wind_speed = 100.0; 	/* mph */
+		this.rate_rain = 1.0; 		/* inches per hour */
+		this.rate_snow = 0.2; 		/* inches per hour */
+		this.visibility = 2.0; 		/* miles */
 
 	}
 
@@ -95,9 +98,9 @@ public class Sensors {
 		lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
-		longitude=Double.valueOf((data.get(lastoff)));
+		longitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
-		latitude=Double.valueOf((data.get(lastoff)));
+		latitude1=Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		gate_distance = Double.valueOf((data.get(lastoff)));
 		lastoff++;
@@ -187,23 +190,43 @@ public class Sensors {
 			System.out.println("Error: Invalid coordinates");
 			return -1;
 		}
-		this.longitude = longitude; /* use randomizer */
-		this.latitude = latitude; /* use randomizer */
+
+		/* The most recent data becomes the old data.  */
+		this.latitude2 = this.latitude1;
+		this.longitude2 = this.longitude1;
+
+		this.longitude1 = longitude; /* use randomizer */
+		this.latitude1 = latitude; /* use randomizer */
 		return 0;
 	}
 
 	/**
-	 * @return the latitude.
+	 * @return the most recent latitude.
 	 */
-	double getLatitude() {
-		return this.latitude;
+	double getLatitude1() {
+		return this.latitude1;
 	}
 
 	/**
-	 * @return the longitude.
+	 * @return the most recent longitude.
 	 */
-	double getLongitude() {
-		return this.longitude;
+	double getLongitude1() {
+		return this.longitude1;
+	}
+
+	
+	/**
+	 * @return the old latitude.
+	 */
+	double getLatitude2() {
+		return this.latitude2;
+	}
+
+	/**
+	 * @return the old longitude.
+	 */
+	double getLongitude2() {
+		return this.longitude2;
 	}
 
 	/**
@@ -311,12 +334,10 @@ public class Sensors {
 	/**
 	 * Set the speed. Return 0 on success & -1 on failure.
 	 */
-	int setSpeed(double speed) {
-		if (speed < 0.0 || speed > 400.0) {
-			return -1;
-		}
-		this.speed = speed; /* use randomizer */
-		return 0;
+	void setSpeed() {
+		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
+		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
+		this.speed = Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0));
 	}
 
 	/**

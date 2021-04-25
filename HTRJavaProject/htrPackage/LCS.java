@@ -181,7 +181,7 @@ public class LCS extends IOT {
 
 	// (long,lat)
 	String displayLocation() {
-		return "(" + this.getLatitude() + ", " + this.getLongitude() + ")";
+		return "(" + this.getLatitude1() + ", " + this.getLongitude1() + ")";
 	}
 
 	// private String recommend(String field) {
