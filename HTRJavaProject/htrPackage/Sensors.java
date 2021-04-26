@@ -363,15 +363,19 @@ void makerpmNumber(double speed )
 	 * Set the speed. Return 0 on success & -1 on failure.
 	 */
 	void setSpeed() {
+//		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
+//		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
+//		this.speed = Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)) * 360.0;
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
-		this.speed = Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0));
+		this.speed = Math.rint(240* Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
 	}
 
 	/**
 	 * @return the speed in miles per hour.
 	 */
 	double getSpeed() {
+		//setSpeed();
 		return this.speed;
 	}
 
@@ -448,11 +452,26 @@ void makerpmNumber(double speed )
 		return this.visibility;
 	}
 
-//	public static void main(String[] args) {
-//		Sensors s = new Sensors();
-//		System.out.println(s.wind_speed);
-//		s.updateValuesSensors();
-//		System.out.println(s.wind_speed);	
-//	}
+	public static void main(String[] args) {
+		Sensors s = new Sensors();
+		//System.out.println(s.wind_speed);
+		//s.updateValuesSensors();
+		//System.out.println(s.wind_speed);	
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+		s.updateValuesSensors();
+		System.out.println(s.getSpeed());
+	}
 
 }
