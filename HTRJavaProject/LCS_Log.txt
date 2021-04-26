@@ -1,0 +1,406 @@
+******************************************
+Mon Apr 26 13:26:44 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:26:46 EDT 2021-- Failed login attempt.
+Mon Apr 26 13:27:00 EDT 2021-- User 'admin' logged in.
+******************************************
+Mon Apr 26 13:27:04 EDT 2021-- User 'operator' logged off successfully.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+******************************************
+Mon Apr 26 13:27:04 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:27:14 EDT 2021-- Failed login attempt.
+Mon Apr 26 13:27:19 EDT 2021-- User 'operator' logged in.
+******************************************
+******************************************
+Mon Apr 26 13:40:25 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:31 EDT 2021-- User 'admin' logged in.
+******************************************
+Mon Apr 26 13:40:32 EDT 2021-- User entered the following command 'VISIBILITY'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:33 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:33 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:33 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:36 EDT 2021-- User entered the following command 'VISIBILITY'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:37 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:37 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:37 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:39 EDT 2021-- User 'admin' logged off successfully.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+******************************************
+Mon Apr 26 13:40:39 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:46 EDT 2021-- User 'operator' logged in.
+******************************************
+Mon Apr 26 13:40:56 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:57 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:57 EDT 2021-- User entered the following command 'VISIBILITY'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:58 EDT 2021-- User entered the following command 'GATE'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:58 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:59 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:40:59 EDT 2021-- User entered the following command 'OBSTRUCTION'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:41:00 EDT 2021-- User entered the following command 'SLIPPAGE'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:41:00 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:41:01 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:41:01 EDT 2021-- User entered the following command 'VISIBILITY'.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 13:41:01 EDT 2021-- Speed data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- RPM data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Rain data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Wind data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Snow data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Visibility data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Obstruction data has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Wheels' status has been updated ''.
+Mon Apr 26 13:41:01 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.53659, 0.16875)
+Gate Distance: 1000.0
+Gate Status: false
+Obstruction Present?: false
+RPM: 533
+Speed: 0.56
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.0
+Mon Apr 26 13:41:01 EDT 2021-- User entered the following command 'GATE'.
+
+Location: (0.53659, 0.16875)
+Gate Distance: 1000.0
+Gate Status: false
+Obstruction Present?: false
+RPM: 533
+Speed: 0.56
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.0
+Mon Apr 26 13:41:02 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.53659, 0.16875)
+Gate Distance: 1000.0
+Gate Status: false
+Obstruction Present?: false
+RPM: 533
+Speed: 0.56
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.0
+Mon Apr 26 13:41:02 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.53659, 0.16875)
+Gate Distance: 1000.0
+Gate Status: false
+Obstruction Present?: false
+RPM: 533
+Speed: 0.56
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.0
+Mon Apr 26 13:41:04 EDT 2021-- User 'operator' logged off successfully.
+
+Location: (0.53659, 0.16875)
+Gate Distance: 1000.0
+Gate Status: false
+Obstruction Present?: false
+RPM: 533
+Speed: 0.56
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.0
+******************************************
+Mon Apr 26 13:41:04 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0

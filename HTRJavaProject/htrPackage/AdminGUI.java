@@ -19,7 +19,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.UIManager;
 
-public class OperatorGUI extends JFrame {
+public class AdminGUI extends JFrame {
 
 	/**
 	 * Data fields
@@ -37,7 +37,7 @@ public class OperatorGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OperatorGUI frame = new OperatorGUI();
+					AdminGUI frame = new AdminGUI();
 					frame.setTitle("LCS");
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -50,8 +50,7 @@ public class OperatorGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public OperatorGUI() {
-		
+	public AdminGUI() {
 		/**
 		 * Create new instances of LCS and Timer
 		 * Set isLoggedIn() to true
@@ -78,7 +77,7 @@ public class OperatorGUI extends JFrame {
 		display.setLineWrap(true);
 		display.setBackground(Color.BLACK);
 		display.setFont(new Font("Monospaced", Font.BOLD, 16));
-		display.setText("Welcome, Operator.");
+		display.setText("Welcome, Admin.");
 		
 		/**
 		 * Sets up the label and display 
@@ -213,7 +212,7 @@ public class OperatorGUI extends JFrame {
 		btnRain.setBounds(443, 311, 118, 71);
 		btnRain.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.rainReport() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -226,7 +225,7 @@ public class OperatorGUI extends JFrame {
 		btnVisibility.setBounds(599, 311, 118, 71);
 		btnVisibility.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.visibilityReport() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -239,7 +238,7 @@ public class OperatorGUI extends JFrame {
 		btnWind.setBounds(599, 409, 118, 71);
 		btnWind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.windReport() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -253,7 +252,7 @@ public class OperatorGUI extends JFrame {
 		btnSnow.setBounds(443, 409, 118, 71);
 		btnSnow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.snowReport() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -269,7 +268,7 @@ public class OperatorGUI extends JFrame {
 		btnObstr.setFont(new Font("Tahoma", Font.BOLD, 10));
 		btnObstr.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.ProcessObject() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -283,7 +282,7 @@ public class OperatorGUI extends JFrame {
 		btnSlip.setBounds(285, 411, 118, 71);
 		btnSlip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.detectSlippage() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -296,7 +295,7 @@ public class OperatorGUI extends JFrame {
 		btnGate.setBounds(743, 313, 118, 71);
 		btnGate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(display.getText().equals("Welcome, Operator."))
+				if(display.getText().equals("Welcome, Admin."))
 					display.setText("");
 				display.append(lcs.gateStatus() + "\n");
 				date = java.util.Calendar.getInstance().getTime();
@@ -309,7 +308,8 @@ public class OperatorGUI extends JFrame {
 		btnLog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				display.setText("");
-				display.setText("Error: Only the admin can access the log.\n");
+				display.setText(lcs.readFromLog2());
+				lcs.writeToLog(lcs.toString());
 			}
 		});
 		btnLog.setBounds(743, 411, 118, 71);
@@ -330,7 +330,7 @@ public class OperatorGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				lcs.setIsLoggedIn(false);
 				date = java.util.Calendar.getInstance().getTime();
-				lcs.writeToLog("" + date + "-- User \'" + "operator" + "\' logged off successfully.\n");
+				lcs.writeToLog("" + date + "-- User \'" + "admin" + "\' logged off successfully.\n");
 				lcs.writeToLog(lcs.toString());
 				loop.cancel();
 				LoginGUI login = new LoginGUI();

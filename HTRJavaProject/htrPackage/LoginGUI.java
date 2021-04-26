@@ -64,7 +64,7 @@ public class LoginGUI extends JFrame {
 		 */
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 600);
+		setBounds(325, 100, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
 		contentPane.setForeground(Color.WHITE);
@@ -108,11 +108,20 @@ public class LoginGUI extends JFrame {
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
-						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
+						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0) 
+						&& (userField.getText().equals("operator"))) {
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
-					OperatorGUI main = new OperatorGUI();
-					main.setVisible(true);
+					OperatorGUI op = new OperatorGUI();
+					op.setVisible(true);
+					dispose();
+				} else if (lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
+						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0) 
+						&& (userField.getText().equals("admin"))) {
+					date = java.util.Calendar.getInstance().getTime();
+					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
+					AdminGUI ad = new AdminGUI();
+					ad.setVisible(true);
 					dispose();
 				} else {
 					date = java.util.Calendar.getInstance().getTime();

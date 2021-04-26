@@ -129,7 +129,7 @@ public class LCS extends IOT {
 				  //System.out.println(data);
 				}
 				//System.out.println("*************** END OF LOG ***************");
-				data += "*************** END OF LOG ***************";
+				data += "*************** END OF LOG ***************\n";
 				myReader.close();
 			  } catch (FileNotFoundException e) {
 				System.out.println("Error: Unable to read from the log.\n");
