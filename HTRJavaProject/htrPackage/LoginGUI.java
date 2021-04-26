@@ -70,9 +70,10 @@ public class LoginGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		ImageIcon train = new ImageIcon();
-		JLabel lblImage = new JLabel("Image");
-		lblImage.setBounds(411, 133, 45, 13);
+		//ImageIcon train = new ImageIcon("train1.png");
+		JLabel lblImage = new JLabel();
+		lblImage.setBounds(269, 55, 333, 169);
+		lblImage.setIcon(null);
 		//lblImage.setText("");
 		
 		/**
