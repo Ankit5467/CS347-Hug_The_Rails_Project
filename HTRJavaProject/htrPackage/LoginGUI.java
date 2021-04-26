@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -70,11 +71,11 @@ public class LoginGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
-		//ImageIcon train = new ImageIcon("train1.png");
+		File img = new File("train.png");
 		JLabel lblImage = new JLabel();
-		lblImage.setBounds(269, 55, 333, 169);
-		lblImage.setIcon(null);
-		//lblImage.setText("");
+		lblImage.setBounds(310, 60, 256, 169);
+		lblImage.setText("");
+		lblImage.setIcon(new ImageIcon(img.getAbsolutePath()));
 		
 		/**
 		 * Sets up the username 
