@@ -61,7 +61,7 @@ public class Sensors {
 		this.rate_rain = 0.0; /* inches per hour */
 		this.rate_snow = 0.0; /* inches per hour */
 		this.visibility = 2.0; /* miles */
-		// updateValues();
+		updateValues();
 
 	}
 
