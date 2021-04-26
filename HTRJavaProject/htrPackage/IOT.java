@@ -102,7 +102,7 @@ public class IOT extends Sensors {
 		} else {
 			if (this.obtainDistanceFromObject() < 0) { /* obstruction behind train */
 				str.append(
-						"There is an obstruction " + roundTwoDecimals(this.obtainDistanceFromObject()) + " feet behind the train.");
+						"There is an obstruction " + roundTwoDecimals(this.obtainDistanceFromObject()) + " miles behind the train.");
 				if (this.getDetectMovingObject()) {
 					str.append("Obstruction is moving. It's speed is " + roundTwoDecimals(this.objectSpeed()) + " mph.");
 				} else {
@@ -111,7 +111,7 @@ public class IOT extends Sensors {
 				return str.toString();
 			} else { /* obstruction in front of train */
 				str.append("There is an obstruction " + roundTwoDecimals(this.obtainDistanceFromObject())
-						+ " feet in front of the train.");
+						+ " miles in front of the train.");
 				if (this.getDetectMovingObject()) {
 					str.append("Obstruction is moving. It's speed is " + roundTwoDecimals(this.objectSpeed()) + " mph.");
 				} else {

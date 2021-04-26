@@ -1,7 +1,6 @@
 package htrPackage;
 
 import java.util.Date;
-//import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.File;
@@ -11,7 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
-//import java.util.*;
 
 public class LCS extends IOT {
 	

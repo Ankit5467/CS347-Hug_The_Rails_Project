@@ -54,7 +54,7 @@ public class Sensors {
 		this.gate_status = false;	/* false = closed. true = open. */
 		this.moving_obstruction = true;
 		this.stationary_obstruction = false;
-		this.distance_from_obstruction = 1400; /* feet */
+		this.distance_from_obstruction = 1400; /* b/w -2 and 2 miles. */
 		this.rpm = 100;
 		this.speed = 888.0;			/* mph */
 		this.wind_speed = 10.0; 	/* mph */
