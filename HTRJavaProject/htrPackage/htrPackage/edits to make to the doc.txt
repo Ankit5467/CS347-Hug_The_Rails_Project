@@ -16,7 +16,7 @@ If your name is in parentheses, that means you're in charge to making the change
 
 - [TODO] section 4.4: update it. (jan)
 - [TODO] section 4.5: read over it & update it if applicable. (faraz)
-- [TODO] section 4.6: read over seq diagrams & update them is applicable. (ankit)
+- [TODO] section 4.6: read over seq diagrams & update them if applicable. (ankit)
 - [TODO] section 4.7: update the state diagram (ankit)
 - [TODO] section 5.1 and 5.3: update the table. See feedback on canvas for the section 5 doc. (jan + faraz).
 - [TODO] section 5.4: update the input/output table (ankit).
