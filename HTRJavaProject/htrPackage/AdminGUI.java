@@ -344,6 +344,7 @@ public class AdminGUI extends JFrame {
 		JButton btnExit = new JButton("X");
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				lcs.writeToLog("" + date + "-- User \'" + "admin" + "\' terminated LCS session.\n");
 				loop.cancel();
 				dispose();
 			}
