@@ -69,10 +69,8 @@ public class LCS extends IOT {
 			System.out.println("An error occurred.\n");
 		}
 
-		// set its filename/path and write a line to it
+		/* set its filename/path and write a line to it */
 		this.logFileName = Path.of(filename);
-		// Files.writeString(this.logFileName,
-		// "******************************************\n");
 		try {
 			Files.write(this.logFileName, "******************************************\n".getBytes(),
 					StandardOpenOption.APPEND);
@@ -87,18 +85,15 @@ public class LCS extends IOT {
 	void writeToLog(String str) {
 		try {
 			Files.write(this.logFileName, str.getBytes(), StandardOpenOption.APPEND);
-			// System.out.println("Updated Log.\n");
 		} catch (IOException e) {
 			System.out.println("Error: Unable to write to log.\n");
 			e.printStackTrace();
 		}
-		// Files.writeString(this.logFileName,"hello World!\n");
 	}
 
 	void readFromLog(boolean isOperator) {
 		if (isOperator) {
 			try {
-				// File myObj = new File("filename.txt");
 				Scanner myReader = new Scanner(this.log);
 				while (myReader.hasNextLine()) {
 					String data = myReader.nextLine();
@@ -117,10 +112,8 @@ public class LCS extends IOT {
 	}
 
 	String readFromLog2() {
-		// if (isOperator) {
 		String data = "";
 		try {
-			// File myObj = new File("filename.txt");
 			Scanner myReader = new Scanner(this.log);
 			while (myReader.hasNextLine()) {
 				data += myReader.nextLine();
