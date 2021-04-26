@@ -1,19 +1,15 @@
 package htrPackage;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JLabel;
-import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import java.util.Date;
@@ -53,7 +49,7 @@ public class TestGUI2 extends JFrame {
 		lcs.writeToLog(lcs.toString());
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 400);
+		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setForeground(Color.WHITE);
@@ -61,20 +57,22 @@ public class TestGUI2 extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lblUser = new JLabel("USERNAME:");
+		lblUser.setBounds(154, 86, 88, 33);
 		
 		JLabel lblPass = new JLabel("PASSWORD:");
+		lblPass.setBounds(154, 137, 88, 33);
 		
 		userField = new JTextField(20);
+		userField.setBounds(246, 93, 231, 19);
 		passField = new JPasswordField(20);
+		passField.setBounds(246, 144, 231, 19);
 		
 		JButton newWindow = new JButton("ENTER");
+		newWindow.setBounds(305, 206, 63, 21);
 		newWindow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
 						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
-					//userInput = userField.getText();
-					//lcs.setUsername(userField.getText());
-					//lcs.setIsLoggedIn(true);
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
 					TestGUI main = new TestGUI();
@@ -87,40 +85,11 @@ public class TestGUI2 extends JFrame {
 			}
 		});
 		
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(149)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-								.addComponent(lblPass, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE)
-								.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 88, GroupLayout.PREFERRED_SIZE))
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
-								.addComponent(passField)
-								.addComponent(userField, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(300)
-							.addComponent(newWindow)))
-					.addContainerGap(304, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.TRAILING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addContainerGap(156, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblUser, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblPass, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
-						.addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(36)
-					.addComponent(newWindow)
-					.addGap(131))
-		);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(lblPass);
+		contentPane.add(lblUser);
+		contentPane.add(passField);
+		contentPane.add(userField);
+		contentPane.add(newWindow);
 	}
 }

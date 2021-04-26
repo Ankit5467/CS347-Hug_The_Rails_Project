@@ -56,7 +56,7 @@ public class Sensors {
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 1400; /* feet */
 		this.rpm = 100;
-		this.speed = 10.0;			/* mph */
+		this.speed = 888.0;			/* mph */
 		this.wind_speed = 10.0; 	/* mph */
 		this.rate_rain = .3; 		/* inches per hour */
 		this.rate_snow = 0.02; 		/* inches per hour */
