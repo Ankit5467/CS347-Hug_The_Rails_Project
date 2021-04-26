@@ -1,0 +1,20 @@
+Mon Apr 26 10:19:17 EDT 2021-- Speed data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- RPM data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Rain data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Wind data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Snow data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Visibility data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Obstruction data has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Wheels' status has been updated ''.
+Mon Apr 26 10:19:17 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.54851, 0.1725)
+Gate Distance: 700.0
+Gate Status: false
+Obstruction Present?: false
+RPM: 545
+Speed: 0.15
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.0

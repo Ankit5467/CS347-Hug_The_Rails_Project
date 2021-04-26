@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import java.util.Date;
 
-public class TestGUI2 extends JFrame {
+public class LoginGUI extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField userField;
@@ -30,7 +30,7 @@ public class TestGUI2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TestGUI2 frame = new TestGUI2();
+					LoginGUI frame = new LoginGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class TestGUI2 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TestGUI2() {
+	public LoginGUI() {
 		lcs = new LCS();
 		date = java.util.Calendar.getInstance().getTime();
 		lcs.writeToLog("" + date + "-- LCS session started.\n");
@@ -75,7 +75,7 @@ public class TestGUI2 extends JFrame {
 						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
-					TestGUI main = new TestGUI();
+					OperatorGUI main = new OperatorGUI();
 					main.setVisible(true);
 					dispose();
 				} else {
@@ -92,4 +92,5 @@ public class TestGUI2 extends JFrame {
 		contentPane.add(userField);
 		contentPane.add(newWindow);
 	}
+
 }

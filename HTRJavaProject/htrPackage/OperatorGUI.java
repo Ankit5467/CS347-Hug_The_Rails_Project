@@ -20,7 +20,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.UIManager;
 
-public class TestGUI extends JFrame {
+public class OperatorGUI extends JFrame {
 
 	private JPanel contentPane;
 	LCS lcs;
@@ -34,8 +34,8 @@ public class TestGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TestGUI frame = new TestGUI();
-					frame.setTitle("Test GUI");
+					OperatorGUI frame = new OperatorGUI();
+					frame.setTitle("LCS");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,7 +47,7 @@ public class TestGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TestGUI() {
+	public OperatorGUI() {
 		lcs = new LCS();
 		lcs.setIsLoggedIn(true);
 		Timer loop = new Timer();
@@ -270,7 +270,7 @@ public class TestGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				lcs.writeToLog("" + date + "-- User \'" + "operator" + "\' logged off successfully.\n");
 				lcs.writeToLog(lcs.toString());
-				TestGUI2 login = new TestGUI2();
+				LoginGUI login = new LoginGUI();
 				login.setVisible(true);
 				dispose();
 			}
@@ -307,4 +307,5 @@ public class TestGUI extends JFrame {
 		contentPane.add(btnLogOff);
 		contentPane.add(btnClear);
 	}
+
 }
