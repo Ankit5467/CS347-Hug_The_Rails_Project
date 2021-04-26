@@ -66,10 +66,15 @@ public class LoginGUI extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(Color.GRAY);
 		contentPane.setForeground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		
+		/**
+		 * Code that adds a train
+		 * to our login window
+		 */
 		
 		File img = new File("train.png");
 		JLabel lblImage = new JLabel();
@@ -83,8 +88,10 @@ public class LoginGUI extends JFrame {
 		 */
 		
 		JLabel lblUser = new JLabel("USERNAME:");
+		lblUser.setForeground(Color.GREEN);
 		lblUser.setBounds(226, 269, 88, 33);
 		JLabel lblPass = new JLabel("PASSWORD:");
+		lblPass.setForeground(Color.GREEN);
 		lblPass.setBounds(226, 312, 88, 33);
 		userField = new JTextField(20);
 		userField.setBounds(335, 276, 231, 19);
@@ -110,6 +117,8 @@ public class LoginGUI extends JFrame {
 				} else {
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- Failed login attempt.\n");
+					LoginFailed fail = new LoginFailed();
+					fail.setVisible(true);
 				}
 			}
 		});
