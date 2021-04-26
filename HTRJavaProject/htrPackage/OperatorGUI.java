@@ -22,6 +22,9 @@ import javax.swing.UIManager;
 
 public class OperatorGUI extends JFrame {
 
+	/**
+	 * Data fields
+	 */
 	private JPanel contentPane;
 	LCS lcs;
 	Date date = java.util.Calendar.getInstance().getTime();
@@ -106,7 +109,7 @@ public class OperatorGUI extends JFrame {
 		lblRPM.setBounds(72, 160, 128, 34);
 		lblRPM.setForeground(Color.YELLOW);
 		lblRPM.setFont(new Font("Tahoma", Font.BOLD, 14));
-		lblRPM.setHorizontalAlignment(SwingConstants.CENTER);
+		lblRPM.setHorizontalAlignment(JLabel.CENTER);
 		
 		JTextPane rpmPane = new JTextPane();
 		rpmPane.setBounds(82, 193, 103, 61);
@@ -174,6 +177,7 @@ public class OperatorGUI extends JFrame {
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog("" + date + "-- Gate status has been updated \'" + "\'.\n");
 				
+				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog(lcs.toString());
 				
 				if(totalMilliseconds == 420000) {
@@ -352,8 +356,8 @@ public class OperatorGUI extends JFrame {
 		btnExit.setBounds(839, 0, 47, 36);
 		
 		/**
-		 * Block of code that adds the components
-		 * onto the GUI 
+		 * Block of code that adds 
+		 * the components onto the GUI 
 		 */
 		
 		contentPane.setLayout(null);

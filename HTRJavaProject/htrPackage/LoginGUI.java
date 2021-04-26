@@ -16,10 +16,12 @@ import java.util.Date;
 
 public class LoginGUI extends JFrame {
 
+	/**
+	 * Data fields
+	 */
 	private JPanel contentPane;
 	private JTextField userField;
 	private	 JPasswordField passField;
-	
 	Date date = java.util.Calendar.getInstance().getTime();
 	LCS lcs;
 
@@ -43,10 +45,21 @@ public class LoginGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginGUI() {
+		
+		/**
+		 * Create new intance of LCS
+		 * Update date
+		 * Write to log that session has started
+		 */
+		
 		lcs = new LCS();
 		date = java.util.Calendar.getInstance().getTime();
 		lcs.writeToLog("" + date + "-- LCS session started.\n");
 		lcs.writeToLog(lcs.toString());
+		
+		/**
+		 * Default block of code with JFrame
+		 */
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 600);
@@ -56,20 +69,28 @@ public class LoginGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
+		/**
+		 * Sets up the username 
+		 * and password labels
+		 */
+		
 		JLabel lblUser = new JLabel("USERNAME:");
 		lblUser.setBounds(154, 86, 88, 33);
-		
 		JLabel lblPass = new JLabel("PASSWORD:");
 		lblPass.setBounds(154, 137, 88, 33);
-		
 		userField = new JTextField(20);
 		userField.setBounds(246, 93, 231, 19);
 		passField = new JPasswordField(20);
 		passField.setBounds(246, 144, 231, 19);
 		
-		JButton newWindow = new JButton("ENTER");
-		newWindow.setBounds(305, 206, 63, 21);
-		newWindow.addActionListener(new ActionListener() {
+		/**
+		 * Code for the log in button
+		 * (style, size, functionality, etc.)
+		 */
+		
+		JButton logIn = new JButton("LOG IN");
+		logIn.setBounds(305, 206, 63, 21);
+		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
 						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)) {
@@ -85,12 +106,17 @@ public class LoginGUI extends JFrame {
 			}
 		});
 		
+		/**
+		 * Block of code that adds 
+		 * the components onto the GUI 
+		 */
+		
 		contentPane.setLayout(null);
 		contentPane.add(lblPass);
 		contentPane.add(lblUser);
 		contentPane.add(passField);
 		contentPane.add(userField);
-		contentPane.add(newWindow);
+		contentPane.add(logIn);
 	}
 
 }
