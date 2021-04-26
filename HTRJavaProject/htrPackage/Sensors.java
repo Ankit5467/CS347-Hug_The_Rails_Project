@@ -8,16 +8,16 @@ import java.util.ArrayList;
 public class Sensors {
 
 	/* hardware: */
-	public final double WHEEL_DIAMETER = 85.0;		/* Wheel diameter in inches */
+	public final double WHEEL_DIAMETER = 85.0; /* Wheel diameter in inches */
 	public final int REFRESH_TIME = 30; /* How often to refresh the data (in seconds) */
 
 	/* Data fields: */
-	private int lastoff=0;
+	private int lastoff = 0;
 	private double longitude1; /* miles from origin */
 	private double latitude1; /* miles from origin */
 
-	private double longitude2;	/* miles from origin */
-	private double latitude2;	/* miles from origin */
+	private double longitude2; /* miles from origin */
+	private double latitude2; /* miles from origin */
 
 	private double gate_distance;
 	private boolean gate_status;
@@ -44,24 +44,24 @@ public class Sensors {
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
 		// TODO: Change these values to 0 after testing.
-		
-		//this.wheel_diameter = 40.0; 
-		this.longitude1 = 0.00000; 	/* most recent longitude */
-		this.latitude1 = 0.00000; 	/* most recent latitude */
-		this.longitude2 = 0.0000; 	/* older longitude */
-		this.latitude2 = 0.0000;	/* older latitude */
-		this.gate_distance = 10.0; 	/* miles*/
-		this.gate_status = true;	/* false = closed. true = open. */
+
+		// this.wheel_diameter = 40.0;
+		this.longitude1 = 0.00000; /* most recent longitude */
+		this.latitude1 = 0.00000; /* most recent latitude */
+		this.longitude2 = 3.0000; /* older longitude */
+		this.latitude2 = 2.0000; /* older latitude */
+		this.gate_distance = 10.0; /* miles */
+		this.gate_status = true; /* false = closed. true = open. */
 		this.moving_obstruction = false;
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 1400; /* feet */
 		this.rpm = 0;
-		this.speed = 0.0;			/* mph */
-		this.wind_speed = 10.0; 	/* mph */
-		this.rate_rain = 0.0; 		/* inches per hour */
-		this.rate_snow = 0.0; 		/* inches per hour */
-		this.visibility = 2.0;	 	/* miles */
-		updateValues();
+		this.speed = 0.0; /* mph */
+		this.wind_speed = 10.0; /* mph */
+		this.rate_rain = 0.0; /* inches per hour */
+		this.rate_snow = 0.0; /* inches per hour */
+		this.visibility = 2.0; /* miles */
+		// updateValues();
 
 	}
 
@@ -76,110 +76,86 @@ public class Sensors {
 
 			input = new Scanner(file);
 
-			//while (input.hasNextLine()) {
-				//System.out.println("pooop")
-				//System.out.println(line);
-			//}
-		
+			while (input.hasNextLine()) {
+				String line = input.nextLine();
+				data.add(line);
+			}
 
-            while (input.hasNextLine()) {
-                String line = input.nextLine();
-				//System.out.println("pooop");
-                data.add(line);
-            }
-            //input.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-	 }
-		//doc.close();
-	public void updateValuesSensors()
-	{
-		//speed=Double.valueOf((data.get(lastoff)));
-		//lastoff++;
+	public void updateValuesSensors() {
+		// speed=Double.valueOf((data.get(lastoff)));
+		// lastoff++;
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
-		//setLocation((data.get(lastoff)),data.get(lastoff+1));
+		// setLocation((data.get(lastoff)),data.get(lastoff+1));
 		longitude2 = longitude1;
-		longitude1=Double.valueOf((data.get(lastoff)));
+		longitude1 = Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		latitude2 = latitude1;
-		latitude1=Double.valueOf((data.get(lastoff)));
+		latitude1 = Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		gate_distance = Double.valueOf((data.get(lastoff)));
 		lastoff++;
-		if(data.get(lastoff).equals("True"))
-		{
-			gate_status=true;
+		if (data.get(lastoff).equals("True")) {
+			gate_status = true;
+			lastoff++;
+		} else {
+			gate_status = false;
 			lastoff++;
 		}
-		else{
-			gate_status=false;
+		if (data.get(lastoff).equals("True")) {
+			moving_obstruction = true;
+			lastoff++;
+		} else {
+			moving_obstruction = false;
 			lastoff++;
 		}
-		if(data.get(lastoff).equals("True"))
-		{
-			moving_obstruction=true;
-			lastoff++;
-		}
-		else{
-			moving_obstruction=false;
-			lastoff++;
-		}
-		if(data.get(lastoff).equals("True"))
-		{
+		if (data.get(lastoff).equals("True")) {
 			stationary_obstruction = true;
 			lastoff++;
-		}
-		else{
+		} else {
 			stationary_obstruction = false;
 			lastoff++;
 		}
 		distance_from_obstruction = Double.valueOf((data.get(lastoff)));
 		lastoff++;
-		rate_rain =  Double.valueOf((data.get(lastoff)));
+		rate_rain = Double.valueOf((data.get(lastoff)));
 		lastoff++;
-		rate_snow =  Double.valueOf((data.get(lastoff)));
+		rate_snow = Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		wind_speed = Double.valueOf((data.get(lastoff)));
 		lastoff++;
-		visibility  = Double.valueOf((data.get(lastoff)));
+		visibility = Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		setSpeed();
 
-		//not needed 0-speed
-		//0 - rpm
-		//1-lat
-		//2 long
-		//3- gate distance
-		//4 - gate status
-		//5- moving obstruction
-		//6- stationaty
-		//7-distance
-		//8- rain
-		//9- snow
-		//10- wind
-		//11- visibality
-		
+		// not needed 0-speed
+		// 0 - rpm
+		// 1-lat
+		// 2 long
+		// 3- gate distance
+		// 4 - gate status
+		// 5- moving obstruction
+		// 6- stationaty
+		// 7-distance
+		// 8- rain
+		// 9- snow
+		// 10- wind
+		// 11- visibality
 
-
-		
 	}
-	// void updateValues()
+	void makerpmNumber(double speed) {
+		System.out.println(speed / (WHEEL_DIAMETER * Math.PI * (double) 60 / (double) 63360));
+	}
+
+	// void makeLongAndLong(double speed, double ogLat, double ogLong)
 	// {
-	//
-	//
-	//
+	// System.out.println("Long: "+ );
 	// }
-void makerpmNumber(double speed )
-{
-		System.out.println(	speed/ (WHEEL_DIAMETER * Math.PI * (double)60 / (double)63360));
-	}
-//	void makeLongAndLong(double speed, double ogLat, double ogLong)
-//	{
-//		System.out.println("Long: "+  );
-//	}
 	// void testDoc()
 	// {
 	// for(int i = 0; i<data.size();i++)
@@ -189,44 +165,11 @@ void makerpmNumber(double speed )
 	// }
 
 	/**
-	 * sets the wheel diameter to @param diameter.
-	 * 
-	 * @return 0 on success. -1 on failure.
-	 */
-	/**int setWheelDiameter(double diameter) {
-		if (diameter < 1.0) {
-			// System.out.println("Error: Diameter must be at least 1 inch!");
-			return -1;
-		} else {
-			this.wheel_diameter = diameter;
-			return 0;
-		}
-	}*/
-
-	/**
 	 * @return the wheel diameter (in inches).
 	 */
 	double getWheelDiameter() {
-		return WHEEL_DIAMETER;        /* use randomizer only once? */
+		return WHEEL_DIAMETER; /* use randomizer only once? */
 	}
-
-	/**
-	 * sets the longitude & latitude. Returns 0 on success, -1 on failure.
-	 */
-	/*int setLocation(double latitude, double longitude) {
-		if (Math.abs(latitude) > 90 || longitude < 0 || longitude > 180) {
-			System.out.println("Error: Invalid coordinates");
-			return -1;
-		}
-
-		/* The most recent data becomes the old data.  */
-		/*this.latitude2 = this.latitude1;
-		this.longitude2 = this.longitude1;
-
-		this.longitude1 = longitude; /* use randomizer */
-		//this.latitude1 = latitude; /* use randomizer */
-		//return 0;
-	//}
 
 	/**
 	 * @return the most recent latitude.
@@ -242,7 +185,6 @@ void makerpmNumber(double speed )
 		return this.longitude1;
 	}
 
-	
 	/**
 	 * @return the old latitude.
 	 */
@@ -365,6 +307,8 @@ void makerpmNumber(double speed )
 	void setSpeed() {
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
+		// System.out.println("delta lat: " + deltaLat);
+		// System.out.println("delta long: " + deltaLong);
 		this.speed = Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0));
 	}
 
@@ -447,12 +391,5 @@ void makerpmNumber(double speed )
 	double getVisibility() {
 		return this.visibility;
 	}
-
-//	public static void main(String[] args) {
-//		Sensors s = new Sensors();
-//		System.out.println(s.wind_speed);
-//		s.updateValuesSensors();
-//		System.out.println(s.wind_speed);	
-//	}
 
 }

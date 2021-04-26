@@ -295,6 +295,11 @@ public class LCS extends IOT {
 					System.out.println("Weather: " + myTrain.obtainWeather());
 					break;
 				case "speed":
+					myTrain.setSpeed();
+//					System.out.println(myTrain.getLatitude1());
+//					System.out.println(myTrain.getLongitude1());
+//					System.out.println(myTrain.getLatitude1());
+//					System.out.println(myTrain.getLongitude2());
 					System.out.println("Speed: " + myTrain.getSpeed() + " mph.");
 					break;
 				case "rpm":
