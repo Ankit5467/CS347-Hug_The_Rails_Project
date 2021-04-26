@@ -110,3 +110,99 @@ Rain Rate: 0.3
 Snow Rate: 0.0
 Visibility: 3.0
 Mon Apr 26 17:34:02 EDT 2021-- User 'admin' terminated LCS session.
+******************************************
+Mon Apr 26 18:07:05 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 0
+Speed: 0.0
+Wind Speed: 10.0
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Mon Apr 26 18:07:13 EDT 2021-- User 'admin' logged in.
+******************************************
+Mon Apr 26 18:07:28 EDT 2021-- Speed data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- RPM data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Rain data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Wind data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Snow data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Visibility data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Obstruction data has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Wheels' status has been updated ''.
+Mon Apr 26 18:07:28 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.53659, 0.16875)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 135.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Mon Apr 26 18:07:43 EDT 2021-- Speed data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- RPM data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Rain data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Wind data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Snow data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Visibility data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Obstruction data has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Wheels' status has been updated ''.
+Mon Apr 26 18:07:43 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.09305, 0.34375)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 140.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Mon Apr 26 18:07:58 EDT 2021-- Speed data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- RPM data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Rain data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Wind data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Snow data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Visibility data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Obstruction data has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Wheels' status has been updated ''.
+Mon Apr 26 18:07:58 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.49053, 0.46875)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 42.3
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Mon Apr 26 18:08:13 EDT 2021-- Speed data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- RPM data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Rain data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Wind data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Snow data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Visibility data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Obstruction data has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Wheels' status has been updated ''.
+Mon Apr 26 18:08:13 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.888, 0.59375)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 45.6
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 3.0
+Mon Apr 26 18:08:13 EDT 2021-- User 'admin' terminated LCS session.
