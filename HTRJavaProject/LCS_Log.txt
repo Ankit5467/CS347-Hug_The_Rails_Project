@@ -1,0 +1,53 @@
+******************************************
+Mon Apr 26 11:52:14 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+******************************************
+Mon Apr 26 11:53:48 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+******************************************
+Mon Apr 26 11:54:37 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+******************************************
+Mon Apr 26 11:55:03 EDT 2021-- LCS session started.
+
+Location: (0.0, 0.0)
+Gate Distance: 10.0
+Gate Status: false
+Obstruction Present?: true
+RPM: 100
+Speed: 888.0
+Wind Speed: 10.0
+Rain Rate: 0.3
+Snow Rate: 0.02
+Visibility: 2.0
+Mon Apr 26 11:55:05 EDT 2021-- Failed login attempt.

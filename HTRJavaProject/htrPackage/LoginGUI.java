@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -55,7 +56,7 @@ public class LoginGUI extends JFrame {
 		lcs = new LCS();
 		date = java.util.Calendar.getInstance().getTime();
 		lcs.writeToLog("" + date + "-- LCS session started.\n");
-		lcs.writeToLog(lcs.toString());
+		lcs.writeToLog(lcs.toString()); // ask about this toString
 		
 		/**
 		 * Default block of code with JFrame
@@ -69,19 +70,24 @@ public class LoginGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
+		ImageIcon train = new ImageIcon();
+		JLabel lblImage = new JLabel("Image");
+		lblImage.setBounds(411, 133, 45, 13);
+		//lblImage.setText("");
+		
 		/**
 		 * Sets up the username 
 		 * and password labels
 		 */
 		
 		JLabel lblUser = new JLabel("USERNAME:");
-		lblUser.setBounds(154, 86, 88, 33);
+		lblUser.setBounds(226, 269, 88, 33);
 		JLabel lblPass = new JLabel("PASSWORD:");
-		lblPass.setBounds(154, 137, 88, 33);
+		lblPass.setBounds(226, 312, 88, 33);
 		userField = new JTextField(20);
-		userField.setBounds(246, 93, 231, 19);
+		userField.setBounds(335, 276, 231, 19);
 		passField = new JPasswordField(20);
-		passField.setBounds(246, 144, 231, 19);
+		passField.setBounds(335, 319, 231, 19);
 		
 		/**
 		 * Code for the log in button
@@ -89,7 +95,7 @@ public class LoginGUI extends JFrame {
 		 */
 		
 		JButton logIn = new JButton("LOG IN");
-		logIn.setBounds(305, 206, 63, 21);
+		logIn.setBounds(373, 359, 150, 40);
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
@@ -117,6 +123,6 @@ public class LoginGUI extends JFrame {
 		contentPane.add(passField);
 		contentPane.add(userField);
 		contentPane.add(logIn);
+		contentPane.add(lblImage);
 	}
-
 }
