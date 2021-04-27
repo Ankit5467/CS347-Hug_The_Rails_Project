@@ -24,4 +24,10 @@ If your name is in parentheses, that means you're in charge to making the change
 
 - paste the final code on the document (save this for WEDNESDAY night).
 - [TODO]Add test cases for functional reqs & their results to the document (Ayo/Faraz?).
-- 
+
+
+
+[TODO] For this week:
+ - update the use cases & diagrams w/ new requirement for honk horn recommendation for:
+		- gate crossing and
+		- obstruction.
