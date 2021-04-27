@@ -22,6 +22,6 @@ If your name is in parentheses, that means you're in charge to making the change
 - [TODO] section 5.4: update the input/output table (ankit).
 
 
-- paste the final code on the document (save this for monday night).
+- paste the final code on the document (save this for WEDNESDAY night).
 - [TODO]Add test cases for functional reqs & their results to the document (Ayo/Faraz?).
 - 
