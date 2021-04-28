@@ -5,12 +5,14 @@ If your name is in parentheses, that means you're in charge to making the change
 
 - [TODO] Section 2.3: Update timeline (anyone)
 - [DONE] Section 3: Make sure we fulfill all the requirements. Remove all the requirements that we didnt complete. (ankit)
+- [DONE] Section 3: Add the new reqs. (Ankit)
 
 - [DONE] section 4.1 usecases:
 	- [DONE] Update/revise wording (ankit)
 	- [DONE] Fix preconditions for 4.1.1 and 4.1.2 (ankit)
 	- [DONE] revise the use cases for "automated/automatic" actions. (4.1.7 | 4.1.9 | 4.1.11) (ankit)
 	- [DONE] edit the stuff that we say is written to the log (ankit)
+	- [TODO] Add Usecases for new reqs! (Ankit)
 	
 - [TODO] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
 
@@ -20,14 +22,7 @@ If your name is in parentheses, that means you're in charge to making the change
 - [TODO] section 4.7: update the state diagram (ankit)
 - [TODO] section 5.1 and 5.3: update the table. See feedback on canvas for the section 5 doc. (jan + faraz).
 - [TODO] section 5.4: update the input/output table (ankit).
-
+[TODO] - UPDATE appropriate diagrams w/ regards to the new requirements
 
 - paste the final code on the document (save this for WEDNESDAY night).
 - [TODO]Add test cases for functional reqs & their results to the document (Ayo/Faraz?).
-
-
-
-[TODO] For this week:
- - update the use cases & diagrams w/ new requirement for honk horn recommendation for:
-		- gate crossing and
-		- obstruction.
