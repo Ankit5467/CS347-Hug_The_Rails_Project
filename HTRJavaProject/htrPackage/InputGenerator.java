@@ -69,7 +69,7 @@ public class InputGenerator {
 				146};
 		
 		for ( int i = 0; i < speeds.length; i++) {
-			timer += 15;
+			timer += update_time;
 //			rpm = rpm_data[i];
 //			speed_from_rpm = computeRpmSpeed(rpm, wd);
 			
