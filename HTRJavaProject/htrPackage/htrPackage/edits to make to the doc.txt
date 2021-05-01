@@ -3,26 +3,30 @@ EDITS/Change to make to the document:
 LIST OF ALL CHANGES WE NEED TO MAKE TO THE DOC.
 If your name is in parentheses, that means you're in charge to making the change. 
 
+DONE::
 - [DONE - can someone just review this?] Section 2.3: Update timeline (ankit)
 - [DONE] Section 3: Make sure we fulfill all the requirements. Remove all the requirements that we didnt complete. (ankit)
 - [DONE] Section 3: Add the new reqs. (Ankit)
-
 - [DONE] section 4.1 usecases:
 	- [DONE] Update/revise wording (ankit)
 	- [DONE] Fix preconditions for 4.1.1 and 4.1.2 (ankit)
 	- [DONE] revise the use cases for "automated/automatic" actions. (4.1.7 | 4.1.9 | 4.1.11) (ankit)
 	- [DONE] edit the stuff that we say is written to the log (ankit)
-	- [DONE - someone double check] Add Usecases for new reqs! (Ankit)
-	
-- [TODO] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
-
-- [TODO] section 4.4: update it. (jan)
-- [TODO] section 4.5: read over it & update it if applicable. (faraz)
+	- [DONE - someone double check]
 - [DONE] section 4.6: read over seq diagrams & update them if applicable. (ankit)
 - [DONE] section 4.7: update the state diagram (ankit)
-- [TODO] section 5.1 and 5.3: update the table. See feedback on canvas for the section 5 doc. (jan + faraz).
-- [TODO] section 5.4: update the input/output table (ankit).
-- [TODO] - UPDATE appropriate diagrams w/ regards to the new requirements (all)
+- [DONE] section 5.4: update the input/output table (ankit).
+- [DONE] Add Usecases for new reqs! (Ankit)
 
-- paste the final code on the document (save this for SUNDAY night).
-- [TODO]Add test cases for functional reqs & their results to the document (Ayo/Faraz?).
+TODO::
+- [TODO] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
+- [TODO] section 4.4: update it. (jan)
+- [TODO] section 4.5: read over it & update it if applicable. (faraz)
+- [TODO] section 5.1 and 5.3: update the table. See feedback on canvas for the section 5 doc. (jan + faraz).
+- [TODO] - UPDATE appropriate diagrams w/ regards to the new requirements (Jan + faraz <- update the diagrams that u worked on)
+- [TODO] Add test cases for functional reqs & their results to the document (Ayo/Faraz?).
+
+FINAL TOUCHES: 
+- [TODO] - paste the final code on the document (save this for SUNDAY night).
+- [TODO] - Work on the formal technical review & other things reza talked about in 4/29 lecture. 
+- [TODO] - FORMAT THE DOCUMENT.
