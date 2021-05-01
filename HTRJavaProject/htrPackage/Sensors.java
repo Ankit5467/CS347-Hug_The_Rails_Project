@@ -8,33 +8,33 @@ import java.util.ArrayList;
 public class Sensors {
 
 	/* hardware: */
-	public final double WHEEL_DIAMETER = 85.0; 	/* Wheel diameter in inches */
-	public  final long time = 10;				/* How often to refresh the data (in seconds) */
+	public final double WHEEL_DIAMETER = 85.0; /* Wheel diameter in inches */
+	public final long time = 10; /* How often to refresh the data (in seconds) */
 
 	/* Data fields: */
 	private int lastoff = 0;
-	private double longitude1;					/* miles from origin */
-	private double latitude1; 					/* miles from origin */
+	private double longitude1; /* miles from origin */
+	private double latitude1; /* miles from origin */
 
-	private double longitude2; 					/* miles from origin */
-	private double latitude2; 					/* miles from origin */
+	private double longitude2; /* miles from origin */
+	private double latitude2; /* miles from origin */
 
-	private double gate_distance;				/* miles */
-	private boolean gate_status;				/* true = gate open. false = gate closed. */
+	private double gate_distance; /* miles */
+	private boolean gate_status; /* true = gate open. false = gate closed. */
 
-	private boolean moving_obstruction; 		/* true = is obstruction. */
-	private boolean stationary_obstruction;		/* true = is obstruction. */
-	private double distance_from_obstruction; 	/* [-2,2] miles */
+	private boolean moving_obstruction; /* true = is obstruction. */
+	private boolean stationary_obstruction; /* true = is obstruction. */
+	private double distance_from_obstruction; /* [-2,2] miles */
 
 	private int rpm;
 
-	private double speed;						/* mph */
-	private double wind_speed;					/* mph */
+	private double speed; /* mph */
+	private double wind_speed; /* mph */
 
-	private double rate_rain;					/* inches per hour */
-	private double rate_snow;					/* inches per hour */
+	private double rate_rain; /* inches per hour */
+	private double rate_snow; /* inches per hour */
 
-	private double visibility;					/* miles */
+	private double visibility; /* miles */
 	// protected Scanner docc;
 	private ArrayList<String> data;
 
@@ -44,21 +44,21 @@ public class Sensors {
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
 
-		this.longitude1 = 0.00000; 				/* most recent longitude */
-		this.latitude1 = 0.00000; 				/* most recent latitude */
-		this.longitude2 = 3.0000; 				/* older longitude */
-		this.latitude2 = 2.0000; 				/* older latitude */
-		this.gate_distance = 4.58;				/* miles */
-		this.gate_status = true; 				/* false = closed. true = open. */
+		this.longitude1 = 0.00000; /* most recent longitude */
+		this.latitude1 = 0.00000; /* most recent latitude */
+		this.longitude2 = 3.0000; /* older longitude */
+		this.latitude2 = 2.0000; /* older latitude */
+		this.gate_distance = 4.58; /* miles */
+		this.gate_status = true; /* false = closed. true = open. */
 		this.moving_obstruction = false;
 		this.stationary_obstruction = false;
 		this.distance_from_obstruction = 2.0;
 		this.rpm = 514;
-		this.speed = 130.0; 					/* mph */
-		this.wind_speed = 20.0; 				/* mph */
-		this.rate_rain = 0.0; 					/* inches per hour */
-		this.rate_snow = 0.0; 					/* inches per hour */
-		this.visibility = 2.0; 					/* miles */
+		this.speed = 130.0; /* mph */
+		this.wind_speed = 20.0; /* mph */
+		this.rate_rain = 0.0; /* inches per hour */
+		this.rate_snow = 0.0; /* inches per hour */
+		this.visibility = 2.0; /* miles */
 		updateValues();
 	}
 
@@ -83,22 +83,12 @@ public class Sensors {
 	}
 
 	/**
-	 Map of data's indices to the data it represents.
-		0 - rpm
-		1-lat
-		2 long
-		3- gate distance
-		4 - gate status
-		5- moving obstruction
-		6- stationaty
-		7-distance
-		8- rain
-		9- snow
-		10- wind
-		11- visibality
+	 * Map of data's indices to the data it represents. 0 - rpm 1-lat 2 long 3- gate
+	 * distance 4 - gate status 5- moving obstruction 6- stationaty 7-distance 8-
+	 * rain 9- snow 10- wind 11- visibality
 	 */
 	public void updateValuesSensors() {
-		
+
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
 		longitude2 = longitude1;
@@ -141,8 +131,6 @@ public class Sensors {
 		visibility = Double.valueOf((data.get(lastoff)));
 		lastoff++;
 		setSpeed();
-
-
 	}
 
 	/**
@@ -188,11 +176,10 @@ public class Sensors {
 	}
 
 	/**
-	 * Set the distance to the next gate. Returns 0 on success and -1 on failure.
+	 * Set the distance to the next gate.
 	 */
-	int setGateDistance(double dist) {
+	void setGateDistance(double dist) {
 		this.gate_distance = dist;
-		return 0;
 	}
 
 	/**
@@ -206,7 +193,7 @@ public class Sensors {
 	 * Set the gate_status data field to true if next gate is open, otherwise false.
 	 */
 	void setGateStatus() {
-		this.gate_status = true; 
+		this.gate_status = true;
 	}
 
 	/**
@@ -220,9 +207,9 @@ public class Sensors {
 	 * If a stationary object is detected, set the data field stationary_obstruction
 	 * to true, otherwise false.
 	 */
-	void setDetectStationaryObject() {
-		this.stationary_obstruction = true;
-	}
+	// void setDetectStationaryObject() {
+	// this.stationary_obstruction = true;
+	// }
 
 	/**
 	 * @return true if a a stationary object is detected, false otherwise.
@@ -235,9 +222,9 @@ public class Sensors {
 	 * If a moving object is detected, set the data field moving_obstruction to
 	 * true, otherwise false.
 	 */
-	void setDetectMovingObject() {
-		this.moving_obstruction = true;
-	}
+	// void setDetectMovingObject() {
+	// this.moving_obstruction = true;
+	// }
 
 	/**
 	 * @return true if a a moving object is detected, false otherwise.
@@ -257,14 +244,13 @@ public class Sensors {
 	}
 
 	/**
-	 * Set the rpm. Return 0 on success & -1 on failure.
+	 * Set the rpm.
 	 */
-	int setRPM(int rpm) {
+	void setRPM(int rpm) {
 		if (rpm < 0 || rpm > 5000) {
-			return -1;
+			return;
 		}
-		this.rpm = rpm; /* use randomizer */
-		return 0;
+		this.rpm = rpm;
 	}
 
 	/**
@@ -275,31 +261,29 @@ public class Sensors {
 	}
 
 	/**
-	 * Set the speed. Return 0 on success & -1 on failure.
+	 * Set the speed.
 	 */
 	void setSpeed() {
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
-		this.speed = Math.rint((this.getTime()/3600)* Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
+		this.speed = Math.rint((this.getTime() / 3600) * Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
 	}
 
 	/**
 	 * @return the speed in miles per hour.
 	 */
 	double getSpeed() {
-		//setSpeed();
 		return this.speed;
 	}
 
 	/**
-	 * Set the speed. Return 0 on success & -1 on failure.
+	 * Set the speed.
 	 */
-	int setWindSpeed(double wind_speed) {
+	void setWindSpeed(double wind_speed) {
 		if (wind_speed < 0 || wind_speed > 400) {
-			return -1;
+			return;
 		}
-		this.wind_speed = wind_speed; /* use randomizer */
-		return 0;
+		this.wind_speed = wind_speed;
 	}
 
 	/**
@@ -310,11 +294,10 @@ public class Sensors {
 	}
 
 	/**
-	 * Set the rain rate. Return 0 on success & -1 on failure.
+	 * Set the rain rate.
 	 */
-	int setRainRate(double rate) {
+	void setRainRate(double rate) {
 		this.rate_rain = rate;
-		return 0;
 	}
 
 	/**
@@ -325,11 +308,10 @@ public class Sensors {
 	}
 
 	/**
-	 * Set the snow rate. Return 0 on success & -1 on failure.
+	 * Set the snow rate.
 	 */
-	int setSnowRate(double rate) {
+	void setSnowRate(double rate) {
 		this.rate_snow = rate;
-		return 0;
 	}
 
 	/**
@@ -340,14 +322,13 @@ public class Sensors {
 	}
 
 	/**
-	 * set the visibility. Return 0 on success & -1 on failure.
+	 * Set the visibility.
 	 */
-	int setVisibility(double visibility) {
+	void setVisibility(double visibility) {
 		if (visibility < 0 || visibility > 2.0) {
-			return -1;
+			return;
 		}
 		this.visibility = visibility;
-		return 0;
 	}
 
 	/**
@@ -356,28 +337,6 @@ public class Sensors {
 	 */
 	double getVisibility() {
 		return this.visibility;
-	}
-
-	public static void main(String[] args) {
-		Sensors s = new Sensors();
-		//System.out.println(s.wind_speed);
-		//s.updateValuesSensors();
-		//System.out.println(s.wind_speed);	
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
-		s.updateValuesSensors();
-		System.out.println(s.getSpeed());
 	}
 
 }

@@ -23,7 +23,7 @@ public class LoginGUI extends JFrame {
 	 */
 	private JPanel contentPane;
 	private JTextField userField;
-	private	 JPasswordField passField;
+	private JPasswordField passField;
 	Date date = java.util.Calendar.getInstance().getTime();
 	LCS lcs;
 
@@ -47,22 +47,20 @@ public class LoginGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginGUI() {
-		
+
 		/**
-		 * Create new intance of LCS
-		 * Update date
-		 * Write to log that session has started
+		 * Create new intance of LCS Update date Write to log that session has started
 		 */
-		
+
 		lcs = new LCS();
 		date = java.util.Calendar.getInstance().getTime();
 		lcs.writeToLog("" + date + "-- LCS session started.\n");
 		lcs.writeToLog(lcs.toString()); // ask about this toString
-		
+
 		/**
 		 * Default block of code with JFrame
 		 */
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(325, 100, 900, 600);
 		contentPane = new JPanel();
@@ -70,23 +68,21 @@ public class LoginGUI extends JFrame {
 		contentPane.setForeground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		
+
 		/**
-		 * Code that adds a train
-		 * to our login window
+		 * Code that adds a train to our login window
 		 */
-		
+
 		File img = new File("train.png");
 		JLabel lblImage = new JLabel();
 		lblImage.setBounds(310, 60, 256, 169);
 		lblImage.setText("");
 		lblImage.setIcon(new ImageIcon(img.getAbsolutePath()));
-		
+
 		/**
-		 * Sets up the username 
-		 * and password labels
+		 * Sets up the username and password labels
 		 */
-		
+
 		JLabel lblUser = new JLabel("USERNAME:");
 		lblUser.setForeground(Color.GREEN);
 		lblUser.setBounds(226, 269, 88, 33);
@@ -97,26 +93,25 @@ public class LoginGUI extends JFrame {
 		userField.setBounds(335, 276, 231, 19);
 		passField = new JPasswordField(20);
 		passField.setBounds(335, 319, 231, 19);
-		
+
 		/**
-		 * Code for the log in button
-		 * (style, size, functionality, etc.)
+		 * Code for the log in button (style, size, functionality, etc.)
 		 */
-		
+
 		JButton logIn = new JButton("LOG IN");
 		logIn.setBounds(373, 359, 150, 40);
 		logIn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
-						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0) 
+				if (lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword()))
+						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)
 						&& (userField.getText().equals("operator"))) {
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
 					OperatorGUI op = new OperatorGUI();
 					op.setVisible(true);
 					dispose();
-				} else if (lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword())) 
-						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0) 
+				} else if (lcs.checkCredentials(userField.getText(), String.valueOf(passField.getPassword()))
+						&& (userField.getText().length() != 0 && String.valueOf(passField.getPassword()).length() != 0)
 						&& (userField.getText().equals("admin"))) {
 					date = java.util.Calendar.getInstance().getTime();
 					lcs.writeToLog("" + date + "-- User \'" + userField.getText() + "\' logged in.\n");
@@ -131,12 +126,11 @@ public class LoginGUI extends JFrame {
 				}
 			}
 		});
-		
+
 		/**
-		 * Block of code that adds 
-		 * the components onto the GUI 
+		 * Block of code that adds the components onto the GUI
 		 */
-		
+
 		contentPane.setLayout(null);
 		contentPane.add(lblPass);
 		contentPane.add(lblUser);

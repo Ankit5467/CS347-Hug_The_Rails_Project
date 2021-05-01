@@ -1,6 +1,5 @@
 package htrPackage;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.File;
@@ -18,7 +17,7 @@ public class LCS extends IOT {
 	private boolean isConnected; /* tracks if the LCS system is connected to wifi */
 	private boolean isLoggedIn; /* tracks if the user is logged into LCS */
 	private boolean wantToCont; /* tracks if the user wants to exit from LCS */
-	
+
 	private Path logFileName;
 	private File log; /* LCS log stores lots of information */
 
@@ -91,27 +90,7 @@ public class LCS extends IOT {
 		}
 	}
 
-	void readFromLog(boolean isOperator) {
-		if (isOperator) {
-			try {
-				Scanner myReader = new Scanner(this.log);
-				while (myReader.hasNextLine()) {
-					String data = myReader.nextLine();
-					System.out.println(data);
-				}
-				System.out.println("*************** END OF LOG ***************");
-				myReader.close();
-			} catch (FileNotFoundException e) {
-				System.out.println("Error: Unable to read from the log.\n");
-				e.printStackTrace();
-			}
-		} else {
-			System.out.println("Error: Only the operator can access the log.\n");
-		}
-
-	}
-
-	String readFromLog2() {
+	String readFromLog() {
 		String data = "";
 		try {
 			Scanner myReader = new Scanner(this.log);
@@ -180,8 +159,6 @@ public class LCS extends IOT {
 	}
 
 	/* Wifi Connection Methods */
-
-	@SuppressWarnings("unused")
 	private void setWifi(boolean b) {
 		this.isConnected = b;
 	}
@@ -205,124 +182,4 @@ public class LCS extends IOT {
 		str.append("\nVisibility: " + roundTwoDecimals(this.getVisibility()) + "\n");
 		return str.toString();
 	}
-
-// 	public static void main(String[] args) {
-
-// 		LCS myTrain = new LCS();
-// 		Scanner scan = new Scanner(System.in);
-
-// 		Date date = java.util.Calendar.getInstance().getTime();
-// 		myTrain.writeToLog("" + date + "-- LCS session started.\n");
-
-// 		myTrain.writeToLog(myTrain.toString());
-
-// 		String username = "";
-// 		String password = "";
-
-// 		while (!myTrain.isLoggedIn) {
-
-// 			while (true) {
-// 				System.out.println("Enter your username: ");
-// 				username = scan.nextLine();
-// 				System.out.println("Enter your password: ");
-// 				password = scan.nextLine();
-// 				date = java.util.Calendar.getInstance().getTime();
-// 				if (myTrain.checkCredentials(username, password)) {
-// 					myTrain.isLoggedIn = true;
-// 					myTrain.writeToLog("" + date + "-- User \'" + username + "\' logged in.\n");
-// 					break;
-// 				} else {
-// 					System.out.println("Incorrect credentials");
-// 					myTrain.writeToLog("" + date + "-- Failed login attempt.\n");
-// 				}
-// 			}
-
-// 			while (myTrain.wantToCont && !myTrain.getWifi() && myTrain.isLoggedIn) {
-// 				System.out.print("-------------------------------\nEnter a command: ");
-// 				String command = scan.nextLine().toLowerCase();
-
-// 				switch (command) { /* commands are case insensitive */
-// 				case "":
-// 					break;
-// 				case "help":
-// 					System.out.println(myTrain.helpMessage());
-// 					break;
-// 				case "log off": /* log out (but don't exit the program) */
-// 					System.out.println("Logging off ...");
-// 					myTrain.isLoggedIn = false;
-// 					break;
-// 				case "add user":
-// 					System.out.print("Enter a username: ");
-// 					String newUser = scan.nextLine();
-// 					System.out.print("Enter a password: ");
-// 					String newPass = scan.nextLine();
-// 					myTrain.addLoginInfo(newUser, newPass);
-// 					break;
-// 				case "exit":
-// 					myTrain.wantToCont = false;
-// 					break;
-// 				case "wifi":
-// 					System.out.println("Connected to wifi: " + myTrain.getWifi());
-// 					break;
-// 				case "location":
-// 					System.out.println("Location: " + myTrain.displayLocation());
-// 					break;
-// 				case "weather":
-// 					System.out.println("Weather: " + myTrain.obtainWeather());
-// 					break;
-// 				case "speed":
-// 					myTrain.setSpeed();
-// //					System.out.println(myTrain.getLatitude1());
-// //					System.out.println(myTrain.getLongitude1());
-// //					System.out.println(myTrain.getLatitude1());
-// //					System.out.println(myTrain.getLongitude2());
-// 					System.out.println("Speed: " + myTrain.getSpeed() + " mph.");
-// 					break;
-// 				case "rpm":
-// 					System.out.println("Wheel rpm: " + myTrain.getRPM());
-// 					break;
-// 				case "status":
-// 					System.out.println("Status Report: " + myTrain.getStatus());
-// 					break;
-// 				case "recommend":
-// 					System.out.println("No Recommendations.");
-// 					break;
-// 				case "view log": /* Access the log */
-// 					myTrain.readFromLog(username.equals("operator"));
-// 					break;
-// 				case "obstruction":
-// 					myTrain.ProcessObject();
-// 					break;
-// 				default:
-// 					System.out.println("Error: Unknown Command '" + command + "'. Please enter a valid command.\n");
-// 					break;
-// 				}
-// 				date = java.util.Calendar.getInstance().getTime();
-// 				myTrain.writeToLog("" + date + "-- User entered the following command \'" + command + "\'.\n");
-// 				myTrain.writeToLog(myTrain.toString());
-
-// 			}
-// 			if (myTrain.getWifi()) {
-// 				System.out
-// 						.println("LCS is connected to WiFi. LCS is only meant " + "to be used when there is no wifi.");
-// 				System.exit(-1);
-// 			}
-// 			if (!myTrain.wantToCont) {
-// 				System.out.println("Shutting off ...");
-// 				date = java.util.Calendar.getInstance().getTime();
-// 				myTrain.writeToLog("" + date + "-- User \'" + username + "\' terminated LCS session.\n");
-// 				myTrain.writeToLog(myTrain.toString());
-// 				break;
-// 			} else if (!myTrain.isLoggedIn) {
-// 				System.out.println("Logged off");
-// 				date = java.util.Calendar.getInstance().getTime();
-// 				myTrain.writeToLog("" + date + "-- User \'" + username + "\' logged off successfully.\n");
-// 				myTrain.writeToLog(myTrain.toString());
-// 			}
-// 		}
-// 		scan.close();
-// 		System.out.println("LCS has shut off successfully.");
-
-// 	}
-
 }

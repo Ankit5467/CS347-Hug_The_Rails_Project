@@ -36,11 +36,11 @@ public class LoginFailed extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginFailed() {
-		
+
 		/**
 		 * Default block of code with JFrame
 		 */
-		
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(600, 300, 350, 200);
 		contentPane = new JPanel();
@@ -48,22 +48,21 @@ public class LoginFailed extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		/**
 		 * The text to denote wrong credentials.
 		 */
-		
+
 		JLabel lblIncorrect = new JLabel("Incorrect credentials.");
 		lblIncorrect.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblIncorrect.setForeground(Color.YELLOW);
 		lblIncorrect.setHorizontalAlignment(JLabel.CENTER);
 		lblIncorrect.setBounds(63, 49, 212, 33);
-		
+
 		/**
-		 * Code for the close button
-		 * (style, size, functionality)
+		 * Code for the close button (style, size, functionality)
 		 */
-		
+
 		JButton btnClose = new JButton("CLOSE");
 		btnClose.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -71,7 +70,7 @@ public class LoginFailed extends JFrame {
 			}
 		});
 		btnClose.setBounds(123, 92, 85, 21);
-		
+
 		contentPane.add(lblIncorrect);
 		contentPane.add(btnClose);
 	}
