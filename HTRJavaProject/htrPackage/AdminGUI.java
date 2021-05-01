@@ -178,7 +178,7 @@ public class AdminGUI extends JFrame {
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog(lcs.toString());
 				
-				if(totalMilliseconds == 420000) {
+				if(totalMilliseconds == 405000) {
 					loop.cancel();
 				}	
 			}
@@ -189,7 +189,7 @@ public class AdminGUI extends JFrame {
 		 * of 7 minutes with 15 second intervals
 		 */
 		
-		loop.scheduleAtFixedRate(task, 15000, 15000);
+		loop.scheduleAtFixedRate(task, 10000, 10000);
 		
 		/**
 		 * Default block of code with JFrame
