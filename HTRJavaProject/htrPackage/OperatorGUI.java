@@ -125,7 +125,7 @@ public class OperatorGUI extends JFrame {
 		
 		TimerTask task = new TimerTask() {
 			public void run() {
-				totalMilliseconds += 15000;
+				totalMilliseconds += 10000;
 				lcs.updateValuesSensors();
 				
 				speedPane.setText(String.valueOf(lcs.getSpeed()));

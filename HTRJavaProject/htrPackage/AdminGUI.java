@@ -124,7 +124,7 @@ public class AdminGUI extends JFrame {
 		
 		TimerTask task = new TimerTask() {
 			public void run() {
-				totalMilliseconds += 15000;
+				totalMilliseconds += 10000;
 				lcs.updateValuesSensors();
 				
 				speedPane.setText(String.valueOf(lcs.getSpeed()));
@@ -189,7 +189,7 @@ public class AdminGUI extends JFrame {
 		 * of 7 minutes with 15 second intervals
 		 */
 		
-		loop.scheduleAtFixedRate(task, 10000, 10000);
+		loop.scheduleAtFixedRate(task, lcs.getTime()*1000, lcs.getTime()*1000);
 		
 		/**
 		 * Default block of code with JFrame
