@@ -66,7 +66,7 @@ public class InputGenerator {
 //		double[] speeds = {135, 140, 150}; /* Stores the speed at every 15 second interval */
 		double[] speeds = {135, 140, 100, 100, 138, 134, 113, 110, 143,
 				146,55, 0, 0, 135,138, 108, 104, 129, 134, 53, 0, 0, 124,
-				146,104,106,136,138,149,145,126,130,95,91,123,129,96,94,123}
+				146,104,106,136,138,149,145,126,130,95,91,123,129,96,94,123};
 		
 		for ( int i = 0; i < speeds.length; i++) {
 			timer += update_time;
