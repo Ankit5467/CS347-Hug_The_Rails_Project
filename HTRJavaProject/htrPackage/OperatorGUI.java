@@ -29,7 +29,7 @@ public class OperatorGUI extends JFrame {
 	Date date = java.util.Calendar.getInstance().getTime();
 	Timer loop;
 	int totalMilliseconds;
-
+	
 	/**
 	 * Launch the application.
 	 */
@@ -189,8 +189,7 @@ public class OperatorGUI extends JFrame {
 		 * Schedules the task to occur over a span
 		 * of 7 minutes with 15 second intervals
 		 */
-		
-		loop.scheduleAtFixedRate(task, 10000, 10000);
+		loop.scheduleAtFixedRate(task, lcs.getTime()*1000, lcs.getTime()*1000);
 		
 		/**
 		 * Default block of code with JFrame

@@ -10,6 +10,7 @@ public class Sensors {
 	/* hardware: */
 	public final double WHEEL_DIAMETER = 85.0; /* Wheel diameter in inches */
 	public final int REFRESH_TIME = 30; /* How often to refresh the data (in seconds) */
+	public  final long time = 10; /* how often the dat updates */
 
 	/* Data fields: */
 	private int lastoff = 0;
@@ -146,8 +147,15 @@ public class Sensors {
 		// 9- snow
 		// 10- wind
 		// 11- visibality
-
 	}
+
+	/**
+	 * Getter for time.
+	 */
+	public long getTime() {
+		return this.time;
+	}
+
 	void makerpmNumber(double speed) {
 		System.out.println(speed / (WHEEL_DIAMETER * Math.PI * (double) 60 / (double) 63360));
 	}
@@ -310,7 +318,7 @@ public class Sensors {
 //		this.speed = Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)) * 360.0;
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
-		this.speed = Math.rint(240* Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
+		this.speed = Math.rint((this.getTime()/3600)* Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
 	}
 
 	/**

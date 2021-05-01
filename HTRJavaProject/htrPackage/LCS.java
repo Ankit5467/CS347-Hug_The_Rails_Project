@@ -15,10 +15,10 @@ public class LCS extends IOT {
 
 	/* data fields */
 
-	 private boolean isConnected; /* tracks if the LCS system is connected to wifi */
-	 private boolean isLoggedIn; /* tracks if the user is logged into LCS */
-	 private boolean wantToCont; /* tracks if the user wants to exit from LCS */
-
+	private boolean isConnected; /* tracks if the LCS system is connected to wifi */
+	private boolean isLoggedIn; /* tracks if the user is logged into LCS */
+	private boolean wantToCont; /* tracks if the user wants to exit from LCS */
+	
 	private Path logFileName;
 	private File log; /* LCS log stores lots of information */
 

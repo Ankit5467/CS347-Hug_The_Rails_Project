@@ -78,9 +78,7 @@ public class IOT extends Sensors {
 	 *          same speed & direction as the train.
 	 */
 	double objectSpeed() {
-		// get 2 distance measurements.
-		// return ((double) ((int) ((1 + (Math.random() * ((15 - 1) + 1))) * 100))) / 100; /* generate random speed b/w [1,15] */
-		return (1 + (Math.random() * ((15 - 1) + 1)));
+		return (1 + (Math.random() * ((15 - 1) + 1)));	/* generate random speed b/w [1,15] */
 	}
 
 	/**
@@ -88,8 +86,6 @@ public class IOT extends Sensors {
 	 * @return the number of seconds to impact.
 	 */
 	double computeImpact() {
-		// returns time to impact.
-		// return ((double) ((int)((this.obtainDistanceFromObject() / (88 * this.getSpeed())) * 100))) / 100;
 		return ((this.obtainDistanceFromObject() / (88 * this.getSpeed())));
 	}
 
@@ -148,21 +144,48 @@ public class IOT extends Sensors {
 
 	String gateStatus() {
 		// true if gate is open, false if closed.
+		StringBuilder str = new StringBuilder();
+
 		if (getGateDistance() > 2.0) {
 			if (this.getGateStatus()) {
-				return "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is open.";
+				str.append( "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is open.");
 			} else {
-				return "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is closed.";
+				str.append("The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is closed.");
 			}
 		} else {
 			if (getGateStatus()) {
-				return "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is open. \n"
-				+ "You may proceed.";
+				str.append("The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is open. \n"
+				+ "You may proceed.");
 			} else {
-				return "The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is closed.\n"
-						+ "Recommendation: Stop the train immediately & wait for the gate to open.";
+				str.append("The next gate, which is " + roundTwoDecimals(getGateDistance()) + " miles away, is closed.\n"
+						+ "Recommendation: Stop the train immediately & wait for the gate to open.");
 			}
 		}
+		double deltaDist = 0.0; /* approximation of distance the train will travel in the next 'time' seconds. */
+		deltaDist = (getTime()*getSpeed()/3600);
+
+		/*  We have to approximate the gate dist w/ our curr speed. yes. Gate dist after 'time' sec.
+			getGateDistance = current gate dist
+			getGateDistance - deltaDist = approximation of gatedist in 15 second
+
+			recommend honking the horn when
+			gateDistance - approx15sec > 1 and gateDist - approx30sec < 1.
+			ie: when gateDist is currently at least 1, but is projected to be less than 1 in 30 seconds.
+		*/
+		if (getGateDistance() - deltaDist > 1 && getGateDistance() - 2*deltaDist < 1) {
+			str.append("Gate is about 1 mile away. Recommendation: Honk the horn for 15 seconds.\n");
+		}
+
+		/* 
+			recommend honking the horn when
+			gateDist - deltaDist > 0 && gateDist - 2*deltaDist == 0
+			ie: when gateDist is currently greater than 0, but we are projected to cross the gate in the next 15 sec. 
+		*/
+		if (getGateDistance() - deltaDist > 0 && getGateDistance() - 2*deltaDist == 0) {
+			str.append("About to cross a gate. Recommendation: Honk the horn for 5 seconds.\n");
+		}
+		
+		return str.toString();
 	}
 
 	// String helpMessage() {
