@@ -102,7 +102,7 @@ public class IOT extends Sensors {
 	 * @return the number of seconds to impact.
 	 */
 	double computeImpact() {
-		return ((this.obtainDistanceFromObject() / (88 * this.getSpeed())));
+		return (((this.obtainDistanceFromObject() * 5280) / (88 * this.getSpeed())));
 	}
 
 	/*
@@ -140,7 +140,10 @@ public class IOT extends Sensors {
 				} else {
 					str.append("Obstruction is stationary.");
 				}
-				str.append("Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
+				if (this.getSpeed() != 0) {
+					str.append("Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
+				}
+//				str.append("Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
 				return str.toString();
 			}
 		}
@@ -150,6 +153,7 @@ public class IOT extends Sensors {
 	/**
 	 * Calculate wheel slippage. If the wheels are slipping, then print out a
 	 * recommendation to slow down the train.
+	 * LOOK INTO IT A BIT MORE!
 	 */
 	String detectSlippage() {
 		/*
@@ -157,10 +161,17 @@ public class IOT extends Sensors {
 		 * different from normal speed, where normal speed is speed calculated using gps
 		 * coordinates.
 		 */
-		double rpmSpeed = (double) this.getRPM() * this.getWheelDiameter() * Math.PI * (double) 60 / (double) 63360;
-		if (Math.abs(
-				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.001)) { /* would this work? CHANGED FROM 0.05 */
+//		double rpmSpeed = (double) this.getRPM() * this.getWheelDiameter() * Math.PI * (double) 60 / (double) 63360;
+//		if (Math.abs(
+//				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.005)) { /* would this work? CHANGED FROM 0.05 */
+//			return "The wheels are slipping. Recommendation: slow down or halt the train.";
+//		} else {
+//			return "The wheels are not slipping.";
+//		}
+		if (this.getSnowRate() >= 0.2 || this.getRainRate() >= 0.3) {
 			return "The wheels are slipping. Recommendation: slow down or halt the train.";
+		//}
+		//return "";
 		} else {
 			return "The wheels are not slipping.";
 		}
@@ -171,6 +182,7 @@ public class IOT extends Sensors {
 	 * 
 	 * @returns a string which contains details about upcoming gate crossings.
 	 *          String will contain the appropriate recommendations, if any.
+	 * NEEDS MORE WORK!!!
 	 */
 	String gateStatus() {
 		StringBuilder str = new StringBuilder();

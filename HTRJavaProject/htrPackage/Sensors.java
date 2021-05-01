@@ -267,7 +267,6 @@ public class Sensors {
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
 		this.speed = Math.rint((3600 / this.getTime()) * Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
-		//this.speed = Math.rint((360) * Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
 	}
 
 	/**

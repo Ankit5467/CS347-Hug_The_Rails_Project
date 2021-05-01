@@ -164,7 +164,9 @@ public class AdminGUI extends JFrame {
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog("" + date + "-- Obstruction data has been updated \'" + "\'.\n");
 
-				display.append(lcs.detectSlippage() + "\n");
+				if (lcs.getSnowRate() >= 0.2 || lcs.getRainRate() >= 0.3) {
+					display.append(lcs.detectSlippage() + "\n");
+				}
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog("" + date + "-- Wheels' status has been updated \'" + "\'.\n");
 
@@ -179,7 +181,7 @@ public class AdminGUI extends JFrame {
 //					loop.cancel();
 //				}
 				
-				if (totalMilliseconds == 4800000) {
+				if (totalMilliseconds == 4680000) {
 					loop.cancel();
 				}
 			}
