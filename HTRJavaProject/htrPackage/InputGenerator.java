@@ -51,7 +51,7 @@ public class InputGenerator {
 		double lon = 0.0;
 		double delta_lat = 0.0;
 		double delta_lon = 0.0;
-		
+		int update = 1;
 		int rpm = 0;
 //		double speed_from_rpm = 0.0;
 		double dist_traveled = 0.0; //stores the dist traveled in 
@@ -66,7 +66,7 @@ public class InputGenerator {
 //		double[] speeds = {135, 140, 150}; /* Stores the speed at every 15 second interval */
 		double[] speeds = {135, 140, 100, 100, 138, 134, 113, 110, 143,
 				146,55, 0, 0, 135,138, 108, 104, 129, 134, 53, 0, 0, 124,
-				146};
+				146,104,106,136,138,149,145,126,130,95,91,123,129,96,94,123}
 		
 		for ( int i = 0; i < speeds.length; i++) {
 			timer += update_time;
@@ -90,6 +90,7 @@ public class InputGenerator {
 
 			delta_lat = 0;
 			delta_lon = 0;
+			
 
 			// lat_new = lat_old + (weight * dist_traveled);
 			// long_new = long_old + Math.sqrt(Math.pow(dist_traveled, 2.0) - 
@@ -99,7 +100,8 @@ public class InputGenerator {
 			//print the updated speed and the updated coordinates.
 			System.out.println("Time: " + timer + " seconds. Distance Traveled: " + dist_traveled
 					+ ". New Speed: " + speeds[i] +  ". New long: " + lon + 
-					". New lat: " + lat + ". RPM: " + rpm);
+					". New lat: " + lat + ". RPM: " + rpm+". Update : "+update);
+					update++;
 			
 		}
 		
