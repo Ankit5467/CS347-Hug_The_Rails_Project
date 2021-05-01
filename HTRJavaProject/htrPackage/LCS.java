@@ -11,6 +11,12 @@ import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.Scanner;
 
+// Visib should be 2.0 most of the time.
+// 	If visib is less than 2, then it will print the recommendation
+//	Also, pull from github
+// Also, since we changed the update time to 10 seconds, we'll need to update the input.txt inputs
+// for long & lat.
+
 public class LCS extends IOT {
 
 	/* data fields */

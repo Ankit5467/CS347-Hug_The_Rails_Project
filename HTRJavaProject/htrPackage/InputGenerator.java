@@ -38,7 +38,7 @@ public class InputGenerator {
 
 		
 		int timer = 0;			/* Keeps track of the elapsed time. */
-		final int update_time = 15; /* How often new measurements are taken. */
+		final int update_time = 10; /* How often new measurements are taken. */
 		final int wd = 85; // wheel diameter
 		final double weight = 0.30; /* weight % of the distance traveled contributes to the latitude. */
 
