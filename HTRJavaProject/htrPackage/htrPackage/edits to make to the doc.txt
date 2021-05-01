@@ -30,3 +30,71 @@ FINAL TOUCHES:
 - [TODO] - paste the final code on the document (save this for SUNDAY night).
 - [TODO] - Work on the formal technical review & other things reza talked about in 4/29 lecture. 
 - [TODO] - FORMAT THE DOCUMENT.
+
+
+
+REVIEW PART:
+- complete the coding
+- have test file
+- hold a formal review of the product before submission
+- have a post-mortem meeting
+	- talk about pos/neg/learning experiences
+	- what went well/not well
+- Create a document where you explain the installation & running process.
+
+- during 15 min pres, 
+	- he will do a black-box test on the product. (demo)
+	- we go over post-mortem notes
+	- pres is graded
+
+- Main document, and every supplemental document is graded.
+	
+
+Reviews:
+	- Look for errors and defects.
+		- error: a problem found before software is released.
+		- detect: a problem found after software is released.
+	- List the review metrics -- 4/29 lect: min 11 - 15
+	- A meeting has several components:
+		-	Planning & prep: date, time, who should be there etc...
+		-	Each person at the review has a role/responsibility
+			- eg: Review leader, notetaker, someone who goes over the testcases/requirements (ie: Reviewer), people who have developed the work product (ie: Producer), etc...
+		- Meeting structure
+		- Correction & Verification (later)
+		
+	Formal Technical Reviews (aka: walkthrough/inspection): (min 20)
+		- Review the big document, installation guide, and test file.
+		
+		-	Objective:
+			- Uncover any & all errors
+			- Verify software meets all reqs
+		- The review Meeting:
+			- Prepare in advance (max 2 hrs of prep per person)
+			- Review roles (min 22)
+				- Reporter/notetaker responsibilites : min 24
+			- Review Outcome
+				- accept (no errors)
+				- recject (major errors)
+				- accept provisionally (minor errors)
+		- review guidelines:
+			- set an agenda & maintain it
+			- limit debate/arguing
+			- Note the problems, dont try to solve the problems
+			- has to be written.
+			
+		- After the formal techical review, a Formal Technical Review Summary Report is created by the notetaker/recorder.
+			-	it answers the questions:
+				- what was reviewed, who reviewed it, and what were the findings/conclusions?
+			- Report should be b/w 0.5 to 1 pages long.
+			- We have to submit this document!
+			
+	
+	Postmortem evaluations (min 28):
+		- talk/write about what went write and what went wrong.
+		- 
+	
+Submission contains:
+	- Formal technical review (~1 pg)
+	- postmortem meeting notes (~1 pg)
+	- Big document (?)
+	- The code (?)
