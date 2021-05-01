@@ -8,35 +8,34 @@ import java.util.ArrayList;
 public class Sensors {
 
 	/* hardware: */
-	public final double WHEEL_DIAMETER = 85.0; /* Wheel diameter in inches */
-	public final int REFRESH_TIME = 30; /* How often to refresh the data (in seconds) */
-	public  final long time = 10; /* how often the dat updates */
+	public final double WHEEL_DIAMETER = 85.0; 	/* Wheel diameter in inches */
+	public  final long time = 10;				/* How often to refresh the data (in seconds) */
 
 	/* Data fields: */
 	private int lastoff = 0;
-	private double longitude1; /* miles from origin */
-	private double latitude1; /* miles from origin */
+	private double longitude1;					/* miles from origin */
+	private double latitude1; 					/* miles from origin */
 
-	private double longitude2; /* miles from origin */
-	private double latitude2; /* miles from origin */
+	private double longitude2; 					/* miles from origin */
+	private double latitude2; 					/* miles from origin */
 
-	private double gate_distance;
-	private boolean gate_status;
+	private double gate_distance;				/* miles */
+	private boolean gate_status;				/* true = gate open. false = gate closed. */
 
-	private boolean moving_obstruction;
-	private boolean stationary_obstruction;
-	private double distance_from_obstruction; /* [-2,2] miles */
+	private boolean moving_obstruction; 		/* true = is obstruction. */
+	private boolean stationary_obstruction;		/* true = is obstruction. */
+	private double distance_from_obstruction; 	/* [-2,2] miles */
 
 	private int rpm;
 
-	private double speed;
-	private double wind_speed;
+	private double speed;						/* mph */
+	private double wind_speed;					/* mph */
 
-	private double rate_rain;
-	private double rate_snow;
+	private double rate_rain;					/* inches per hour */
+	private double rate_snow;					/* inches per hour */
 
-	private double visibility;
-	protected Scanner docc;
+	private double visibility;					/* miles */
+	// protected Scanner docc;
 	private ArrayList<String> data;
 
 	/**
@@ -44,26 +43,23 @@ public class Sensors {
 	 */
 	protected Sensors() {
 		/* Initialize the sensor object with the following default values */
-		// TODO: Change these values to 0 after testing.
 
-		// this.wheel_diameter = 40.0;
-		this.longitude1 = 0.00000; /* most recent longitude */
-		this.latitude1 = 0.00000; /* most recent latitude */
-		this.longitude2 = 3.0000; /* older longitude */
-		this.latitude2 = 2.0000; /* older latitude */
-		this.gate_distance = 10.0; /* miles */
-		this.gate_status = true; /* false = closed. true = open. */
+		this.longitude1 = 0.00000; 				/* most recent longitude */
+		this.latitude1 = 0.00000; 				/* most recent latitude */
+		this.longitude2 = 3.0000; 				/* older longitude */
+		this.latitude2 = 2.0000; 				/* older latitude */
+		this.gate_distance = 4.58;				/* miles */
+		this.gate_status = true; 				/* false = closed. true = open. */
 		this.moving_obstruction = false;
 		this.stationary_obstruction = false;
-		this.distance_from_obstruction = 1400; /* feet */
-		this.rpm = 0;
-		this.speed = 0.0; /* mph */
-		this.wind_speed = 10.0; /* mph */
-		this.rate_rain = 0.0; /* inches per hour */
-		this.rate_snow = 0.0; /* inches per hour */
-		this.visibility = 2.0; /* miles */
+		this.distance_from_obstruction = 2.0;
+		this.rpm = 514;
+		this.speed = 130.0; 					/* mph */
+		this.wind_speed = 20.0; 				/* mph */
+		this.rate_rain = 0.0; 					/* inches per hour */
+		this.rate_snow = 0.0; 					/* inches per hour */
+		this.visibility = 2.0; 					/* miles */
 		updateValues();
-
 	}
 
 	public void updateValues() {
@@ -81,18 +77,30 @@ public class Sensors {
 				String line = input.nextLine();
 				data.add(line);
 			}
-
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
+	/**
+	 Map of data's indices to the data it represents.
+		0 - rpm
+		1-lat
+		2 long
+		3- gate distance
+		4 - gate status
+		5- moving obstruction
+		6- stationaty
+		7-distance
+		8- rain
+		9- snow
+		10- wind
+		11- visibality
+	 */
 	public void updateValuesSensors() {
-		// speed=Double.valueOf((data.get(lastoff)));
-		// lastoff++;
+		
 		rpm = Integer.valueOf((data.get(lastoff)));
 		lastoff++;
-		// setLocation((data.get(lastoff)),data.get(lastoff+1));
 		longitude2 = longitude1;
 		longitude1 = Double.valueOf((data.get(lastoff)));
 		lastoff++;
@@ -134,19 +142,7 @@ public class Sensors {
 		lastoff++;
 		setSpeed();
 
-		// not needed 0-speed
-		// 0 - rpm
-		// 1-lat
-		// 2 long
-		// 3- gate distance
-		// 4 - gate status
-		// 5- moving obstruction
-		// 6- stationaty
-		// 7-distance
-		// 8- rain
-		// 9- snow
-		// 10- wind
-		// 11- visibality
+
 	}
 
 	/**
@@ -156,27 +152,11 @@ public class Sensors {
 		return this.time;
 	}
 
-	void makerpmNumber(double speed) {
-		System.out.println(speed / (WHEEL_DIAMETER * Math.PI * (double) 60 / (double) 63360));
-	}
-
-	// void makeLongAndLong(double speed, double ogLat, double ogLong)
-	// {
-	// System.out.println("Long: "+ );
-	// }
-	// void testDoc()
-	// {
-	// for(int i = 0; i<data.size();i++)
-	// {
-	// System.out.println(data.get(i));
-	// }
-	// }
-
 	/**
 	 * @return the wheel diameter (in inches).
 	 */
 	double getWheelDiameter() {
-		return WHEEL_DIAMETER; /* use randomizer only once? */
+		return WHEEL_DIAMETER;
 	}
 
 	/**
@@ -211,10 +191,7 @@ public class Sensors {
 	 * Set the distance to the next gate. Returns 0 on success and -1 on failure.
 	 */
 	int setGateDistance(double dist) {
-		if (dist > 0 || dist < 250.0) {
-			return -1;
-		}
-		this.gate_distance = dist; /* use randomizer */
+		this.gate_distance = dist;
 		return 0;
 	}
 
@@ -229,7 +206,7 @@ public class Sensors {
 	 * Set the gate_status data field to true if next gate is open, otherwise false.
 	 */
 	void setGateStatus() {
-		this.gate_status = true; /* use randomizer */
+		this.gate_status = true; 
 	}
 
 	/**
@@ -244,7 +221,7 @@ public class Sensors {
 	 * to true, otherwise false.
 	 */
 	void setDetectStationaryObject() {
-		this.stationary_obstruction = true; /* use randomizer */
+		this.stationary_obstruction = true;
 	}
 
 	/**
@@ -259,7 +236,7 @@ public class Sensors {
 	 * true, otherwise false.
 	 */
 	void setDetectMovingObject() {
-		this.moving_obstruction = true; /* use randomizer */
+		this.moving_obstruction = true;
 	}
 
 	/**
@@ -269,7 +246,6 @@ public class Sensors {
 		return this.moving_obstruction;
 	}
 
-	// TODO
 	/**
 	 * Sets then gets distance from object.
 	 * 
@@ -277,17 +253,6 @@ public class Sensors {
 	 *         and a non-negative double to signify distance in front of the train.
 	 */
 	double obtainDistanceFromObject() {
-		// distance b/w train and obstacle.
-		// double dist = -1.0;
-		// if(getDetectStationaryObject()) {
-		// //some math
-		// dist = 2.0;
-		// }
-		// if(getDetectMovingObject()) {
-		// //some math
-		// dist = 3.0;
-		// }
-		// this.distance_from_obstruction = dist;
 		return this.distance_from_obstruction;
 	}
 
@@ -313,9 +278,6 @@ public class Sensors {
 	 * Set the speed. Return 0 on success & -1 on failure.
 	 */
 	void setSpeed() {
-//		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
-//		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
-//		this.speed = Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)) * 360.0;
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
 		this.speed = Math.rint((this.getTime()/3600)* Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
@@ -351,10 +313,7 @@ public class Sensors {
 	 * Set the rain rate. Return 0 on success & -1 on failure.
 	 */
 	int setRainRate(double rate) {
-		if (rate < 0 || rate > 6) {
-			return -1;
-		}
-		this.rate_rain = rate; /* use randomizer */
+		this.rate_rain = rate;
 		return 0;
 	}
 
@@ -369,10 +328,7 @@ public class Sensors {
 	 * Set the snow rate. Return 0 on success & -1 on failure.
 	 */
 	int setSnowRate(double rate) {
-		if (rate < 0 || rate > 6) {
-			return -1;
-		}
-		this.rate_snow = rate; /* use randomizer */
+		this.rate_snow = rate;
 		return 0;
 	}
 
@@ -390,7 +346,7 @@ public class Sensors {
 		if (visibility < 0 || visibility > 2.0) {
 			return -1;
 		}
-		this.visibility = visibility; /* use randomizer */
+		this.visibility = visibility;
 		return 0;
 	}
 
