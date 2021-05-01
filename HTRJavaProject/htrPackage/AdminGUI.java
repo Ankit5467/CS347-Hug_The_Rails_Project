@@ -120,7 +120,8 @@ public class AdminGUI extends JFrame {
 
 		TimerTask task = new TimerTask() {
 			public void run() {
-				totalMilliseconds += 10000;
+//				totalMilliseconds += lcs.getTime()*1000;
+				totalMilliseconds += 2000;
 				lcs.updateValuesSensors();
 
 				speedPane.setText(String.valueOf(lcs.getSpeed()));
@@ -174,7 +175,11 @@ public class AdminGUI extends JFrame {
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog(lcs.toString());
 
-				if (totalMilliseconds == 405000) {
+//				if (totalMilliseconds == 405000) {
+//					loop.cancel();
+//				}
+				
+				if (totalMilliseconds == 4800000) {
 					loop.cancel();
 				}
 			}
@@ -183,7 +188,8 @@ public class AdminGUI extends JFrame {
 		/**
 		 * Schedules the task to occur over a span of 6min 45s with 10 second intervals
 		 */
-		loop.scheduleAtFixedRate(task, lcs.getTime() * 1000, lcs.getTime() * 1000);
+		//loop.scheduleAtFixedRate(task, lcs.getTime() * 1000, lcs.getTime() * 1000);
+		loop.scheduleAtFixedRate(task, 2000, 2000);
 
 		/**
 		 * Default block of code with JFrame

@@ -159,7 +159,7 @@ public class IOT extends Sensors {
 		 */
 		double rpmSpeed = (double) this.getRPM() * this.getWheelDiameter() * Math.PI * (double) 60 / (double) 63360;
 		if (Math.abs(
-				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.00001)) { /* would this work? CHANGED FROM 0.05 */
+				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.001)) { /* would this work? CHANGED FROM 0.05 */
 			return "The wheels are slipping. Recommendation: slow down or halt the train.";
 		} else {
 			return "The wheels are not slipping.";

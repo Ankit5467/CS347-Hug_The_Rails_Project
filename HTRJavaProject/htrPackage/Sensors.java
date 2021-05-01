@@ -46,8 +46,8 @@ public class Sensors {
 
 		this.longitude1 = 0.00000; /* most recent longitude */
 		this.latitude1 = 0.00000; /* most recent latitude */
-		this.longitude2 = 3.0000; /* older longitude */
-		this.latitude2 = 2.0000; /* older latitude */
+		this.longitude2 = 2.0000; /* older longitude */
+		this.latitude2 = 3.0000; /* older latitude */
 		this.gate_distance = 4.58; /* miles */
 		this.gate_status = true; /* false = closed. true = open. */
 		this.moving_obstruction = false;
@@ -266,7 +266,8 @@ public class Sensors {
 	void setSpeed() {
 		double deltaLat = Math.abs(this.latitude1 - this.latitude2);
 		double deltaLong = Math.abs(this.longitude1 - this.longitude2);
-		this.speed = Math.rint((this.getTime() / 3600) * Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
+		this.speed = Math.rint((3600 / this.getTime()) * Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
+		//this.speed = Math.rint((360) * Math.sqrt(Math.pow(deltaLat, 2.0) + Math.pow(deltaLong, 2.0)));
 	}
 
 	/**

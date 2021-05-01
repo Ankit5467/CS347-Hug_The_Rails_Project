@@ -1,0 +1,907 @@
+******************************************
+Sat May 01 17:30:47 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:30:47 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 0.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:30:53 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 0.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:30:54 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 0.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:30:55 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 0.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:30:56 EDT 2021-- User entered the following command 'VISIBILITY'.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 0.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:30:57 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:30:57 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:30:58 EDT 2021-- User entered the following command 'GATE'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:30:59 EDT 2021-- User entered the following command 'OBSTRUCTION'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:30:59 EDT 2021-- User entered the following command 'SLIPPAGE'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:00 EDT 2021-- User entered the following command 'SNOW'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:00 EDT 2021-- User entered the following command 'RAIN'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:01 EDT 2021-- User entered the following command 'VISIBILITY'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:01 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:02 EDT 2021-- User entered the following command 'WIND'.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 0.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:07 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:31:07 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.9937, 0.3125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 0.0
+Wind Speed: 42.3
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:31:07 EDT 2021-- User 'admin' terminated LCS session.
+******************************************
+Sat May 01 17:32:59 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:32:59 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 0.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:32:59 EDT 2021-- User 'admin' terminated LCS session.
+******************************************
+Sat May 01 17:46:45 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:46:45 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 135.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:46:47 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:46:47 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 140.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:46:49 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:46:49 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.9937, 0.3125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 42.3
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:46:51 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:46:51 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.2587, 0.3958)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 45.6
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:46:51 EDT 2021-- User 'admin' terminated LCS session.
+******************************************
+Sat May 01 17:47:44 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:47:44 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 135.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:47:46 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:47:46 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 140.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:47:48 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:47:48 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.9937, 0.3125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 42.3
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:47:50 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:47:50 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.2587, 0.3958)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 45.6
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:47:50 EDT 2021-- User 'admin' terminated LCS session.
+******************************************
+Sat May 01 17:48:55 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:48:55 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.3577, 0.1125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 135.0
+Wind Speed: 0.0
+Rain Rate: 0.0
+Snow Rate: 45.4
+Visibility: 3.0
+Sat May 01 17:48:57 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:48:57 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.7287, 0.2291)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 140.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:48:59 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:48:59 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.9937, 0.3125)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 42.3
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:49:01 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:49:01 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.2587, 0.3958)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 45.6
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 3.0
+Sat May 01 17:49:01 EDT 2021-- User 'admin' terminated LCS session.
+******************************************
+Sat May 01 17:50:56 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:50:56 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.35773, 0.1125)
+Gate Distance: 4.2
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 135.0
+Wind Speed: 45.4
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:50:58 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:50:58 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.7287, 0.22917)
+Gate Distance: 3.82
+Gate Status: true
+Obstruction Present?: false
+RPM: 553
+Speed: 140.0
+Wind Speed: 36.79
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:00 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:00 EDT 2021-- Gate status has been updated ''.
+
+Location: (0.99369, 0.3125)
+Gate Distance: 3.3
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 42.3
+Rain Rate: 0.3
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:02 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:02 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.25867, 0.395833)
+Gate Distance: 3.12
+Gate Status: true
+Obstruction Present?: false
+RPM: 395
+Speed: 100.0
+Wind Speed: 45.6
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:04 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:04 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.62435, 0.51083)
+Gate Distance: 2.89
+Gate Status: true
+Obstruction Present?: false
+RPM: 545
+Speed: 138.0
+Wind Speed: 42.3
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:06 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:06 EDT 2021-- Gate status has been updated ''.
+
+Location: (1.97942, 0.6225)
+Gate Distance: 2.47
+Gate Status: true
+Obstruction Present?: false
+RPM: 529
+Speed: 134.0
+Wind Speed: 35.5
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.3
+Sat May 01 17:51:08 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:08 EDT 2021-- Gate status has been updated ''.
+
+Location: (2.27885, 0.71667)
+Gate Distance: 2.04
+Gate Status: true
+Obstruction Present?: false
+RPM: 446
+Speed: 113.0
+Wind Speed: 35.9
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 0.26
+Sat May 01 17:51:10 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:10 EDT 2021-- Gate status has been updated ''.
+
+Location: (2.57033, 0.80833)
+Gate Distance: 1.68
+Gate Status: true
+Obstruction Present?: false
+RPM: 434
+Speed: 110.0
+Wind Speed: 48.7
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 1.75
+Sat May 01 17:51:12 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:12 EDT 2021-- Gate status has been updated ''.
+
+Location: (2.94926, 0.9275)
+Gate Distance: 1.45
+Gate Status: true
+Obstruction Present?: false
+RPM: 565
+Speed: 143.0
+Wind Speed: 40.4
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:14 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:14 EDT 2021-- Gate status has been updated ''.
+
+Location: (3.33613, 1.04917)
+Gate Distance: 1.03
+Gate Status: false
+Obstruction Present?: false
+RPM: 577
+Speed: 146.0
+Wind Speed: 38.2
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:16 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:16 EDT 2021-- Gate status has been updated ''.
+
+Location: (3.48188, 1.095)
+Gate Distance: 0.57
+Gate Status: false
+Obstruction Present?: false
+RPM: 217
+Speed: 55.0
+Wind Speed: 27.4
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 1.95
+Sat May 01 17:51:18 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:18 EDT 2021-- Gate status has been updated ''.
+
+Location: (3.48188, 1.095)
+Gate Distance: 0.01
+Gate Status: false
+Obstruction Present?: false
+RPM: 0
+Speed: 0.0
+Wind Speed: 39.7
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:20 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:20 EDT 2021-- Gate status has been updated ''.
+
+Location: (3.48188, 1.095)
+Gate Distance: 0.01
+Gate Status: true
+Obstruction Present?: false
+RPM: 0
+Speed: 0.0
+Wind Speed: 45.8
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:22 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:22 EDT 2021-- Gate status has been updated ''.
+
+Location: (3.83961, 1.2075)
+Gate Distance: 3.4
+Gate Status: true
+Obstruction Present?: false
+RPM: 533
+Speed: 135.0
+Wind Speed: 24.6
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:24 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:24 EDT 2021-- Gate status has been updated ''.
+
+Location: (4.20528, 1.3225)
+Gate Distance: 3.0
+Gate Status: true
+Obstruction Present?: false
+RPM: 545
+Speed: 138.0
+Wind Speed: 48.2
+Rain Rate: 0.0
+Snow Rate: 0.4
+Visibility: 2.0
+Sat May 01 17:51:26 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:26 EDT 2021-- Gate status has been updated ''.
+
+Location: (4.4915, 1.4125)
+Gate Distance: 2.8
+Gate Status: true
+Obstruction Present?: false
+RPM: 427
+Speed: 108.0
+Wind Speed: 32.4
+Rain Rate: 0.0
+Snow Rate: 0.4
+Visibility: 2.0
+Sat May 01 17:51:28 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:28 EDT 2021-- Gate status has been updated ''.
+
+Location: (4.76705, 1.49917)
+Gate Distance: 2.5
+Gate Status: true
+Obstruction Present?: false
+RPM: 411
+Speed: 104.0
+Wind Speed: 41.3
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:30 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:30 EDT 2021-- Gate status has been updated ''.
+
+Location: (5.10887, 1.60667)
+Gate Distance: 2.2
+Gate Status: true
+Obstruction Present?: false
+RPM: 510
+Speed: 129.0
+Wind Speed: 44.4
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:32 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:32 EDT 2021-- Gate status has been updated ''.
+
+Location: (5.46395, 1.71833)
+Gate Distance: 1.8
+Gate Status: true
+Obstruction Present?: true
+RPM: 529
+Speed: 134.0
+Wind Speed: 23.3
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:34 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:34 EDT 2021-- Gate status has been updated ''.
+
+Location: (5.604392808324557, 1.7625)
+Gate Distance: 1.4
+Gate Status: true
+Obstruction Present?: true
+RPM: 209
+Speed: 53.0
+Wind Speed: 27.7
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:36 EDT 2021-- Speed data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- RPM data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Rain data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Wind data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Snow data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Visibility data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Obstruction data has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Wheels' status has been updated ''.
+Sat May 01 17:51:36 EDT 2021-- Gate status has been updated ''.
+
+Location: (5.604392808324557, 1.7625)
+Gate Distance: 1.3
+Gate Status: true
+Obstruction Present?: true
+RPM: 0
+Speed: 0.0
+Wind Speed: 10.4
+Rain Rate: 0.0
+Snow Rate: 0.0
+Visibility: 2.0
+Sat May 01 17:51:36 EDT 2021-- User 'admin' terminated LCS session.
