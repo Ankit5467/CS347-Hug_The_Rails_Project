@@ -24,6 +24,7 @@ public class LoginFailed extends JFrame {
 			public void run() {
 				try {
 					LoginFailed frame = new LoginFailed();
+					frame.setTitle("Error");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

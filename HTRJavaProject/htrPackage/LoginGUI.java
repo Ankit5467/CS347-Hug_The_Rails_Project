@@ -35,6 +35,7 @@ public class LoginGUI extends JFrame {
 			public void run() {
 				try {
 					LoginGUI frame = new LoginGUI();
+					frame.setTitle("Login");					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -54,7 +55,7 @@ public class LoginGUI extends JFrame {
 		lcs = new LCS();
 		date = java.util.Calendar.getInstance().getTime();
 		lcs.writeToLog("" + date + "-- LCS session started.\n");
-		lcs.writeToLog(lcs.toString()); // ask about this toString
+		lcs.writeToLog(lcs.toString());
 
 		/**
 		 * Default block of code with JFrame

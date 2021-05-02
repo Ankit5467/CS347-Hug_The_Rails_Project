@@ -51,12 +51,10 @@ public class OperatorGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public OperatorGUI() {
-
 		/**
 		 * Create new instances of LCS and Timer Set isLoggedIn() to true Set date
 		 * variable
 		 */
-
 		lcs = new LCS();
 		lcs.setIsLoggedIn(true);
 		loop = new Timer();
@@ -65,7 +63,6 @@ public class OperatorGUI extends JFrame {
 		/**
 		 * Sets up the main display area for the outputs and recommendations
 		 */
-
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(285, 42, 576, 245);
 		JTextArea display = new JTextArea();
@@ -81,7 +78,6 @@ public class OperatorGUI extends JFrame {
 		/**
 		 * Sets up the label and display for the speed data
 		 */
-
 		JTextPane speedPane = new JTextPane();
 		speedPane.setBounds(57, 83, 152, 67);
 		speedPane.setEditable(false);
@@ -119,7 +115,7 @@ public class OperatorGUI extends JFrame {
 		 */
 		TimerTask task = new TimerTask() {
 			public void run() {
-				totalMilliseconds += 10000;
+				totalMilliseconds += lcs.getTime() * 1000;
 				lcs.updateValuesSensors();
 
 				speedPane.setText(String.valueOf(lcs.getSpeed()));
@@ -131,7 +127,7 @@ public class OperatorGUI extends JFrame {
 				lcs.writeToLog("" + date + "-- RPM data has been updated \'" + "\'.\n");
 
 				display.setText("");
-
+				
 				if (lcs.getRainRate() >= 0.3) {
 					display.append(lcs.rainReport() + "\n");
 				}
@@ -175,7 +171,7 @@ public class OperatorGUI extends JFrame {
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog(lcs.toString());
 
-				if (totalMilliseconds == 405000) {
+				if (totalMilliseconds == lcs.getTime() * 39000) {
 					loop.cancel();
 				}
 			}

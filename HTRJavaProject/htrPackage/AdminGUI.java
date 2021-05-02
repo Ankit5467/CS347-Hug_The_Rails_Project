@@ -29,7 +29,6 @@ public class AdminGUI extends JFrame {
 	Date date = java.util.Calendar.getInstance().getTime();
 	Timer loop;
 	int totalMilliseconds;
-	int count = 1; /* temp */
 
 	/**
 	 * Launch the application.
@@ -115,10 +114,8 @@ public class AdminGUI extends JFrame {
 		 * output printing
 		 */
 		TimerTask task = new TimerTask() {
-
 			public void run() {
 				totalMilliseconds += lcs.getTime() * 1000;
-				// totalMilliseconds += 10000;
 				lcs.updateValuesSensors();
 
 				speedPane.setText(String.valueOf(lcs.getSpeed()));
@@ -130,8 +127,7 @@ public class AdminGUI extends JFrame {
 				lcs.writeToLog("" + date + "-- RPM data has been updated \'" + "\'.\n");
 
 				display.setText("");
-				display.append("Count " + count + "\n");
-				count++;
+				
 				if (lcs.getRainRate() >= 0.3) {
 					display.append(lcs.rainReport() + "\n");
 				}
@@ -174,10 +170,6 @@ public class AdminGUI extends JFrame {
 
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog(lcs.toString());
-
-				// if (totalMilliseconds == 405000) {
-				// loop.cancel();
-				// }
 
 				if (totalMilliseconds == lcs.getTime() * 39000) {
 					loop.cancel();
