@@ -51,7 +51,6 @@ public class LoginGUI extends JFrame {
 		/**
 		 * Create new intance of LCS Update date Write to log that session has started
 		 */
-
 		lcs = new LCS();
 		date = java.util.Calendar.getInstance().getTime();
 		lcs.writeToLog("" + date + "-- LCS session started.\n");
@@ -60,7 +59,6 @@ public class LoginGUI extends JFrame {
 		/**
 		 * Default block of code with JFrame
 		 */
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(325, 100, 900, 600);
 		contentPane = new JPanel();
@@ -72,7 +70,6 @@ public class LoginGUI extends JFrame {
 		/**
 		 * Code that adds a train to our login window
 		 */
-
 		File img = new File("train.png");
 		JLabel lblImage = new JLabel();
 		lblImage.setBounds(310, 60, 256, 169);
@@ -82,7 +79,6 @@ public class LoginGUI extends JFrame {
 		/**
 		 * Sets up the username and password labels
 		 */
-
 		JLabel lblUser = new JLabel("USERNAME:");
 		lblUser.setForeground(Color.GREEN);
 		lblUser.setBounds(226, 269, 88, 33);
@@ -97,7 +93,6 @@ public class LoginGUI extends JFrame {
 		/**
 		 * Code for the log in button (style, size, functionality, etc.)
 		 */
-
 		JButton logIn = new JButton("LOG IN");
 		logIn.setBounds(373, 359, 150, 40);
 		logIn.addActionListener(new ActionListener() {
@@ -130,7 +125,6 @@ public class LoginGUI extends JFrame {
 		/**
 		 * Block of code that adds the components onto the GUI
 		 */
-
 		contentPane.setLayout(null);
 		contentPane.add(lblPass);
 		contentPane.add(lblUser);

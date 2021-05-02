@@ -18,7 +18,7 @@ DONE::
 - [DONE] section 5.4: update the input/output table (ankit).
 - [DONE] Add Usecases for new reqs! (Ankit)
 
-TODO::
+TODO:
 - [TODO] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
 - [TODO] section 4.4: update it. (jan)
 - [TODO] section 4.5: read over it & update it if applicable. (faraz)

@@ -67,21 +67,6 @@ public class IOT extends Sensors {
 		}
 	}
 
-	// String obtainWeather() {
-	// // print the weather report.
-	// String precipitation = "";
-	// if (this.getRainRate() < 0.3 && this.getSnowRate() < 0.3) {
-	// precipitation += "The rate of precipitation is " +
-	// roundTwoDecimals(this.getRainRate() + this.getSnowRate())
-	// + " inches per hour.";
-	// return this.windReport() + "\n" + precipitation + "\n" + visibilityReport();
-	// } else {
-	// return this.windReport() + "\n" + this.rainReport() + "\n" +
-	// this.snowReport() + "\n"
-	// + this.visibilityReport();
-	// }
-	// }
-
 	/**
 	 * @return true if there is an obstruction. False otherwise.
 	 */
@@ -143,7 +128,6 @@ public class IOT extends Sensors {
 				if (this.getSpeed() != 0) {
 					str.append(" Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
 				}
-//				str.append("Estimated time to impact: " + roundTwoDecimals(this.computeImpact()) + " minutes.");
 				return str.toString();
 			}
 		}
@@ -180,7 +164,6 @@ public class IOT extends Sensors {
 	 * 
 	 * @returns a string which contains details about upcoming gate crossings.
 	 *          String will contain the appropriate recommendations, if any.
-	 * NEEDS MORE WORK!!!
 	 */
 	String gateStatus() {
 		StringBuilder str = new StringBuilder();
@@ -199,9 +182,7 @@ public class IOT extends Sensors {
 						+ " miles away, is open. ");
 				if (!this.isObstruction()) {
 					str.append("You may proceed.");
-				} /*else {*/
-				// 	str.append("\n");
-				// }
+				}
 			} else {
 				str.append("The next gate, which is " + roundTwoDecimals(this.getGateDistance())
 						+ " miles away, is closed."
@@ -209,7 +190,6 @@ public class IOT extends Sensors {
 			}
 		}
 
-		// TEST THIS
 		/* Dont honk if the gate is closed & there is an obstruction */
 		if (this.getSpeed() != 0) {
 			double deltaDist = 0.0; 
@@ -226,10 +206,6 @@ public class IOT extends Sensors {
 			if (this.getGateDistance() >= 1 && this.getGateDistance() < 1 + deltaDist) {
 				str.append("Gate is about 1 mile away.\nRecommendation: Honk the horn for 15 seconds.");
 			}
-
-			// if (this.getGateDistance() >=1 && this.getGateDistance() - deltaDist < 1 && this.getGateDistance() < 1 + deltaDist) {
-			// 	str.append("Gate is about 1 mile away. Recommendation: Honk the horn for 15 seconds.\n");
-			// }
 
 			/*
 			 * Honk the horn if the gate distance is b/w [0, deltaDist).

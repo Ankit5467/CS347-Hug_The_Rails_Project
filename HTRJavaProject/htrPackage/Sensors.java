@@ -35,7 +35,6 @@ public class Sensors {
 	private double rate_snow; /* inches per hour */
 
 	private double visibility; /* miles */
-	// protected Scanner docc;
 	private ArrayList<String> data;
 
 	/**
@@ -204,27 +203,11 @@ public class Sensors {
 	}
 
 	/**
-	 * If a stationary object is detected, set the data field stationary_obstruction
-	 * to true, otherwise false.
-	 */
-	// void setDetectStationaryObject() {
-	// this.stationary_obstruction = true;
-	// }
-
-	/**
 	 * @return true if a a stationary object is detected, false otherwise.
 	 */
 	boolean getDetectStationaryObject() {
 		return this.stationary_obstruction;
 	}
-
-	/**
-	 * If a moving object is detected, set the data field moving_obstruction to
-	 * true, otherwise false.
-	 */
-	// void setDetectMovingObject() {
-	// this.moving_obstruction = true;
-	// }
 
 	/**
 	 * @return true if a a moving object is detected, false otherwise.

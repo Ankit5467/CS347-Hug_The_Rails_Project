@@ -13,7 +13,6 @@ import java.util.Scanner;
 public class LCS extends IOT {
 
 	/* data fields */
-
 	private boolean isConnected; /* tracks if the LCS system is connected to wifi */
 	private boolean isLoggedIn; /* tracks if the user is logged into LCS */
 	private boolean wantToCont; /* tracks if the user wants to exit from LCS */
@@ -28,12 +27,9 @@ public class LCS extends IOT {
 	/* Add default login info for operator & administrator */
 	private Map<String, String> login_info = new HashMap<String, String>();
 
-	/* Constructor */
-
 	/**
 	 * Constructor for LCS object.
 	 */
-
 	protected LCS() {
 		super();
 		this.isConnected = false; /* By default, assume there is no wifi connection. */
@@ -60,7 +56,7 @@ public class LCS extends IOT {
 	void initializeLog() throws Exception {
 		String filename = "LCS_Log.txt";
 
-		// create the log file:
+		/* create the log file: */
 		try {
 			this.log = new File(filename);
 			this.log.createNewFile();
@@ -71,11 +67,11 @@ public class LCS extends IOT {
 		/* set its filename/path and write a line to it */
 		this.logFileName = Path.of(filename);
 		try {
+			/* Initialize the log to be written to & read from */
 			Files.write(this.logFileName, "******************************************\n".getBytes(),
 					StandardOpenOption.APPEND);
-			System.out.println("Log has been initialized for this session.\n");
 		} catch (IOException e) {
-			System.out.println("Error: Unable to initialize log.\n");
+			/* Unable to initialize log */
 			e.printStackTrace();
 		}
 
@@ -85,7 +81,7 @@ public class LCS extends IOT {
 		try {
 			Files.write(this.logFileName, str.getBytes(), StandardOpenOption.APPEND);
 		} catch (IOException e) {
-			System.out.println("Error: Unable to write to log.\n");
+			/* Unable to write to log */
 			e.printStackTrace();
 		}
 	}
@@ -163,11 +159,17 @@ public class LCS extends IOT {
 		this.isConnected = b;
 	}
 
-	// (long,lat)
+	/**
+	 * 
+	 * @return a string representation of the location in the form: (long,lat)
+	 */
 	String displayLocation() {
 		return "(" + this.getLatitude1() + ", " + this.getLongitude1() + ")";
 	}
 
+	/**
+	 * ToString for an LCS object.
+	 */
 	public String toString() {
 		StringBuilder str = new StringBuilder();
 		str.append("\nLocation: " + this.displayLocation());

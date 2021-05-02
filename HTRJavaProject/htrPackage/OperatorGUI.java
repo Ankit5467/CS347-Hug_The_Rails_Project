@@ -99,7 +99,6 @@ public class OperatorGUI extends JFrame {
 		/**
 		 * Sets up the label and display for the RPM data
 		 */
-
 		JLabel lblRPM = new JLabel("RPM");
 		lblRPM.setBounds(72, 160, 128, 34);
 		lblRPM.setForeground(Color.YELLOW);
@@ -118,7 +117,6 @@ public class OperatorGUI extends JFrame {
 		 * Create and define a TimerTask() to automate file reading, updating, the
 		 * output printing
 		 */
-
 		TimerTask task = new TimerTask() {
 			public void run() {
 				totalMilliseconds += 10000;
@@ -191,7 +189,6 @@ public class OperatorGUI extends JFrame {
 		/**
 		 * Default block of code with JFrame
 		 */
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(325, 100, 900, 600);
 		contentPane = new JPanel();
@@ -202,7 +199,6 @@ public class OperatorGUI extends JFrame {
 		/**
 		 * Codes for our button components (style, size, functionality, etc.)
 		 */
-
 		JButton btnRain = new JButton("RAIN");
 		btnRain.setForeground(Color.BLACK);
 		btnRain.setBounds(443, 311, 118, 71);
@@ -352,7 +348,6 @@ public class OperatorGUI extends JFrame {
 		/**
 		 * Block of code that adds the components onto the GUI
 		 */
-
 		contentPane.setLayout(null);
 		contentPane.add(rpmPane);
 		contentPane.add(lblRPM);

@@ -30,6 +30,7 @@ public class AdminGUI extends JFrame {
 	Timer loop;
 	int totalMilliseconds;
 	int count = 1; /* temp */
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,7 +56,6 @@ public class AdminGUI extends JFrame {
 		 * Create new instances of LCS and Timer Set isLoggedIn() to true Set date
 		 * variable
 		 */
-
 		lcs = new LCS();
 		lcs.setIsLoggedIn(true);
 		loop = new Timer();
@@ -64,7 +64,6 @@ public class AdminGUI extends JFrame {
 		/**
 		 * Sets up the main display area for the outputs and recommendations
 		 */
-
 		JScrollPane scroll = new JScrollPane();
 		scroll.setBounds(285, 42, 576, 245);
 		JTextArea display = new JTextArea();
@@ -80,7 +79,6 @@ public class AdminGUI extends JFrame {
 		/**
 		 * Sets up the label and display for the speed data
 		 */
-
 		JTextPane speedPane = new JTextPane();
 		speedPane.setBounds(57, 83, 152, 67);
 		speedPane.setEditable(false);
@@ -98,7 +96,6 @@ public class AdminGUI extends JFrame {
 		/**
 		 * Sets up the label and display for the RPM data
 		 */
-
 		JLabel lblRPM = new JLabel("RPM");
 		lblRPM.setBounds(72, 160, 128, 34);
 		lblRPM.setForeground(Color.YELLOW);
@@ -117,11 +114,10 @@ public class AdminGUI extends JFrame {
 		 * Create and define a TimerTask() to automate file reading, updating, the
 		 * output printing
 		 */
-		
 		TimerTask task = new TimerTask() {
-			
+
 			public void run() {
-				totalMilliseconds += lcs.getTime()*1000;
+				totalMilliseconds += lcs.getTime() * 1000;
 				// totalMilliseconds += 10000;
 				lcs.updateValuesSensors();
 
@@ -179,10 +175,10 @@ public class AdminGUI extends JFrame {
 				date = java.util.Calendar.getInstance().getTime();
 				lcs.writeToLog(lcs.toString());
 
-//				if (totalMilliseconds == 405000) {
-//					loop.cancel();
-//				}
-				
+				// if (totalMilliseconds == 405000) {
+				// loop.cancel();
+				// }
+
 				if (totalMilliseconds == lcs.getTime() * 39000) {
 					loop.cancel();
 				}
@@ -193,12 +189,10 @@ public class AdminGUI extends JFrame {
 		 * Schedules the task to occur over a span of 6min 30s with 10 second intervals
 		 */
 		loop.scheduleAtFixedRate(task, lcs.getTime() * 1000, lcs.getTime() * 1000);
-		// loop.scheduleAtFixedRate(task, 10000, 10000);
 
 		/**
 		 * Default block of code with JFrame
 		 */
-
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(325, 100, 900, 600);
 		contentPane = new JPanel();
@@ -209,7 +203,6 @@ public class AdminGUI extends JFrame {
 		/**
 		 * Codes for our button components (style, size, functionality, etc.)
 		 */
-
 		JButton btnRain = new JButton("RAIN");
 		btnRain.setForeground(Color.BLACK);
 		btnRain.setBounds(443, 311, 118, 71);
