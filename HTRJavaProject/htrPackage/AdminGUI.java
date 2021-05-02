@@ -29,7 +29,7 @@ public class AdminGUI extends JFrame {
 	Date date = java.util.Calendar.getInstance().getTime();
 	Timer loop;
 	int totalMilliseconds;
-
+	int count = 1; /* temp */
 	/**
 	 * Launch the application.
 	 */
@@ -117,11 +117,12 @@ public class AdminGUI extends JFrame {
 		 * Create and define a TimerTask() to automate file reading, updating, the
 		 * output printing
 		 */
-
+		
 		TimerTask task = new TimerTask() {
+			
 			public void run() {
-//				totalMilliseconds += lcs.getTime()*1000;
-				totalMilliseconds += 2000;
+				totalMilliseconds += lcs.getTime()*1000;
+				// totalMilliseconds += 10000;
 				lcs.updateValuesSensors();
 
 				speedPane.setText(String.valueOf(lcs.getSpeed()));
@@ -133,7 +134,8 @@ public class AdminGUI extends JFrame {
 				lcs.writeToLog("" + date + "-- RPM data has been updated \'" + "\'.\n");
 
 				display.setText("");
-
+				display.append("Count " + count + "\n");
+				count++;
 				if (lcs.getRainRate() >= 0.3) {
 					display.append(lcs.rainReport() + "\n");
 				}
@@ -181,17 +183,17 @@ public class AdminGUI extends JFrame {
 //					loop.cancel();
 //				}
 				
-				if (totalMilliseconds == 4680000) {
+				if (totalMilliseconds == lcs.getTime() * 39000) {
 					loop.cancel();
 				}
 			}
 		};
 
 		/**
-		 * Schedules the task to occur over a span of 6min 45s with 10 second intervals
+		 * Schedules the task to occur over a span of 6min 30s with 10 second intervals
 		 */
-		//loop.scheduleAtFixedRate(task, lcs.getTime() * 1000, lcs.getTime() * 1000);
-		loop.scheduleAtFixedRate(task, 2000, 2000);
+		loop.scheduleAtFixedRate(task, lcs.getTime() * 1000, lcs.getTime() * 1000);
+		// loop.scheduleAtFixedRate(task, 10000, 10000);
 
 		/**
 		 * Default block of code with JFrame

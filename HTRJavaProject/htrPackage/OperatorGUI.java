@@ -184,7 +184,7 @@ public class OperatorGUI extends JFrame {
 		};
 
 		/**
-		 * Schedules the task to occur over a span of 6min 45s with 10 second intervals
+		 * Schedules the task to occur over a span of 6min 30s with 10 second intervals
 		 */
 		loop.scheduleAtFixedRate(task, lcs.getTime() * 1000, lcs.getTime() * 1000);
 
