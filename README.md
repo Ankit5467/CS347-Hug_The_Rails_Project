@@ -3,8 +3,5 @@
 
 The repository contains the code for our CS 347 project.
 
-The files in this repo are:
-    - LCS.java
-    - IOT.java
-    - Sensor.java
-Hi
+Run LoginGUI.java in HTRJavaProject/htrpackage to execute the program.
+
