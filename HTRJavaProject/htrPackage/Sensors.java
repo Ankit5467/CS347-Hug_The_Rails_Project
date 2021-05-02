@@ -218,7 +218,6 @@ public class Sensors {
 
 	/**
 	 * Sets then gets distance from object.
-	 * 
 	 * @return a negative double to signify obstruction's distance behind the train,
 	 *         and a non-negative double to signify distance in front of the train.
 	 */

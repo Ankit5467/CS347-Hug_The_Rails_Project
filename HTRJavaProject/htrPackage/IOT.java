@@ -90,16 +90,15 @@ public class IOT extends Sensors {
 		return (((this.obtainDistanceFromObject() * 5280) / (88 * this.getSpeed())));
 	}
 
-	/*
-	 * Object processing ALGORITHM: if (!isObstruction) print
-	 * "There is no obstruction" else if object is in front of train Print whether
-	 * object is moving or stationary If object is moving compute & print object
-	 * speed Compute & Print distance b/w train & Object Compute & Print Time to
-	 * impact (if applicable)
+	/**
 	 * 
-	 * else (object is behind train) Print whether object is moving or stationary If
-	 * object is moving compute & print object speed Compute & Print distance b/w
-	 * train & Object
+	 * Determines if there is an obstruction. 
+	 * If there is, determine:
+	 * 		whether its in front of or behind the train,
+	 * 		its speed,
+	 * 		whether the obstruction is moving or stationary,
+	 * 		its distance away from the train,
+	 * 		and the time to collision, if applicable.
 	 */
 	String ProcessObject() {
 		StringBuilder str = new StringBuilder();
@@ -139,11 +138,6 @@ public class IOT extends Sensors {
 	 * recommendation to slow down the train.
 	 */
 	String detectSlippage() {
-		/*
-		 * Wheel slippage occurs when speed calculated from rpm if more than 5%
-		 * different from normal speed, where normal speed is speed calculated using gps
-		 * coordinates.
-		 */
 //		double rpmSpeed = (double) this.getRPM() * this.getWheelDiameter() * Math.PI * (double) 60 / (double) 63360;
 //		if (Math.abs(
 //				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.05)) { /* would this work? CHANGED FROM 0.05 */
