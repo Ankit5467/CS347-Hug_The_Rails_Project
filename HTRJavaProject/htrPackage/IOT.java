@@ -137,17 +137,16 @@ public class IOT extends Sensors {
 	/**
 	 * Calculate wheel slippage. If the wheels are slipping, then print out a
 	 * recommendation to slow down the train.
-	 * LOOK INTO IT A BIT MORE!
 	 */
 	String detectSlippage() {
 		/*
-		 * Wheel slippage occurs when speed calculated from rpm if more than .001%
+		 * Wheel slippage occurs when speed calculated from rpm if more than 5%
 		 * different from normal speed, where normal speed is speed calculated using gps
 		 * coordinates.
 		 */
 //		double rpmSpeed = (double) this.getRPM() * this.getWheelDiameter() * Math.PI * (double) 60 / (double) 63360;
 //		if (Math.abs(
-//				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.005)) { /* would this work? CHANGED FROM 0.05 */
+//				this.getSpeed() - rpmSpeed) > (this.getSpeed() * 0.05)) { /* would this work? CHANGED FROM 0.05 */
 //			return "The wheels are slipping. Recommendation: slow down or halt the train.";
 //		} else {
 //			return "The wheels are not slipping.";
