@@ -82,9 +82,9 @@ public class Sensors {
 	}
 
 	/**
-	 * Map of data's indices to the data it represents. 0 - rpm 1-lat 2 long 3- gate
-	 * distance 4 - gate status 5- moving obstruction 6- stationaty 7-distance 8-
-	 * rain 9- snow 10- wind 11- visibality
+	 * Map of data's indices to the data it represents. 0-rpm 1-lat 2-long 3-gate distance 
+	 * 4-gate status 5-moving obstruction 6-stationary 7-distance 
+	 * 8-rain 9-snow 10-wind 11-visibility
 	 */
 	public void updateValuesSensors() {
 
