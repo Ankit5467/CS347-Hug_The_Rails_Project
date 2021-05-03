@@ -19,6 +19,7 @@ DONE::
 - [DONE] Add Usecases for new reqs! (Ankit)
 - [DONE] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
 - [DONE] section 4.4: update it. (jan)
+- [DONE] - paste the final code on the document.
 
 TODO:
 
@@ -29,7 +30,6 @@ TODO:
 	- [TODo] test cases for the horn (Ayo)
 
 FINAL TOUCHES: 
-- [TODO] - paste the final code on the document (save this for Monday night).
 - [TODO] - Work on the formal technical review & other things reza talked about in 4/29 lecture. 
 - [TODO] - FORMAT THE DOCUMENT.
 
