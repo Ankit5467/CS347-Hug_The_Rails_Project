@@ -17,10 +17,11 @@ DONE::
 - [DONE] section 4.7: update the state diagram (ankit)
 - [DONE] section 5.4: update the input/output table (ankit).
 - [DONE] Add Usecases for new reqs! (Ankit)
+- [DONE] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
+- [DONE] section 4.4: update it. (jan)
 
 TODO:
-- [TODO] section 4.3: update the class-based diagram. Add the appropriate methods/data fields & add the new classes. (jan)
-- [TODO] section 4.4: update it. (jan)
+
 - [TODO] section 4.5: read over it & update it if applicable. (faraz)
 - [TODO] section 5.1 and 5.3: update the table. See feedback on canvas for the section 5 doc. (jan + faraz).
 - [TODO] - UPDATE appropriate diagrams (SECTION 4) w/ regards to the new requirements (Jan + faraz <- update the diagrams that u worked on)
@@ -28,7 +29,7 @@ TODO:
 	- [TODo] test cases for the horn (Ayo)
 
 FINAL TOUCHES: 
-- [TODO] - paste the final code on the document (save this for SUNDAY night).
+- [TODO] - paste the final code on the document (save this for Monday night).
 - [TODO] - Work on the formal technical review & other things reza talked about in 4/29 lecture. 
 - [TODO] - FORMAT THE DOCUMENT.
 
