@@ -26,9 +26,11 @@ DONE::
 
 TODO:
 
-- [TODO] section 5.1 and 5.3: update the table. See feedback on canvas for the section 5 doc. (faraz + ayo).
-- [TODO] Add test cases for functional reqs & their results to the document (Ayo/Faraz).
-	- [TODo] test cases for the horn (Ayo)
+- [TODO] section 5.3: update the table. See feedback on canvas for the section 5 doc. (faraz).
+
+- [TODO] Add test cases for functional reqs & their results to the document (Ayo).
+
+- [TODo] test cases for the horn (Ayo)
 
 FINAL TOUCHES: 
 - [TODO] - Work on the formal technical review & other things reza talked about in 4/29 lecture. 
