@@ -26,7 +26,7 @@ DONE::
 
 TODO:
 
-- [TODO] section 5.3: update the table. See feedback on canvas for the section 5 doc. (faraz).
+- [TODO] section 5.3: update the table. See feedback on canvas for the section 5 doc (Faraz + Ayo).
 
 - [TODO] Section 7.2 - Add use cases for the horn to the Table(Ayo).
 
