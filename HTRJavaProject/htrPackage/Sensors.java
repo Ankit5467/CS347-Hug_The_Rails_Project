@@ -68,7 +68,7 @@ public class Sensors {
 
 			Scanner input = new Scanner(System.in);
 
-			File file = new File("test.txt");
+			File file = new File("sensor_inputs.txt");
 
 			input = new Scanner(file);
 
