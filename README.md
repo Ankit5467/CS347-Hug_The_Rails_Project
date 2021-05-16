@@ -3,7 +3,8 @@
  
 The repository contains the code and supplemental files for our CS 347 project.
 
-Run LoginGUI.java in /HTRJavaProject/htrpackage to execute the program.
+Read the User Guide for detailed instructions on how to use this product.
+TLDR: Run LoginGUI.java in /HTRJavaProject/htrpackage to execute the program.
 
  Authors:
     - Ayomide Omokanwaye
